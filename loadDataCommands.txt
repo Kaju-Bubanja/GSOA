@@ -1,40 +1,5 @@
-// Tried this first, I thought the error might be because I changed the order of the rows. 
-
-CREATE TABLE laender (Land VARCHAR(40), LandFranz VARCHAR(40), Code CHAR(2), Kontinent VARCHAR(12));
-//Had to move rows, because original data was in a different format.
-ALTER TABLE laender CHANGE Code CHAR(2) FIRST;
-ALTER TABLE laender CHANGE Kontinent VARCHAR(12) AFTER Code;
-LOAD DATA LOCAL INFILE 'laender.csv' INTO TABLE laender CHARACTER SET utf8 COLUMNS TERMINATED BY ';';
-// So I tried:
 CREATE TABLE laender (Code CHAR(2), Kontinent VARCHAR(12), Land VARCHAR(40), LandFranz VARCHAR(40));
 LOAD DATA LOCAL INFILE 'laender.csv' INTO TABLE laender CHARACTER SET utf8 COLUMNS TERMINATED BY ';';
-// Bug is still found.
 
-select * from laender; // results in
-+------+------------+---------------------+----------------------+
-| Code | Kontinent  | Land                | LandFranz            |
-+------+------------+---------------------+----------------------+
-             |a     | Andorra             | Andorre
-            |pa     | Belgien             | Belgique
-  |A   | Europa     | Bosnien und Herzeg. | Bosnie et Herzég.
-            |pa     | Bulgarien           | Bulgarie
-            |pa     | Dänemark           | Danemark
-
-select code from laender; // results in
-+------+
-| code |
-+------+
-| AD   |
-| BE   |
-| BA   |
-| BG   |
-| DK   |
-| DE   |
-
-
-
-// Yet to insert, because it has a reference key to laender, laender needs to work first.
-// LOAD DATA LOCAL INFILE 'kriegsmaterial2008.csv' INTO TABLE kriegsmaterial
-// CHARACTER SET utf8 COLUMNS TERMINATED BY ';';
-// CREATE TABLE kriegsmaterial (Land VARCHAR(40), KM1 INT, KM2 INT, KM3 INT, KM4 INT, KM5 INT, KM6 INT, KM7 INT, KM8 INT, KM10 INT, KM16 INT, Year YEAR,
-// PRIMARY KEY(Land, Year), FOREIGN KEY Land REFERENCES laender(Land));
+CREATE TABLE export (Id INT NOT NULL AUTO_INCREMENT, Code CHAR(2), Art VARCHAR(40), System VARCHAR(10), Kategorie VARCHAR(15), Year Year, Betrag INT, PRIMARY KEY(Id), 
+FOREIGN KEY (Code) REFERENCES laender(Code));
