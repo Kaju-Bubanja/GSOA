@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+html, body, h1, h2, h3, ul, li, a, p,
+article, aside, footer, header, main, nav, section{
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	background-color: black;
+	color: white;
+	font-family: Verdana;
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+}
+
+main{
+	width: auto;
+	height: 100%;
+}
+
+#googleMap{
+	padding: 0;
+	margin: 0;
+	width: 85%;
+	height: 85%;
+}
+
+#skandale{
+	width: 200px;
+}
+
+#jahresdaten{
+	width: 200px;
+}
+
+aside{
+	float: left;
+	margin-right: 20px;
+	width: 200px;
+}
