@@ -1,4 +1,9 @@
-CREATE TABLE laender (Code CHAR(2), Kontinent VARCHAR(12), Land VARCHAR(40), LandFranz VARCHAR(40));
+DROP TABLE IF EXISTS export;
+DROP TABLE IF EXISTS laender;
+CREATE TABLE laender (Code CHAR(2), Kontinent VARCHAR(12), Land VARCHAR(40), LandFranz VARCHAR(40),
+INDEX(Code));
+# Index is necessary when a column is used as foreign key - at least in older versions of mysql.
+
 LOAD DATA LOCAL INFILE 'laender.csv' INTO TABLE laender CHARACTER SET utf8 COLUMNS TERMINATED BY ';';
 
 ALTER TABLE laender ADD latitude FLOAT(10,6);

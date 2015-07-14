@@ -18,11 +18,11 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($export as $export): ?>
+    <? /*php foreach ($export as $export): ?>
         <tr>
             <td><?= h($export->Code) ?></td>  
         </tr>
-    <?php endforeach; ?>
+    <?php endforeach;*/ ?>
     </tbody>
     </table>
     <div class="paginator">
@@ -33,4 +33,16 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+    <script>
+    exports = [
+    <?php foreach ($export as $exp): ?>
+        {
+            "Id":"<?= h($exp->Id) ?>",
+            "Code":"<?= h($exp->Code) ?>"
+        }
+    <?php endforeach; ?>
+    ];
+
+    alert(exports[0].Code);
+    </script>
 </div>
