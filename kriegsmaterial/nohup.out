@@ -1,0 +1,471 @@
+
+Welcome to CakePHP v3.0.8 Console
+---------------------------------------------------------------
+App : src
+Path: /home/masterchief/kriegsmaterial/src/
+DocumentRoot: /home/masterchief/kriegsmaterial/webroot
+---------------------------------------------------------------
+built-in server is running in http://localhost:8765/
+You can exit with `CTRL-C`
+
+Welcome to CakePHP v3.0.8 Console
+---------------------------------------------------------------
+App : src
+Path: /home/masterchief/kriegsmaterial/src/
+DocumentRoot: /home/masterchief/kriegsmaterial/webroot
+---------------------------------------------------------------
+built-in server is running in http://localhost:5678/
+You can exit with `CTRL-C`
+Terminated
+
+Welcome to CakePHP v3.0.8 Console
+---------------------------------------------------------------
+App : src
+Path: /home/masterchief/kriegsmaterial/src/
+DocumentRoot: /home/masterchief/kriegsmaterial/webroot
+---------------------------------------------------------------
+built-in server is running in http://5.196.178.165:5678/
+You can exit with `CTRL-C`
+[Tue Jul  7 08:28:54 2015] 82.197.181.155:53577 [200]: /css/base.css
+[Tue Jul  7 08:28:54 2015] 82.197.181.155:53578 [200]: /css/cake.css
+[Tue Jul  7 08:28:59 2015] 82.197.181.155:53580 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:29:00 2015] 82.197.181.155:53585 [200]: /css/base.css
+[Tue Jul  7 08:29:00 2015] 82.197.181.155:53586 [200]: /css/cake.css
+[Tue Jul  7 08:29:06 2015] 82.197.181.155:53587 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:29:15 2015] 82.197.181.155:53600 [200]: /css/base.css
+[Tue Jul  7 08:29:15 2015] 82.197.181.155:53601 [200]: /css/cake.css
+[Tue Jul  7 08:29:20 2015] 82.197.181.155:53602 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:29:23 2015] 82.197.181.155:53608 [200]: /css/cake.css
+[Tue Jul  7 08:29:23 2015] 82.197.181.155:53609 [200]: /css/base.css
+[Tue Jul  7 08:29:29 2015] 82.197.181.155:53610 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:29:29 2015] 82.197.181.155:53615 [200]: /css/base.css
+[Tue Jul  7 08:29:29 2015] 82.197.181.155:53616 [200]: /css/cake.css
+[Tue Jul  7 08:29:35 2015] 82.197.181.155:53617 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:32:15 2015] 82.197.181.155:53718 [200]: /css/base.css
+[Tue Jul  7 08:32:15 2015] 82.197.181.155:53719 [200]: /css/cake.css
+[Tue Jul  7 08:32:20 2015] 82.197.181.155:53721 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:32:21 2015] 82.197.181.155:53725 [200]: /css/base.css
+[Tue Jul  7 08:32:21 2015] 82.197.181.155:53726 [200]: /css/cake.css
+[Tue Jul  7 08:32:25 2015] 82.197.181.155:53729 [200]: /css/base.css
+[Tue Jul  7 08:32:25 2015] 82.197.181.155:53730 [200]: /css/cake.css
+[Tue Jul  7 08:32:31 2015] 82.197.181.155:53734 [200]: /css/base.css
+[Tue Jul  7 08:32:31 2015] 82.197.181.155:53736 [200]: /css/cake.css
+[Tue Jul  7 08:32:32 2015] 82.197.181.155:53739 [200]: /css/base.css
+[Tue Jul  7 08:32:32 2015] 82.197.181.155:53740 [200]: /css/cake.css
+[Tue Jul  7 08:32:38 2015] 82.197.181.155:53741 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:34:03 2015] 82.197.181.155:53782 [200]: /css/base.css
+[Tue Jul  7 08:34:03 2015] 82.197.181.155:53783 [200]: /css/cake.css
+[Tue Jul  7 08:34:04 2015] 82.197.181.155:53785 [200]: /css/base.css
+[Tue Jul  7 08:34:04 2015] 82.197.181.155:53786 [200]: /css/cake.css
+[Tue Jul  7 08:34:10 2015] 82.197.181.155:53787 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:35:08 2015] 82.197.181.155:53841 [200]: /css/base.css
+[Tue Jul  7 08:35:08 2015] 82.197.181.155:53842 [200]: /css/cake.css
+[Tue Jul  7 08:35:13 2015] 82.197.181.155:53843 Invalid request (Unexpected EOF)
+[Tue Jul  7 08:37:01 2015] 82.197.181.155:53891 Invalid request (Unexpected EOF)
+[Tue Jul  7 09:04:13 2015] 82.197.181.155:55152 [200]: /css/base.css
+[Tue Jul  7 09:04:13 2015] 82.197.181.155:55153 [200]: /css/cake.css
+[Tue Jul  7 09:04:17 2015] 82.197.181.155:55157 [200]: /css/base.css
+[Tue Jul  7 09:04:17 2015] 82.197.181.155:55158 [200]: /css/cake.css
+[Tue Jul  7 09:04:20 2015] 82.197.181.155:55161 [200]: /css/base.css
+[Tue Jul  7 09:04:20 2015] 82.197.181.155:55162 [200]: /css/cake.css
+[Tue Jul  7 09:04:26 2015] 82.197.181.155:55163 Invalid request (Unexpected EOF)
+[Wed Jul  8 09:08:59 2015] 62.203.82.16:53785 [200]: /favicon.ico
+[Wed Jul  8 09:09:00 2015] 62.203.82.16:53787 [200]: /favicon.ico
+[Wed Jul  8 12:01:07 2015] 62.203.82.16:54858 [200]: /css/base.css
+[Wed Jul  8 12:01:07 2015] 62.203.82.16:54859 [200]: /css/cake.css
+[Wed Jul  8 12:01:07 2015] 62.203.82.16:54861 [200]: /favicon.ico
+[Wed Jul  8 12:01:08 2015] 62.203.82.16:54862 [200]: /favicon.ico
+[Wed Jul  8 12:01:08 2015] 62.203.82.16:54863 [200]: /favicon.ico
+[Wed Jul  8 12:01:08 2015] 62.203.82.16:54864 [200]: /favicon.ico
+[Thu Jul  9 08:50:24 2015] 82.197.181.155:53357 [200]: /css/base.css
+[Thu Jul  9 08:50:24 2015] 82.197.181.155:53358 [200]: /css/cake.css
+[Thu Jul  9 08:50:24 2015] 82.197.181.155:53360 [200]: /favicon.ico
+[Thu Jul  9 08:50:24 2015] 82.197.181.155:53359 [200]: /favicon.ico
+[Thu Jul  9 08:50:24 2015] 82.197.181.155:53361 [200]: /favicon.ico
+[Thu Jul  9 08:50:24 2015] 82.197.181.155:53362 [200]: /favicon.ico
+[Thu Jul  9 08:50:33 2015] 82.197.181.155:53366 Invalid request (Unexpected EOF)
+[Thu Jul  9 08:50:54 2015] 84.227.226.114:52671 [200]: /css/base.css
+[Thu Jul  9 08:50:54 2015] 84.227.226.114:52672 [200]: /css/cake.css
+[Thu Jul  9 08:50:54 2015] 84.227.226.114:52673 [200]: /favicon.ico
+[Thu Jul  9 08:51:29 2015] 84.227.226.114:52684 [200]: /css/base.css
+[Thu Jul  9 08:51:29 2015] 84.227.226.114:52685 [200]: /css/cake.css
+[Thu Jul  9 08:51:41 2015] 84.227.226.114:52687 Invalid request (Unexpected EOF)
+[Thu Jul  9 08:51:42 2015] 84.227.226.114:52692 [200]: /css/base.css
+[Thu Jul  9 08:51:42 2015] 84.227.226.114:52695 [200]: /css/cake.css
+[Thu Jul  9 08:51:51 2015] 84.227.226.114:52694 Invalid request (Unexpected EOF)
+[Thu Jul  9 08:52:01 2015] 84.227.226.114:52700 Invalid request (Unexpected EOF)
+[Thu Jul  9 08:52:01 2015] 84.227.226.114:52699 Invalid request (Unexpected EOF)
+[Thu Jul  9 08:52:01 2015] 84.227.226.114:52701 Invalid request (Unexpected EOF)
+[Thu Jul  9 08:53:19 2015] 82.197.181.155:53470 Invalid request (Unexpected EOF)
+[Thu Jul  9 08:53:19 2015] 82.197.181.155:53475 [200]: /css/cake.css
+[Thu Jul  9 08:53:19 2015] 82.197.181.155:53474 [200]: /css/base.css
+[Thu Jul  9 08:53:19 2015] 82.197.181.155:53476 [200]: /favicon.ico
+[Thu Jul  9 08:53:19 2015] 82.197.181.155:53477 [200]: /favicon.ico
+[Thu Jul  9 08:53:19 2015] 82.197.181.155:53478 [200]: /favicon.ico
+[Thu Jul  9 08:53:19 2015] 82.197.181.155:53479 [200]: /favicon.ico
+[Thu Jul  9 08:53:26 2015] 82.197.181.155:53480 Invalid request (Unexpected EOF)
+[Thu Jul  9 08:53:35 2015] 84.227.226.114:52726 [200]: /css/base.css
+[Thu Jul  9 08:53:35 2015] 84.227.226.114:52727 [200]: /css/cake.css
+[Thu Jul  9 08:54:24 2015] 82.197.181.155:53507 Invalid request (Unexpected EOF)
+[Fri Jul 10 06:32:07 2015] 82.197.181.215:49435 [200]: /css/base.css
+[Fri Jul 10 06:32:07 2015] 82.197.181.215:49436 [200]: /css/cake.css
+[Fri Jul 10 06:32:08 2015] 82.197.181.215:49437 [200]: /favicon.ico
+[Fri Jul 10 06:32:08 2015] 82.197.181.215:49438 [200]: /favicon.ico
+[Fri Jul 10 06:32:08 2015] 82.197.181.215:49439 [200]: /favicon.ico
+[Fri Jul 10 06:32:08 2015] 82.197.181.215:49440 [200]: /favicon.ico
+[Fri Jul 10 06:32:13 2015] 82.197.181.215:49441 Invalid request (Unexpected EOF)
+[Fri Jul 10 06:32:24 2015] 82.197.181.215:49443 [200]: /css/base.css
+[Fri Jul 10 06:32:24 2015] 82.197.181.215:49444 [200]: /css/cake.css
+[Fri Jul 10 06:32:24 2015] 82.197.181.215:49445 [200]: /favicon.ico
+[Fri Jul 10 06:32:24 2015] 82.197.181.215:49446 [200]: /favicon.ico
+[Fri Jul 10 06:32:24 2015] 82.197.181.215:49448 [200]: /favicon.ico
+[Fri Jul 10 06:32:24 2015] 82.197.181.215:49447 [200]: /favicon.ico
+[Fri Jul 10 06:33:21 2015] 82.197.181.215:49452 [200]: /favicon.ico
+[Fri Jul 10 06:33:21 2015] 82.197.181.215:49451 [200]: /favicon.ico
+[Fri Jul 10 06:33:21 2015] 82.197.181.215:49453 [200]: /favicon.ico
+[Fri Jul 10 06:33:21 2015] 82.197.181.215:49454 [200]: /favicon.ico
+[Fri Jul 10 06:35:59 2015] 82.197.181.215:49470 [200]: /css/base.css
+[Fri Jul 10 06:35:59 2015] 82.197.181.215:49471 [200]: /css/cake.css
+[Fri Jul 10 06:35:59 2015] 82.197.181.215:49472 [200]: /favicon.ico
+[Fri Jul 10 06:35:59 2015] 82.197.181.215:49474 [200]: /favicon.ico
+[Fri Jul 10 06:35:59 2015] 82.197.181.215:49475 [200]: /favicon.ico
+[Fri Jul 10 06:35:59 2015] 82.197.181.215:49476 [200]: /favicon.ico
+[Fri Jul 10 06:44:32 2015] 82.197.181.215:49525 [200]: /css/base.css
+[Fri Jul 10 06:44:32 2015] 82.197.181.215:49526 [200]: /css/cake.css
+[Fri Jul 10 06:44:32 2015] 82.197.181.215:49528 [200]: /favicon.ico
+[Fri Jul 10 06:44:32 2015] 82.197.181.215:49529 [200]: /favicon.ico
+[Fri Jul 10 06:44:32 2015] 82.197.181.215:49530 [200]: /favicon.ico
+[Fri Jul 10 06:44:32 2015] 82.197.181.215:49531 [200]: /favicon.ico
+[Fri Jul 10 06:47:43 2015] 82.197.181.215:49561 [200]: /css/base.css
+[Fri Jul 10 06:47:43 2015] 82.197.181.215:49562 [200]: /css/cake.css
+[Fri Jul 10 06:47:43 2015] 82.197.181.215:49563 [200]: /css/test.css
+[Fri Jul 10 06:47:43 2015] 82.197.181.215:49564 [200]: /favicon.ico
+[Fri Jul 10 06:47:43 2015] 82.197.181.215:49566 [200]: /favicon.ico
+[Fri Jul 10 06:47:43 2015] 82.197.181.215:49567 [200]: /favicon.ico
+[Fri Jul 10 06:47:43 2015] 82.197.181.215:49568 [200]: /favicon.ico
+[Fri Jul 10 06:47:43 2015] 82.197.181.215:49569 [200]: /img/background.png
+[Fri Jul 10 06:57:06 2015] 82.197.181.215:49652 [200]: /css/base.css
+[Fri Jul 10 06:57:06 2015] 82.197.181.215:49653 [200]: /css/cake.css
+[Fri Jul 10 06:57:06 2015] 82.197.181.215:49654 [200]: /css/test.css
+[Fri Jul 10 06:57:06 2015] 82.197.181.215:49656 [200]: /favicon.ico
+[Fri Jul 10 06:57:06 2015] 82.197.181.215:49657 [200]: /favicon.ico
+[Fri Jul 10 06:57:06 2015] 82.197.181.215:49658 [200]: /favicon.ico
+[Fri Jul 10 06:57:06 2015] 82.197.181.215:49659 [200]: /favicon.ico
+[Fri Jul 10 06:57:06 2015] 82.197.181.215:49660 [200]: /img/background.png
+[Fri Jul 10 06:57:11 2015] 82.197.181.215:49676 [200]: /css/base.css
+[Fri Jul 10 06:57:11 2015] 82.197.181.215:49677 [200]: /css/cake.css
+[Fri Jul 10 06:57:11 2015] 82.197.181.215:49678 [200]: /css/test.css
+[Fri Jul 10 06:57:11 2015] 82.197.181.215:49679 [200]: /favicon.ico
+[Fri Jul 10 06:57:11 2015] 82.197.181.215:49680 [200]: /favicon.ico
+[Fri Jul 10 06:57:11 2015] 82.197.181.215:49681 [200]: /favicon.ico
+[Fri Jul 10 06:57:11 2015] 82.197.181.215:49682 [200]: /favicon.ico
+[Fri Jul 10 06:57:11 2015] 82.197.181.215:49683 [200]: /img/background.png
+[Fri Jul 10 06:57:28 2015] 82.197.181.215:49686 [200]: /css/base.css
+[Fri Jul 10 06:57:28 2015] 82.197.181.215:49687 [200]: /css/cake.css
+[Fri Jul 10 06:57:28 2015] 82.197.181.215:49688 [200]: /css/test.css
+[Fri Jul 10 06:57:28 2015] 82.197.181.215:49689 [200]: /favicon.ico
+[Fri Jul 10 06:57:28 2015] 82.197.181.215:49690 [200]: /favicon.ico
+[Fri Jul 10 06:57:28 2015] 82.197.181.215:49691 [200]: /favicon.ico
+[Fri Jul 10 06:57:28 2015] 82.197.181.215:49692 [200]: /favicon.ico
+[Fri Jul 10 06:57:28 2015] 82.197.181.215:49693 [200]: /img/background.png
+[Fri Jul 10 06:58:34 2015] 82.197.181.215:49718 [200]: /css/base.css
+[Fri Jul 10 06:58:34 2015] 82.197.181.215:49719 [200]: /css/cake.css
+[Fri Jul 10 06:58:34 2015] 82.197.181.215:49720 [200]: /css/test.css
+[Fri Jul 10 06:58:34 2015] 82.197.181.215:49721 [200]: /favicon.ico
+[Fri Jul 10 06:58:34 2015] 82.197.181.215:49722 [200]: /favicon.ico
+[Fri Jul 10 06:58:34 2015] 82.197.181.215:49723 [200]: /favicon.ico
+[Fri Jul 10 06:58:34 2015] 82.197.181.215:49724 [200]: /favicon.ico
+[Fri Jul 10 06:58:35 2015] 82.197.181.215:49725 [200]: /img/background.png
+[Fri Jul 10 06:58:36 2015] 82.197.181.215:49732 [200]: /css/base.css
+[Fri Jul 10 06:58:36 2015] 82.197.181.215:49733 [200]: /css/cake.css
+[Fri Jul 10 06:58:36 2015] 82.197.181.215:49731 [200]: /css/test.css
+[Fri Jul 10 06:58:36 2015] 82.197.181.215:49734 [200]: /favicon.ico
+[Fri Jul 10 06:58:36 2015] 82.197.181.215:49735 [200]: /favicon.ico
+[Fri Jul 10 06:58:36 2015] 82.197.181.215:49736 [200]: /favicon.ico
+[Fri Jul 10 06:58:36 2015] 82.197.181.215:49737 [200]: /favicon.ico
+[Fri Jul 10 06:58:36 2015] 82.197.181.215:49738 [200]: /img/background.png
+[Fri Jul 10 06:58:40 2015] 82.197.181.215:49741 [200]: /css/cake.css
+[Fri Jul 10 06:58:40 2015] 82.197.181.215:49740 [200]: /css/base.css
+[Fri Jul 10 06:58:40 2015] 82.197.181.215:49742 [200]: /favicon.ico
+[Fri Jul 10 06:58:40 2015] 82.197.181.215:49743 [200]: /favicon.ico
+[Fri Jul 10 06:58:40 2015] 82.197.181.215:49744 [200]: /favicon.ico
+[Fri Jul 10 06:58:40 2015] 82.197.181.215:49745 [200]: /favicon.ico
+[Fri Jul 10 06:58:44 2015] 82.197.181.215:49747 [200]: /css/base.css
+[Fri Jul 10 06:58:44 2015] 82.197.181.215:49748 [200]: /css/cake.css
+[Fri Jul 10 06:58:44 2015] 82.197.181.215:49749 [200]: /css/test.css
+[Fri Jul 10 06:58:44 2015] 82.197.181.215:49750 [200]: /favicon.ico
+[Fri Jul 10 06:58:44 2015] 82.197.181.215:49751 [200]: /favicon.ico
+[Fri Jul 10 06:58:44 2015] 82.197.181.215:49752 [200]: /favicon.ico
+[Fri Jul 10 06:58:44 2015] 82.197.181.215:49753 [200]: /favicon.ico
+[Fri Jul 10 06:58:44 2015] 82.197.181.215:49754 [200]: /img/background.png
+[Fri Jul 10 07:00:38 2015] 82.197.181.215:49788 [200]: /css/test.css
+[Fri Jul 10 07:00:38 2015] 82.197.181.215:49789 [200]: /img/background.png
+[Fri Jul 10 07:00:38 2015] 82.197.181.215:49791 [200]: /favicon.ico
+[Fri Jul 10 07:00:38 2015] 82.197.181.215:49792 [200]: /favicon.ico
+[Fri Jul 10 07:21:00 2015] 82.197.181.215:50312 [200]: /favicon.ico
+[Fri Jul 10 07:21:00 2015] 82.197.181.215:50313 [200]: /favicon.ico
+[Fri Jul 10 07:21:06 2015] 82.197.181.215:50314 [200]: /favicon.ico
+[Fri Jul 10 07:21:06 2015] 82.197.181.215:50315 [200]: /favicon.ico
+[Fri Jul 10 07:22:01 2015] 82.197.181.215:50321 [200]: /css/test.css
+[Fri Jul 10 07:22:01 2015] 82.197.181.215:50323 [200]: /img/background.png
+[Fri Jul 10 07:22:01 2015] 82.197.181.215:50325 [200]: /favicon.ico
+[Fri Jul 10 07:22:01 2015] 82.197.181.215:50326 [200]: /favicon.ico
+[Fri Jul 10 07:22:02 2015] 82.197.181.215:50354 [200]: /favicon.ico
+[Fri Jul 10 07:22:02 2015] 82.197.181.215:50355 [200]: /favicon.ico
+[Fri Jul 10 07:22:02 2015] 82.197.181.215:50359 [200]: /favicon.ico
+[Fri Jul 10 07:22:03 2015] 82.197.181.215:50358 [200]: /favicon.ico
+[Fri Jul 10 07:22:03 2015] 82.197.181.215:50357 [200]: /favicon.ico
+[Fri Jul 10 07:22:03 2015] 82.197.181.215:50356 [200]: /favicon.ico
+[Fri Jul 10 07:22:05 2015] 82.197.181.215:50361 [200]: /css/base.css
+[Fri Jul 10 07:22:05 2015] 82.197.181.215:50362 [200]: /css/cake.css
+[Fri Jul 10 07:22:05 2015] 82.197.181.215:50363 [200]: /favicon.ico
+[Fri Jul 10 07:22:05 2015] 82.197.181.215:50364 [200]: /favicon.ico
+[Fri Jul 10 07:22:05 2015] 82.197.181.215:50365 [200]: /favicon.ico
+[Fri Jul 10 07:22:05 2015] 82.197.181.215:50366 [200]: /favicon.ico
+[Fri Jul 10 07:22:06 2015] 82.197.181.215:50367 [200]: /favicon.ico
+[Fri Jul 10 07:22:06 2015] 82.197.181.215:50371 [200]: /favicon.ico
+[Fri Jul 10 07:22:06 2015] 82.197.181.215:50368 [200]: /favicon.ico
+[Fri Jul 10 07:22:06 2015] 82.197.181.215:50369 [200]: /favicon.ico
+[Fri Jul 10 07:22:06 2015] 82.197.181.215:50370 [200]: /favicon.ico
+[Fri Jul 10 07:22:06 2015] 82.197.181.215:50372 [200]: /favicon.ico
+[Fri Jul 10 07:22:06 2015] 82.197.181.215:50373 [200]: /favicon.ico
+[Fri Jul 10 07:22:07 2015] 82.197.181.215:50374 [200]: /favicon.ico
+[Fri Jul 10 07:22:07 2015] 82.197.181.215:50376 [200]: /favicon.ico
+[Fri Jul 10 07:22:07 2015] 82.197.181.215:50375 [200]: /favicon.ico
+[Fri Jul 10 07:22:07 2015] 82.197.181.215:50378 [200]: /favicon.ico
+[Fri Jul 10 07:22:07 2015] 82.197.181.215:50377 [200]: /favicon.ico
+[Fri Jul 10 07:22:08 2015] 82.197.181.215:50379 [200]: /favicon.ico
+[Fri Jul 10 07:22:08 2015] 82.197.181.215:50380 [200]: /favicon.ico
+[Fri Jul 10 07:22:08 2015] 82.197.181.215:50382 [200]: /favicon.ico
+[Fri Jul 10 07:22:08 2015] 82.197.181.215:50381 [200]: /favicon.ico
+[Fri Jul 10 07:22:08 2015] 82.197.181.215:50384 [200]: /favicon.ico
+[Fri Jul 10 07:22:08 2015] 82.197.181.215:50383 [200]: /favicon.ico
+[Fri Jul 10 07:22:10 2015] 82.197.181.215:50385 [200]: /favicon.ico
+[Fri Jul 10 07:22:10 2015] 82.197.181.215:50388 [200]: /favicon.ico
+[Fri Jul 10 07:22:10 2015] 82.197.181.215:50386 [200]: /favicon.ico
+[Fri Jul 10 07:22:10 2015] 82.197.181.215:50387 [200]: /favicon.ico
+[Fri Jul 10 07:22:10 2015] 82.197.181.215:50389 [200]: /favicon.ico
+[Fri Jul 10 07:22:10 2015] 82.197.181.215:50390 [200]: /favicon.ico
+[Fri Jul 10 07:22:11 2015] 82.197.181.215:50391 [200]: /favicon.ico
+[Fri Jul 10 07:22:11 2015] 82.197.181.215:50392 [200]: /favicon.ico
+[Fri Jul 10 07:22:11 2015] 82.197.181.215:50394 [200]: /favicon.ico
+[Fri Jul 10 07:22:11 2015] 82.197.181.215:50393 [200]: /favicon.ico
+[Fri Jul 10 07:22:11 2015] 82.197.181.215:50395 [200]: /favicon.ico
+[Fri Jul 10 07:22:11 2015] 82.197.181.215:50396 [200]: /favicon.ico
+[Fri Jul 10 07:22:14 2015] 82.197.181.215:50399 [200]: /css/test.css
+[Fri Jul 10 07:22:14 2015] 82.197.181.215:50401 [200]: /img/background.png
+[Fri Jul 10 07:22:14 2015] 82.197.181.215:50406 [200]: /favicon.ico
+[Fri Jul 10 07:22:14 2015] 82.197.181.215:50407 [200]: /favicon.ico
+[Fri Jul 10 07:30:03 2015] 82.197.181.215:50520 [200]: /css/test.css
+[Fri Jul 10 07:30:03 2015] 82.197.181.215:50521 [200]: /img/background.png
+[Fri Jul 10 07:30:04 2015] 82.197.181.215:50522 [200]: /favicon.ico
+[Fri Jul 10 07:30:04 2015] 82.197.181.215:50523 [200]: /favicon.ico
+[Fri Jul 10 07:30:24 2015] 82.197.181.215:50525 [200]: /css/test.css
+[Fri Jul 10 07:30:24 2015] 82.197.181.215:50526 [200]: /img/background.png
+[Fri Jul 10 07:30:25 2015] 82.197.181.215:50527 [200]: /favicon.ico
+[Fri Jul 10 07:30:25 2015] 82.197.181.215:50528 [200]: /favicon.ico
+[Fri Jul 10 07:30:26 2015] 82.197.181.215:50530 [200]: /css/test.css
+[Fri Jul 10 07:30:26 2015] 82.197.181.215:50531 [200]: /img/background.png
+[Fri Jul 10 07:30:26 2015] 82.197.181.215:50532 [200]: /favicon.ico
+[Fri Jul 10 07:30:26 2015] 82.197.181.215:50533 [200]: /favicon.ico
+[Fri Jul 10 07:32:15 2015] 82.197.181.215:50565 [200]: /js/test.js
+[Fri Jul 10 07:32:15 2015] 82.197.181.215:50566 [200]: /css/test.css
+[Fri Jul 10 07:32:15 2015] 82.197.181.215:50567 [200]: /img/background.png
+[Fri Jul 10 07:32:16 2015] 82.197.181.215:50568 [200]: /favicon.ico
+[Fri Jul 10 07:32:16 2015] 82.197.181.215:50569 [200]: /favicon.ico
+[Fri Jul 10 07:32:17 2015] 82.197.181.215:50571 [200]: /css/test.css
+[Fri Jul 10 07:32:17 2015] 82.197.181.215:50572 [200]: /js/test.js
+[Fri Jul 10 07:32:17 2015] 82.197.181.215:50573 [200]: /img/background.png
+[Fri Jul 10 07:32:17 2015] 82.197.181.215:50574 [200]: /favicon.ico
+[Fri Jul 10 07:32:17 2015] 82.197.181.215:50575 [200]: /favicon.ico
+[Fri Jul 10 07:32:53 2015] 82.197.181.215:50582 [200]: /css/test.css
+[Fri Jul 10 07:32:53 2015] 82.197.181.215:50583 [200]: /js/test.js
+[Fri Jul 10 07:32:53 2015] 82.197.181.215:50584 [200]: /img/background.png
+[Fri Jul 10 07:32:53 2015] 82.197.181.215:50585 [200]: /favicon.ico
+[Fri Jul 10 07:32:53 2015] 82.197.181.215:50586 [200]: /favicon.ico
+[Fri Jul 10 07:33:16 2015] 82.197.181.215:50588 [200]: /css/test.css
+[Fri Jul 10 07:33:16 2015] 82.197.181.215:50590 [200]: /js/test.js
+[Fri Jul 10 07:33:16 2015] 82.197.181.215:50591 [200]: /img/background.png
+[Fri Jul 10 07:33:16 2015] 82.197.181.215:50592 [200]: /favicon.ico
+[Fri Jul 10 07:33:17 2015] 82.197.181.215:50594 [200]: /favicon.ico
+[Fri Jul 10 07:58:39 2015] 82.197.181.215:50918 [200]: /css/test.css
+[Fri Jul 10 07:58:39 2015] 82.197.181.215:50920 [200]: /js/test.js
+[Fri Jul 10 07:58:39 2015] 82.197.181.215:50921 [200]: /img/background.png
+[Fri Jul 10 07:58:39 2015] 82.197.181.215:50922 [200]: /favicon.ico
+[Fri Jul 10 07:58:39 2015] 82.197.181.215:50924 [200]: /favicon.ico
+[Fri Jul 10 09:45:49 2015] 82.197.181.215:54666 [200]: /css/test.css
+[Fri Jul 10 09:45:49 2015] 82.197.181.215:54669 [200]: /js/test.js
+[Fri Jul 10 09:45:49 2015] 82.197.181.215:54668 [200]: /img/background.png
+[Fri Jul 10 09:45:50 2015] 82.197.181.215:54670 [200]: /favicon.ico
+[Fri Jul 10 09:45:50 2015] 82.197.181.215:54672 [200]: /favicon.ico
+[Fri Jul 10 09:45:54 2015] 82.197.181.215:54675 [200]: /css/test.css
+[Fri Jul 10 09:45:54 2015] 82.197.181.215:54677 [200]: /js/test.js
+[Fri Jul 10 09:45:54 2015] 82.197.181.215:54678 [200]: /img/background.png
+[Fri Jul 10 09:45:54 2015] 82.197.181.215:54680 [200]: /favicon.ico
+[Fri Jul 10 09:45:54 2015] 82.197.181.215:54681 [200]: /favicon.ico
+[Fri Jul 10 09:45:58 2015] 82.197.181.215:54684 [200]: /css/test.css
+[Fri Jul 10 09:45:58 2015] 82.197.181.215:54685 [200]: /js/test.js
+[Fri Jul 10 09:45:58 2015] 82.197.181.215:54686 [200]: /img/background.png
+[Fri Jul 10 09:45:58 2015] 82.197.181.215:54687 [200]: /favicon.ico
+[Fri Jul 10 09:45:58 2015] 82.197.181.215:54688 [200]: /favicon.ico
+[Fri Jul 10 09:47:11 2015] 82.197.181.215:54723 [200]: /css/base.css
+[Fri Jul 10 09:47:11 2015] 82.197.181.215:54724 [200]: /css/cake.css
+[Fri Jul 10 09:47:11 2015] 82.197.181.215:54725 [200]: /favicon.ico
+[Fri Jul 10 09:47:11 2015] 82.197.181.215:54726 [200]: /favicon.ico
+[Fri Jul 10 09:47:11 2015] 82.197.181.215:54727 [200]: /favicon.ico
+[Fri Jul 10 09:47:11 2015] 82.197.181.215:54728 [200]: /favicon.ico
+[Fri Jul 10 09:47:13 2015] 82.197.181.215:54729 [200]: /favicon.ico
+[Fri Jul 10 09:47:13 2015] 82.197.181.215:54730 [200]: /favicon.ico
+[Fri Jul 10 09:47:13 2015] 82.197.181.215:54732 [200]: /favicon.ico
+[Fri Jul 10 09:47:13 2015] 82.197.181.215:54733 [200]: /favicon.ico
+[Fri Jul 10 09:47:14 2015] 82.197.181.215:54734 [200]: /favicon.ico
+[Fri Jul 10 09:47:14 2015] 82.197.181.215:54735 [200]: /favicon.ico
+[Fri Jul 10 09:47:14 2015] 82.197.181.215:54736 [200]: /favicon.ico
+[Fri Jul 10 09:47:14 2015] 82.197.181.215:54737 [200]: /favicon.ico
+[Fri Jul 10 09:47:16 2015] 82.197.181.215:54738 [200]: /favicon.ico
+[Fri Jul 10 09:47:16 2015] 82.197.181.215:54739 [200]: /favicon.ico
+[Fri Jul 10 09:50:20 2015] 82.197.181.215:54841 [200]: /css/test.css
+[Fri Jul 10 09:50:20 2015] 82.197.181.215:54843 [200]: /js/test.js
+[Fri Jul 10 09:50:20 2015] 82.197.181.215:54844 [200]: /img/background.png
+[Fri Jul 10 09:50:20 2015] 82.197.181.215:54845 [200]: /favicon.ico
+[Fri Jul 10 09:50:20 2015] 82.197.181.215:54848 [200]: /favicon.ico
+[Fri Jul 10 09:55:07 2015] 82.197.181.215:55058 [200]: /css/test.css
+[Fri Jul 10 09:55:07 2015] 82.197.181.215:55060 [200]: /js/test.js
+[Fri Jul 10 09:55:07 2015] 82.197.181.215:55061 [200]: /img/background.png
+[Fri Jul 10 09:55:07 2015] 82.197.181.215:55062 [200]: /favicon.ico
+[Fri Jul 10 09:55:07 2015] 82.197.181.215:55064 [200]: /favicon.ico
+[Fri Jul 10 09:55:08 2015] 82.197.181.215:55066 [200]: /css/test.css
+[Fri Jul 10 09:55:08 2015] 82.197.181.215:55067 [200]: /js/test.js
+[Fri Jul 10 09:55:08 2015] 82.197.181.215:55068 [200]: /img/background.png
+[Fri Jul 10 09:55:08 2015] 82.197.181.215:55069 [200]: /favicon.ico
+[Fri Jul 10 09:55:08 2015] 82.197.181.215:55070 [200]: /favicon.ico
+[Fri Jul 10 09:55:56 2015] 82.197.181.215:55094 [200]: /favicon.ico
+[Fri Jul 10 09:55:56 2015] 82.197.181.215:55095 [200]: /favicon.ico
+[Fri Jul 10 09:55:56 2015] 82.197.181.215:55096 [200]: /favicon.ico
+[Fri Jul 10 09:55:56 2015] 82.197.181.215:55097 [200]: /favicon.ico
+[Fri Jul 10 09:56:04 2015] 82.197.181.215:55102 [200]: /favicon.ico
+[Fri Jul 10 09:56:04 2015] 82.197.181.215:55103 [200]: /favicon.ico
+[Fri Jul 10 09:56:04 2015] 82.197.181.215:55104 [200]: /favicon.ico
+[Fri Jul 10 09:56:04 2015] 82.197.181.215:55105 [200]: /favicon.ico
+[Fri Jul 10 09:56:06 2015] 82.197.181.215:55110 [200]: /favicon.ico
+[Fri Jul 10 09:56:06 2015] 82.197.181.215:55111 [200]: /favicon.ico
+[Fri Jul 10 09:56:06 2015] 82.197.181.215:55112 [200]: /favicon.ico
+[Fri Jul 10 09:56:06 2015] 82.197.181.215:55113 [200]: /favicon.ico
+[Fri Jul 10 09:56:06 2015] 82.197.181.215:55114 [200]: /favicon.ico
+[Fri Jul 10 09:56:06 2015] 82.197.181.215:55115 [200]: /favicon.ico
+[Fri Jul 10 10:10:42 2015] 82.197.181.215:55706 [200]: /css/test.css
+[Fri Jul 10 10:10:42 2015] 82.197.181.215:55707 [200]: /js/test.js
+[Fri Jul 10 10:10:42 2015] 82.197.181.215:55709 [200]: /img/background.png
+[Fri Jul 10 10:10:42 2015] 82.197.181.215:55710 [200]: /favicon.ico
+[Fri Jul 10 10:10:42 2015] 82.197.181.215:55712 [200]: /favicon.ico
+[Fri Jul 10 10:35:01 2015] 82.197.181.215:56870 [200]: /css/test.css
+[Fri Jul 10 10:35:01 2015] 82.197.181.215:56871 [200]: /js/test.js
+[Fri Jul 10 10:35:01 2015] 82.197.181.215:56872 [200]: /img/background.png
+[Fri Jul 10 10:35:01 2015] 82.197.181.215:56875 [200]: /favicon.ico
+[Fri Jul 10 10:35:01 2015] 82.197.181.215:56876 [200]: /favicon.ico
+[Fri Jul 10 13:05:06 2015] 82.197.181.215:61839 Invalid request (Unexpected EOF)
+[Fri Jul 10 13:09:37 2015] 82.197.181.215:61901 [200]: /css/test.css
+[Fri Jul 10 13:09:37 2015] 82.197.181.215:61904 [200]: /js/test.js
+[Fri Jul 10 13:09:37 2015] 82.197.181.215:61903 [200]: /img/background.png
+[Fri Jul 10 13:09:37 2015] 82.197.181.215:61905 [200]: /favicon.ico
+[Fri Jul 10 13:09:37 2015] 82.197.181.215:61907 [200]: /favicon.ico
+[Sun Jul 12 17:22:25 2015] 82.197.181.215:49381 [200]: /favicon.ico
+[Sun Jul 12 17:22:28 2015] 82.197.181.215:49407 [200]: /favicon.ico
+[Mon Jul 13 08:39:22 2015] 82.197.181.215:49302 [200]: /favicon.ico
+[Mon Jul 13 08:39:23 2015] 82.197.181.215:49303 [200]: /favicon.ico
+[Tue Jul 14 08:15:50 2015] 62.203.82.16:55455 [200]: /favicon.ico
+[Tue Jul 14 08:15:50 2015] 62.203.82.16:55460 [200]: /favicon.ico
+[Tue Jul 14 08:15:57 2015] 62.203.82.16:55473 [200]: /css/base.css
+[Tue Jul 14 08:15:57 2015] 62.203.82.16:55474 [200]: /css/cake.css
+[Tue Jul 14 08:15:57 2015] 62.203.82.16:55477 [200]: /favicon.ico
+[Tue Jul 14 08:15:58 2015] 62.203.82.16:55478 [200]: /favicon.ico
+[Tue Jul 14 08:15:58 2015] 62.203.82.16:55481 [200]: /favicon.ico
+[Tue Jul 14 08:15:58 2015] 62.203.82.16:55480 [200]: /favicon.ico
+[Tue Jul 14 08:16:08 2015] 62.203.82.16:55483 [200]: /css/base.css
+[Tue Jul 14 08:16:08 2015] 62.203.82.16:55484 [200]: /css/cake.css
+[Tue Jul 14 08:16:08 2015] 62.203.82.16:55485 [200]: /favicon.ico
+[Tue Jul 14 08:16:08 2015] 62.203.82.16:55487 [200]: /favicon.ico
+[Tue Jul 14 08:16:08 2015] 62.203.82.16:55486 [200]: /favicon.ico
+[Tue Jul 14 08:16:08 2015] 62.203.82.16:55488 [200]: /favicon.ico
+[Tue Jul 14 08:16:11 2015] 62.203.82.16:55490 [200]: /css/base.css
+[Tue Jul 14 08:16:11 2015] 62.203.82.16:55491 [200]: /css/cake.css
+[Tue Jul 14 08:16:11 2015] 62.203.82.16:55492 [200]: /favicon.ico
+[Tue Jul 14 08:16:12 2015] 62.203.82.16:55493 [200]: /favicon.ico
+[Tue Jul 14 08:16:12 2015] 62.203.82.16:55494 [200]: /favicon.ico
+[Tue Jul 14 08:16:12 2015] 62.203.82.16:55495 [200]: /favicon.ico
+[Tue Jul 14 09:09:38 2015] 62.203.82.16:56016 [200]: /css/base.css
+[Tue Jul 14 09:09:39 2015] 62.203.82.16:56017 [200]: /css/cake.css
+[Tue Jul 14 09:09:39 2015] 62.203.82.16:56018 [200]: /favicon.ico
+[Tue Jul 14 09:09:39 2015] 62.203.82.16:56019 [200]: /favicon.ico
+[Tue Jul 14 09:09:39 2015] 62.203.82.16:56020 [200]: /favicon.ico
+[Tue Jul 14 09:09:39 2015] 62.203.82.16:56021 [200]: /favicon.ico
+[Tue Jul 14 09:11:36 2015] 62.203.82.16:56043 Invalid request (Unexpected EOF)
+[Tue Jul 14 09:13:53 2015] 62.203.82.16:56057 [200]: /css/base.css
+[Tue Jul 14 09:13:53 2015] 62.203.82.16:56058 [200]: /css/cake.css
+[Tue Jul 14 09:13:53 2015] 62.203.82.16:56059 [200]: /favicon.ico
+[Tue Jul 14 09:13:53 2015] 62.203.82.16:56060 [200]: /favicon.ico
+[Tue Jul 14 09:13:53 2015] 62.203.82.16:56061 [200]: /favicon.ico
+[Tue Jul 14 09:13:53 2015] 62.203.82.16:56062 [200]: /favicon.ico
+[Tue Jul 14 09:30:00 2015] 62.203.82.16:56185 [200]: /css/base.css
+[Tue Jul 14 09:30:00 2015] 62.203.82.16:56186 [200]: /css/cake.css
+[Tue Jul 14 09:30:00 2015] 62.203.82.16:56187 [200]: /favicon.ico
+[Tue Jul 14 09:30:00 2015] 62.203.82.16:56188 [200]: /favicon.ico
+[Tue Jul 14 09:30:01 2015] 62.203.82.16:56189 [200]: /favicon.ico
+[Tue Jul 14 09:30:01 2015] 62.203.82.16:56190 [200]: /favicon.ico
+[Tue Jul 14 09:30:02 2015] 62.203.82.16:56192 [200]: /css/base.css
+[Tue Jul 14 09:30:02 2015] 62.203.82.16:56193 [200]: /css/cake.css
+[Tue Jul 14 09:30:02 2015] 62.203.82.16:56194 [200]: /favicon.ico
+[Tue Jul 14 09:30:02 2015] 62.203.82.16:56195 [200]: /favicon.ico
+[Tue Jul 14 09:30:02 2015] 62.203.82.16:56196 [200]: /favicon.ico
+[Tue Jul 14 09:30:03 2015] 62.203.82.16:56197 [200]: /favicon.ico
+[Tue Jul 14 09:30:04 2015] 62.203.82.16:56199 [200]: /css/base.css
+[Tue Jul 14 09:30:04 2015] 62.203.82.16:56200 [200]: /css/cake.css
+[Tue Jul 14 09:30:04 2015] 62.203.82.16:56201 [200]: /favicon.ico
+[Tue Jul 14 09:30:04 2015] 62.203.82.16:56202 [200]: /favicon.ico
+[Tue Jul 14 09:30:05 2015] 62.203.82.16:56203 [200]: /favicon.ico
+[Tue Jul 14 09:30:05 2015] 62.203.82.16:56204 [200]: /favicon.ico
+[Tue Jul 14 09:30:06 2015] 62.203.82.16:56205 [200]: /favicon.ico
+[Tue Jul 14 09:30:06 2015] 62.203.82.16:56206 [200]: /favicon.ico
+[Tue Jul 14 09:30:06 2015] 62.203.82.16:56207 [200]: /favicon.ico
+[Tue Jul 14 09:30:06 2015] 62.203.82.16:56208 [200]: /favicon.ico
+[Tue Jul 14 09:30:06 2015] 62.203.82.16:56210 [200]: /favicon.ico
+[Tue Jul 14 09:30:06 2015] 62.203.82.16:56209 [200]: /favicon.ico
+[Tue Jul 14 09:30:09 2015] 62.203.82.16:56212 [200]: /css/base.css
+[Tue Jul 14 09:30:09 2015] 62.203.82.16:56213 [200]: /css/cake.css
+[Tue Jul 14 09:30:09 2015] 62.203.82.16:56214 [200]: /favicon.ico
+[Tue Jul 14 09:30:09 2015] 62.203.82.16:56215 [200]: /favicon.ico
+[Tue Jul 14 09:30:09 2015] 62.203.82.16:56216 [200]: /favicon.ico
+[Tue Jul 14 09:30:09 2015] 62.203.82.16:56217 [200]: /favicon.ico
+[Tue Jul 14 09:30:42 2015] 62.203.82.16:56221 [200]: /css/base.css
+[Tue Jul 14 09:30:42 2015] 62.203.82.16:56222 [200]: /css/cake.css
+[Tue Jul 14 09:30:42 2015] 62.203.82.16:56223 [200]: /favicon.ico
+[Tue Jul 14 09:30:42 2015] 62.203.82.16:56224 [200]: /favicon.ico
+[Tue Jul 14 09:30:42 2015] 62.203.82.16:56225 [200]: /favicon.ico
+[Tue Jul 14 09:30:42 2015] 62.203.82.16:56226 [200]: /favicon.ico
+[Tue Jul 14 09:30:48 2015] 62.203.82.16:56227 Invalid request (Unexpected EOF)
+[Tue Jul 14 10:23:27 2015] PHP Warning:  Unknown: failed to open stream: No such file or directory in Unknown on line 0
+[Tue Jul 14 10:23:27 2015] PHP Fatal error:  Unknown: Failed opening required '/home/masterchief/kriegsmaterial/webroot/index.php' (include_path='.:/usr/share/php:/usr/share/pear') in Unknown on line 0
+[Tue Jul 14 10:23:27 2015] PHP Warning:  Unknown: failed to open stream: No such file or directory in Unknown on line 0
+[Tue Jul 14 10:23:27 2015] PHP Fatal error:  Unknown: Failed opening required '/home/masterchief/kriegsmaterial/webroot/index.php' (include_path='.:/usr/share/php:/usr/share/pear') in Unknown on line 0
+[Tue Jul 14 10:23:27 2015] PHP Warning:  Unknown: failed to open stream: No such file or directory in Unknown on line 0
+[Tue Jul 14 10:23:27 2015] PHP Fatal error:  Unknown: Failed opening required '/home/masterchief/kriegsmaterial/webroot/index.php' (include_path='.:/usr/share/php:/usr/share/pear') in Unknown on line 0
+[Tue Jul 14 10:23:31 2015] PHP Warning:  Unknown: failed to open stream: No such file or directory in Unknown on line 0
+[Tue Jul 14 10:23:31 2015] PHP Fatal error:  Unknown: Failed opening required '/home/masterchief/kriegsmaterial/webroot/index.php' (include_path='.:/usr/share/php:/usr/share/pear') in Unknown on line 0
+[Tue Jul 14 10:23:37 2015] 62.203.82.16:56962 Invalid request (Unexpected EOF)
+[Tue Jul 14 10:23:37 2015] 62.203.82.16:56963 Invalid request (Unexpected EOF)
+[Tue Jul 14 10:23:39 2015] PHP Warning:  Unknown: failed to open stream: No such file or directory in Unknown on line 0
+[Tue Jul 14 10:23:39 2015] PHP Fatal error:  Unknown: Failed opening required '/home/masterchief/kriegsmaterial/webroot/index.php' (include_path='.:/usr/share/php:/usr/share/pear') in Unknown on line 0
+Terminated
+Terminated
+
+Welcome to CakePHP v3.0.8 Console
+---------------------------------------------------------------
+App : src
+Path: /home/masterchief/git/kriegsmaterial/src/
+DocumentRoot: /home/masterchief/git/kriegsmaterial/webroot
+---------------------------------------------------------------
+built-in server is running in http://5.196.178.165:5678/
+You can exit with `CTRL-C`
+[Tue Jul 14 10:27:16 2015] 62.203.82.16:56992 [200]: /css/base.css
+[Tue Jul 14 10:27:16 2015] 62.203.82.16:56993 [200]: /css/cake.css
+[Tue Jul 14 10:27:21 2015] 62.203.82.16:56994 Invalid request (Unexpected EOF)
