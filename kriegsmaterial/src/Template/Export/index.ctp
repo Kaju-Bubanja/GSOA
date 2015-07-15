@@ -18,11 +18,7 @@
         </tr>
     </thead>
     <tbody>
-    <? /*php foreach ($export as $export): ?>
-        <tr>
-            <td><?= h($export->Code) ?></td>  
-        </tr>
-    <?php endforeach;*/ ?>
+    
     </tbody>
     </table>
     <div class="paginator">
