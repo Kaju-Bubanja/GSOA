@@ -35,7 +35,8 @@
     </div>
     <script>
     exports = [
-    <?php 
+    <?php
+// Lösung 1: Fehlendes Komma einfügen.  
         $is_first = true;
         foreach ($export as $exp):
             if($is_first){
@@ -46,11 +47,14 @@
 	?>
         {
             "Id":"<?= h($exp->Id) ?>",
-            "Code":"<?= h($exp->Code) ?>"
+            "Code":"<?= h($exp->Code) ?>" // Vorsicht: Wenn ein " im Code wäre, gäbe es ein Problem...
         }
     <?php endforeach; ?>
     ];
 
     alert(exports[0].Code);
     </script>
+
+// Lösung 2: Viel eleganter und einfacher...
+<?php echo json_encode($export); ?>
 </div>
