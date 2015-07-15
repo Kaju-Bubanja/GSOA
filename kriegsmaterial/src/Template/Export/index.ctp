@@ -18,11 +18,11 @@
         </tr>
     </thead>
     <tbody>
-    <? /*php foreach ($export as $export): ?>
+    <?php /* foreach ($export as $export): ?>
         <tr>
             <td><?= h($export->Code) ?></td>  
         </tr>
-    <?php endforeach;*/ ?>
+    <?php endforeach; */ ?>
     </tbody>
     </table>
     <div class="paginator">
@@ -35,7 +35,15 @@
     </div>
     <script>
     exports = [
-    <?php foreach ($export as $exp): ?>
+    <?php 
+        $is_first = true;
+        foreach ($export as $exp):
+            if($is_first){
+                $is_first = false;
+            } else {
+                echo ",";
+            }
+	?>
         {
             "Id":"<?= h($exp->Id) ?>",
             "Code":"<?= h($exp->Code) ?>"
