@@ -1232,3 +1232,20 @@ Stack Trace:
 2015-07-16 11:35:48 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2015-07-16 11:37:15 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2015-07-16 11:37:49 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2015-07-16 14:53:19 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2015-07-16 14:53:19 Error: Fatal Error (4): syntax error, unexpected ''condition'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in [/home/masterchief/git/kriegsmaterial/src/Controller/ExportController.php, line 51]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 191
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 90
+[main] - [internal], line ??
+
+
+
+2015-07-16 14:53:19 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ''condition'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+Request URL: /export/test
+Stack Trace:
+#0 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(90): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/home/masterchi...', 51)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
