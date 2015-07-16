@@ -18,11 +18,22 @@
         </tr>
     </thead>
     <tbody>
-    <?php /* foreach ($export as $export): ?>
+   <?php foreach ($export as $export): ?>
         <tr>
-            <td><?= h($export->Code) ?></td>  
+            <td><?= $this->Number->format($export->Id) ?></td>
+            <td><?= h($export->Code) ?></td>
+            <td><?= h($export->Art) ?></td>
+            <td><?= h($export->System) ?></td>
+            <td><?= h($export->Kategorie) ?></td>
+            <td><?= $this->Number->format($export->Betrag) ?></td>
+            <td class="actions">
+                <?= $this->Html->link(__('View'), ['action' => 'view', $export->Id]) ?>
+                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $export->Id]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $export->Id], ['confirm' => __('Are you sure you want to delete # {0}?', $export->Id)]) ?>
+            </td>
         </tr>
-    <?php endforeach; */ ?>
+
+    <?php endforeach; ?>
     </tbody>
     </table>
     <div class="paginator">
@@ -34,27 +45,4 @@
         <p><?= $this->Paginator->counter() ?></p>
     </div>
     <script>
-    exports = [
-    <?php
-// Lösung 1: Fehlendes Komma einfügen.  
-        $is_first = true;
-        foreach ($export as $exp):
-            if($is_first){
-                $is_first = false;
-            } else {
-                echo ",";
-            }
-	?>
-        {
-            "Id":"<?= h($exp->Id) ?>",
-            "Code":"<?= h($exp->Code) ?>" // Vorsicht: Wenn ein " im Code wäre, gäbe es ein Problem...
-        }
-    <?php endforeach; ?>
-    ];
-
-    alert(exports[0].Code);
-    </script>
-
-// Lösung 2: Viel eleganter und einfacher...
-<?php echo json_encode($export); ?>
 </div>
