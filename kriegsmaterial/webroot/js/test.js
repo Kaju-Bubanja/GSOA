@@ -11,9 +11,6 @@ var mapProp = {
   mapTypeId:google.maps.MapTypeId.HYBRID
   };
   
-testStuff;
-
-more test stuff;
 
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
