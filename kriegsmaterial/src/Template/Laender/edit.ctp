@@ -18,6 +18,8 @@
             echo $this->Form->input('Kontinent');
             echo $this->Form->input('Land');
             echo $this->Form->input('LandFranz');
+            echo $this->Form->input('latitude');
+            echo $this->Form->input('longitude');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

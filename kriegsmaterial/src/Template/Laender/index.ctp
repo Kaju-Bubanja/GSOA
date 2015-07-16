@@ -12,6 +12,8 @@
             <th><?= $this->Paginator->sort('Kontinent') ?></th>
             <th><?= $this->Paginator->sort('Land') ?></th>
             <th><?= $this->Paginator->sort('LandFranz') ?></th>
+            <th><?= $this->Paginator->sort('latitude') ?></th>
+            <th><?= $this->Paginator->sort('longitude') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -22,6 +24,8 @@
             <td><?= h($laender->Kontinent) ?></td>
             <td><?= h($laender->Land) ?></td>
             <td><?= h($laender->LandFranz) ?></td>
+            <td><?= $this->Number->format($laender->latitude) ?></td>
+            <td><?= $this->Number->format($laender->longitude) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $laender->Code]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $laender->Code]) ?>

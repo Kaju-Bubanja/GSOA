@@ -46,6 +46,14 @@ class LaenderTable extends Table
             
         $validator
             ->allowEmpty('LandFranz');
+            
+        $validator
+            ->add('latitude', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('latitude');
+            
+        $validator
+            ->add('longitude', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('longitude');
 
         return $validator;
     }
