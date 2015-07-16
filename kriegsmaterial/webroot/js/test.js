@@ -34,5 +34,6 @@ var flightPath=new google.maps.Polyline({
 
 flightPath.setMap(map);
 }
-window.alert(data);
+
+window.alert(JSON.stringify(data));
 google.maps.event.addDomListener(window, 'load', initialize);
