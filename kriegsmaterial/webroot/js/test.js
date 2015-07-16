@@ -17,6 +17,10 @@ var arrow = {
     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
   };
 
+for(blub in allData){
+  console.log(blub);
+}
+
 var cities = [];
 for(oneExport in allData){
   var city = new google.maps.LatLng(oneExport.Latitude, oneExport.Longitude);
