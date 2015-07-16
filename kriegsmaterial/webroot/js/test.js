@@ -34,6 +34,7 @@ var flightPath=new google.maps.Polyline({
 
 flightPath.setMap(map);
 }
-var arr = JSON.parse(data);
-window.alert(arr);
+
+console.log(schweizKordinaten[0].Latitude)
+
 google.maps.event.addDomListener(window, 'load', initialize);
