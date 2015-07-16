@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
+
 /**
  * Export Controller
  *
@@ -39,6 +40,7 @@ class ExportController extends AppController
     }
 
     public function test(){
+        $this->loadModel('Laender');
         $this->layout= '';
         $this->set('export', $this->paginate($this->Export));
         $this->set('_serialize', ['export']);
@@ -47,8 +49,8 @@ class ExportController extends AppController
             ->join([
                 'table' => 'laender',
                 'alias' => 'l',
-                'type' => 'INNER'
-                'conditions' => 'l.Code = export.Code'
+                'type' => 'INNER',
+                'conditions' => 'l.Code = Export.Code'
                 ])
             ->all();
         $querySwiss = $this->Laender->find()

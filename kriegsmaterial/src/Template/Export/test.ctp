@@ -8,8 +8,6 @@
 		<title>GSOA</title>
 	</head>
 
-<?php echo json_encode($export); ?>;
-
 	<body>
 		<aside>
 			<?php
