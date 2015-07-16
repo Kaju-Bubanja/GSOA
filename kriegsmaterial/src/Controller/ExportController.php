@@ -48,7 +48,7 @@ class ExportController extends AppController
                 'table' => 'laender',
                 'alias' => 'l',
                 'type' => 'INNER'
-                'condition' => 'l.Code = export.Code'
+                'conditions' => 'l.Code = export.Code'
                 ])
             ->all();
         $querySwiss = $this->Laender->find()
