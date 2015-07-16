@@ -1,4 +1,4 @@
-var schweiz = new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten.Longitude);
+var schweiz = new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
 var stavanger=new google.maps.LatLng(50.983991,-100.734863);
 var amsterdam=new google.maps.LatLng(52.395715,4.888916);
 var london=new google.maps.LatLng(51.508742,-0.120850);
