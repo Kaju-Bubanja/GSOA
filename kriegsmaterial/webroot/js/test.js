@@ -17,21 +17,31 @@ var arrow = {
     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
   };
 
-var myTrip=[schweiz, london];
-var flightPath=new google.maps.Polyline({
-  path:myTrip,
+var cities = [];
+for(oneExport in allData){
+  var city = new google.maps.LatLng(oneExport.Latitude, oneExport.Longitude);
+  cities.push(city);
+}
+
+var trips = [];
+for(city in cities){
+  var trip = [schweiz, city];
+}
+
+for(trip in trips){
+  var flightPath=new google.maps.Polyline({
+  path:trip,
   icons: [{
     icon: arrow
   }],
-  strokeColor:"#0000FF",
+  strokeColor:"#FF0000",
   strokeOpacity:1,
   strokeWeight:4,
   geodesic:true
   });
-
-flightPath.setMap(map);
+  flightPath.setMap(map);
 }
 
-console.log(schweizKordinaten[0].Latitude)
+}
 
 google.maps.event.addDomListener(window, 'load', initialize);

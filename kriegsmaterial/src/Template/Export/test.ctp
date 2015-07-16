@@ -50,6 +50,7 @@
 
 	<script type="text/javascript">
 	var data = <?php echo json_encode($export); ?>;
+	var allData = <?php echo json_encode($allData); ?>;
 	var schweizKordinaten = <?php echo json_encode($schweizKordinaten); ?>;
 	</script>
 

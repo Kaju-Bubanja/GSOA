@@ -53,6 +53,7 @@ class ExportController extends AppController
                 'conditions' => 'l.Code = Export.Code'
                 ])
             ->all();
+        $this->set('allData', $queryAll);
         $querySwiss = $this->Laender->find()
             ->select(['Latitude', 'Longitude'])
             ->where(['Code' => 'CH']);
