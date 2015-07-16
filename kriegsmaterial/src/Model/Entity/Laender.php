@@ -18,5 +18,7 @@ class Laender extends Entity
         'Kontinent' => true,
         'Land' => true,
         'LandFranz' => true,
+        'latitude' => true,
+        'longitude' => true,
     ];
 }

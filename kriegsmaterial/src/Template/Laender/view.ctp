@@ -20,5 +20,11 @@
             <h6 class="subheader"><?= __('LandFranz') ?></h6>
             <p><?= h($laender->LandFranz) ?></p>
         </div>
+        <div class="large-2 columns numbers end">
+            <h6 class="subheader"><?= __('Latitude') ?></h6>
+            <p><?= $this->Number->format($laender->latitude) ?></p>
+            <h6 class="subheader"><?= __('Longitude') ?></h6>
+            <p><?= $this->Number->format($laender->longitude) ?></p>
+        </div>
     </div>
 </div>

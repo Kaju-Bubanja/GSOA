@@ -28,6 +28,8 @@ class LaenderFixture extends TestFixture
         'Kontinent' => ['type' => 'string', 'length' => 12, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'Land' => ['type' => 'string', 'length' => 40, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'LandFranz' => ['type' => 'string', 'length' => 40, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'latitude' => ['type' => 'float', 'length' => 10, 'precision' => 6, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => ''],
+        'longitude' => ['type' => 'float', 'length' => 10, 'precision' => 6, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => ''],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['Code'], 'length' => []],
         ],
@@ -45,10 +47,12 @@ class LaenderFixture extends TestFixture
      */
     public $records = [
         [
-            'Code' => 'b5942886-3e56-49e7-8ea5-1b0a7a04fbb7',
+            'Code' => '341a1fb1-8061-4066-b0b1-7b21ad7fbdcf',
             'Kontinent' => 'Lorem ipsu',
             'Land' => 'Lorem ipsum dolor sit amet',
-            'LandFranz' => 'Lorem ipsum dolor sit amet'
+            'LandFranz' => 'Lorem ipsum dolor sit amet',
+            'latitude' => 1,
+            'longitude' => 1
         ],
     ];
 }

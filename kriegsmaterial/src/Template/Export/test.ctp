@@ -8,6 +8,8 @@
 		<title>GSOA</title>
 	</head>
 
+<?php echo json_encode($export); ?>;
+
 	<body>
 		<aside>
 			<?php
@@ -52,7 +54,7 @@
 	var data = <?php echo json_encode($export); ?>;
 	</script>
 
-	<?php echo json_encode($export); ?>;
+	
 
     <?php
 		echo $this->Html->script('http://maps.googleapis.com/maps/api/js');
