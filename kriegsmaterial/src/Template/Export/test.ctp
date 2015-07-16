@@ -48,15 +48,9 @@
 
 	</body>
 
-	<?php foreach ($export as $export): ?>
-       <script type="text/javascript">
-       var code = <?php echo h($export->Code); ?>; 
-       var art = <?php echo h($export->Art); ?>;		
-       var system = <?php echo h($export->System); ?>;
-       var kategorie = <?php echo h($export->Kategorie); ?>;
-       var betrag = <?php echo $this->Number->format($export->Betrag); ?>;
-       </script>
-    <?php endforeach; ?>
+	<script type="text/javascript">
+	var data = <?php echo json_encode($export); ?>;
+	</script>
 
     <?php
 		echo $this->Html->script('http://maps.googleapis.com/maps/api/js');
