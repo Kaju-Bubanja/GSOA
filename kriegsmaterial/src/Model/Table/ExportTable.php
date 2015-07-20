@@ -27,26 +27,6 @@ class ExportTable extends Table
         $this->primaryKey('Id');
     }
 
-    public function getAllData(){
-        $queryAll = $this->Export->find()
-            ->hydrate(false)
-            ->join([
-                'table' => 'laender',
-                'alias' => 'l',
-                'type' => 'INNER',
-                'conditions' => 'l.Code = Export.Code'
-                ])
-            ->all();
-        return $queryAll;
-    }
-
-    public function getKoordinatesSwiss(){
-        $querySwiss = $this->Laender->find()
-            ->select(['Latitude', 'Longitude'])
-            ->where(['Code' => 'CH']);
-        return $querySwiss;
-    }
-
     /**
      * Default validation rules.
      *
