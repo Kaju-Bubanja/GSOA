@@ -1,0 +1,1 @@
+SELECT * FROM laenderexport WHERE Code='X1' and Kontinent='X2' and Land='X3' and Art='X4' and System='X5' and Kategorie='X6' and Year='X7'
