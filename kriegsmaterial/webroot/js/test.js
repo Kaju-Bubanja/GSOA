@@ -17,11 +17,11 @@ var arrow = {
     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
   };
 
-console.log(String(schweiz));
-console.log(JSON.stringify(allData));
+console.log(schweiz);
+console.log(Source(allData));
 for(blub in allData){
-  console.log(String(blub[0].Latitude));
-  console.log(String(blub[0].Longitude));
+  console.log(blub[0].Latitude);
+  console.log(blub[0].Longitude);
 }
 
 var cities = [];
