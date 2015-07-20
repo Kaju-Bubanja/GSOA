@@ -40,23 +40,13 @@ class ExportController extends AppController
     }
 
     public function test(){
-        $this->loadModel('Laender');
+        
         $this->layout= '';
         $this->set('export', $this->paginate($this->Export));
         $this->set('_serialize', ['export']);
-        $queryAll = $this->Export->find()
-            ->hydrate(false)
-            ->join([
-                'table' => 'laender',
-                'alias' => 'l',
-                'type' => 'INNER',
-                'conditions' => 'l.Code = Export.Code'
-                ])
-            ->all();
+        $queryAll = $this->ExportTable->getAllData();
         $this->set('allData', $queryAll);
-        $querySwiss = $this->Laender->find()
-            ->select(['Latitude', 'Longitude'])
-            ->where(['Code' => 'CH']);
+        $querySwiss = $this->ExportTable->getKoordinatesSwiss();
         $this->set('schweizKordinaten', $querySwiss);
     }
 
