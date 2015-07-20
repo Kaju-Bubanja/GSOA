@@ -22,7 +22,6 @@ class ExportTable extends Table
      */
     public function initialize(array $config)
     {
-        $this->loadModel('Laender');
         $this->table('export');
         $this->displayField('Id');
         $this->primaryKey('Id');

@@ -40,7 +40,7 @@ class ExportController extends AppController
     }
 
     public function test(){
-        
+        $this->loadModel('Laender');
         $this->layout= '';
         $this->set('export', $this->paginate($this->Export));
         $this->set('_serialize', ['export']);
