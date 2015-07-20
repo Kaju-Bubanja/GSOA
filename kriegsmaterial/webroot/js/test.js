@@ -17,8 +17,11 @@ var arrow = {
     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
   };
 
+console.log(schweiz);
+console.log(Source(allData));
 for(blub in allData){
-  console.log(blub);
+  console.log(blub[0].Latitude);
+  console.log(blub[0].Longitude);
 }
 
 var cities = [];
