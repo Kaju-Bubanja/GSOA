@@ -18,7 +18,7 @@ var arrow = {
   };
 
 console.log(schweiz);
-console.log(Source(allData));
+console.log(String(allData));
 for(blub in allData){
   console.log(blub[0].Latitude);
   console.log(blub[0].Longitude);
