@@ -60,5 +60,4 @@
 		echo $this->Html->script('http://maps.googleapis.com/maps/api/js');
 		echo $this->Html->script('test');
 	?>
-
 </html>

@@ -17,33 +17,29 @@ var arrow = {
     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
   };
 
-console.log(schweiz);
-console.log(Source(allData));
-for(blub in allData){
-  console.log(blub[0].Latitude);
-  console.log(blub[0].Longitude);
-}
-
 var cities = [];
-for(oneExport in allData){
-  var city = new google.maps.LatLng(oneExport.Latitude, oneExport.Longitude);
+var values = [];
+for(var i = 0; i < allData.length; i++){
+  var city = new google.maps.LatLng(allData[i].laender.Latitude, allData[i].laender.Longitude);
   cities.push(city);
+  values.push(allData[i].Betrag);
 }
 
 var trips = [];
-for(city in cities){
-  var trip = [schweiz, city];
+for(var i = 0; i < cities.length; i++){
+  var trip = [schweiz, cities[i]];
+  trips.push(trip);
 }
 
-for(trip in trips){
+for(var i = 0; i < trips.length; i++){
   var flightPath=new google.maps.Polyline({
-  path:trip,
+  path:trips[i],
   icons: [{
     icon: arrow
   }],
   strokeColor:"#FF0000",
-  strokeOpacity:1,
-  strokeWeight:4,
+  strokeOpacity:0.9,
+  strokeWeight:values[i]/1000000,
   geodesic:true
   });
   flightPath.setMap(map);

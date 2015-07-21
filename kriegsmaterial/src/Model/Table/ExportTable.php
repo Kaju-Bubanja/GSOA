@@ -25,6 +25,9 @@ class ExportTable extends Table
         $this->table('export');
         $this->displayField('Id');
         $this->primaryKey('Id');
+        $this->belongsTo('Laender', [
+            'foreignKey' => 'Code'
+        ]);       
     }
 
     /**
