@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS export;
 DROP TABLE IF EXISTS laender;
+DROP TABLE IF EXISTS art;
+DROP TABLE IF EXISTS system;
+DROP TABLE IF EXISTS kategorie;
+
 CREATE TABLE laender (Code CHAR(2), Kontinent VARCHAR(12), Land VARCHAR(40), LandFranz VARCHAR(40),
 INDEX(Code));
 # Index is necessary when a column is used as foreign key - at least in older versions of mysql.
@@ -9,5 +13,13 @@ LOAD DATA LOCAL INFILE 'laender.csv' INTO TABLE laender CHARACTER SET utf8 COLUM
 ALTER TABLE laender ADD latitude FLOAT(10,6);
 ALTER TABLE laender ADD longitude FLOAT(10,6);
 
-CREATE TABLE export (Id INT NOT NULL AUTO_INCREMENT, Code CHAR(2), Art VARCHAR(40), System VARCHAR(10), Kategorie VARCHAR(15), Year Year, Betrag INT, PRIMARY KEY(Id), 
-FOREIGN KEY (Code) REFERENCES laender(Code));
+CREATE TABLE art (Id INT NOT NULL AUTO_INCREMENT, Art VARCHAR(40));
+CREATE TABLE system (Id INT NOT NULL AUTO_INCREMENT, System VARCHAR(40));
+CREATE TABLE kategorie (Id INT NOT NULL AUTO_INCREMENT, Kategorie VARCHAR(40));
+
+CREATE TABLE export (Id INT NOT NULL AUTO_INCREMENT, Code CHAR(2), Art VARCHAR(40), System VARCHAR(10), Kategorie VARCHAR(15), Year Year, Betrag INT, 
+PRIMARY KEY(Id), FOREIGN KEY (Code) REFERENCES laender(Code), FOREIGN KEY (Art) REFERENCES art(Art), FOREIGN KEY (System) REFERENCES system(System),
+FOREIGN KEY (Kategorie) REFERENCES kategorie(Kategorie));
+
+
+
