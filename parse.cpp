@@ -68,12 +68,14 @@ int main(int argc, char* argv[]){
             landTmp = "Südafrika";
           else if(line.substr(startLand, lengthLand) == "Korea (S?d)")
             landTmp = "Korea (Süd)";
-          tmp << "CALL export_insert( " << landTmp 
-            << ", Kriegsmaterial, Wassenaar, KM" << waasenaarCounter << ", " << year << ", " << line.substr(startKategories, kategoriLength)
+
+          string betrag = line.substr(startKategories, kategoriLength);
+          erase_all(betrag, "'");
+
+          tmp << "CALL export_insert( '" << landTmp 
+            << "', 'Kriegsmaterial', 'Wassenaar', 'KM" << waasenaarCounter << "', " << year << ", " << betrag
             << ");\n";
-          string tmp2 = tmp.str();
-          erase_all(tmp2, "'");
-          outFile << tmp2;   
+          outFile << tmp.str();   
         }
         if(waasenaarCounter == 8){
           waasenaarCounter++;
