@@ -1,6 +1,5 @@
 /*TODO:
 
-- Make command line take year and which file to open
 - Find end of for loop condition
 - Special characters ?
 
@@ -11,74 +10,85 @@
 #include <string>
 #include <sstream>
 #include <boost/algorithm/string/find.hpp>
+#include <boost/algorithm/string.hpp>
 using namespace std;
 using namespace boost;
 
-int main(){
-  string line;
-  ifstream myfile ("gsoa2006.csv", ios::binary);
-  ofstream outfile ("gsoa2006.sql");
-  string eu = "Europa";
-  string af = "Afrika";
-  string am = "Amerika";
-  string as = "Asien";
-  string au = "Australien";
-  if (myfile.is_open())
-  {
-    while ( getline (myfile,line) )
-    {
-      if(line.compare(0,6,eu) == 0){
-        
-        stringstream tmp;
-        
-        size_t startX = line.find_first_of(";");
-        size_t endX = line.find_first_of("/");
-        
-        int startLand = static_cast<int>(startX) + 1;
-        int endLand = static_cast<int>(endX) - 1;
-        int lengthLand = endLand - startLand;
-        
-        for(int i = 2; i < TODETERMIN; i++) {
-          iterator_range<string::iterator> startKategoriesX = find_nth(line, ";", i);
-          int startKategories = distance(line.begin(), startKategoriesX.begin()) + 1;
-          iterator_range<string::iterator> endKategoriesX = find_nth(line, ";", i+1);
-          int endKategories = distance(line.begin(), endKategoriesX.begin());
-          
-          int waasenaarCounter = 1;
-          
-          cout << "HERE COME IMPORTANT STUFF" << endl;
-          cout << startKategories << endl; 
-          
-          tmp << "CALL export_insert( " << line.substr(startLand, lengthLand) 
-            << ", Kriegsmaterial, Wassenaar, KM" << waasenaarCounter << ", " << line.substr(startKategories, endKategories) << ", "
-            <<  
-  
-  
-          outfile << tmp.str();
-        }
-        cout << "SHOOP DA WHOOP" << '\n';
-      }
-      else if(line.compare(0,6,af) == 0){
-        stringstream tmp;
-        cout << "SHOOP DA WHOOP" << '\n';
-      }
-      else if(line.compare(0,7,am) == 0){
-        stringstream tmp;
-        cout << "SHOOP DA WHOOP" << '\n';
-      }
-      else if(line.compare(0,5,as) == 0){
-        stringstream tmp;
-        cout << "SHOOP DA WHOOP" << '\n';
-      }
-      else if(line.compare(0,10,au) == 0){
-        stringstream tmp;
-        cout << "SHOOP DA WHOOP" << '\n';
-      }
-      cout << line << '\n';
-    }
-    myfile.close();
+int main(int argc, char* argv[]){
+  if(argc < 2){
+    cout << "not enough parameters" << endl;
+    return 0;
   }
+  string line;
+  string year = argv[1];
+  
+  stringstream inputFileName;
+  inputFileName << "gsoa" << year << ".csv";
+  ifstream inFile (inputFileName.str().c_str(), ios::binary);
+  
+  stringstream outputFileName;
+  outputFileName << "gsoa" << year << ".sql";
+  ofstream outFile (outputFileName.str().c_str());
+  
+  if (inFile.is_open())
+  {
+    while ( getline (inFile,line) )
+    {   
+      
+      size_t startX = line.find_first_of(";");
+      size_t endX = line.find_first_of("/");
+      
+      int startLand = static_cast<int>(startX) + 1;
+      int endLand = static_cast<int>(endX) - 1;
+      int lengthLand = endLand - startLand;
+      
+      if(endLand == -2 || endLand > 40){
+        continue;
+      }
 
+      int waasenaarCounter = 1;
+      for(int i = 0; i < 10; i++) {
+        iterator_range<string::iterator> startKategoriesX = find_nth(line, ";", i+2);
+        int startKategories = distance(line.begin(), startKategoriesX.begin()) + 1;
+        iterator_range<string::iterator> endKategoriesX = find_nth(line, ";", i+3);
+        int endKategories = distance(line.begin(), endKategoriesX.begin());
+        int kategoriLength = endKategories - startKategories;
+        if(kategoriLength != 0){ 
+          stringstream tmp;
+          string landTmp = line.substr(startLand, lengthLand);
+          if(line.substr(startLand, lengthLand) == "D?nemark")
+            landTmp = "Dänemark";
+          else if(line.substr(startLand, lengthLand) == "?sterreich")
+            landTmp = "Österreich";
+          else if(line.substr(startLand, lengthLand) == "Rum?nien")
+            landTmp = "Rumänien";
+          else if(line.substr(startLand, lengthLand) == "T?rkei")
+            landTmp = "Türkei";
+          else if(line.substr(startLand, lengthLand) == "S?dafrika")
+            landTmp = "Südafrika";
+          else if(line.substr(startLand, lengthLand) == "Korea (S?d)")
+            landTmp = "Korea (Süd)";
+          tmp << "CALL export_insert( " << landTmp 
+            << ", Kriegsmaterial, Wassenaar, KM" << waasenaarCounter << ", " << year << ", " << line.substr(startKategories, kategoriLength)
+            << ");\n";
+          string tmp2 = tmp.str();
+          erase_all(tmp2, "'");
+          outFile << tmp2;   
+        }
+        if(waasenaarCounter == 8){
+          waasenaarCounter++;
+        }
+        if(waasenaarCounter == 10){
+          waasenaarCounter = 15;
+        }
+        waasenaarCounter++;
+        
+        
+        }
+    }
+    inFile.close();
+    outFile.close();
+  }
   else cout << "Unable to open file"; 
 
   return 0;
