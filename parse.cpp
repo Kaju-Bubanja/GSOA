@@ -72,7 +72,7 @@ int main(int argc, char* argv[]){
           string betrag = line.substr(startKategories, kategoriLength);
           erase_all(betrag, "'");
 
-          tmp << "CALL export_insert( ,'" << landTmp 
+          tmp << "CALL export_insert( '" << landTmp 
             << "', 'Kriegsmaterial', 'Wassenaar', 'KM" << waasenaarCounter << "', " << year << ", " << betrag
             << ");\n";
           outFile << tmp.str();   
