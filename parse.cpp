@@ -68,6 +68,25 @@ int main(int argc, char* argv[]){
             landTmp = "Südafrika";
           else if(line.substr(startLand, lengthLand) == "Korea (S?d)")
             landTmp = "Korea (Süd)";
+          else if(line.substr(startLand, lengthLand) == "Bosnien")
+            landTmp = "Bosnien und Herzeg.";
+          else if(line.substr(startLand, lengthLand) == "Gr. Britannien")
+            landTmp = "Grossbritannien";
+          else if(line.substr(startLand, lengthLand) == "Tschechien")
+            landTmp = "Tschechische Rep.";
+          else if(line.substr(startLand, lengthLand) == "Aegypten")
+            landTmp = "Ägypten";
+          else if(line.substr(startLand, lengthLand) == "USA")
+            landTmp = "U.S.A";
+          else if(line.substr(startLand, lengthLand) == "Arab. Emirate")
+            landTmp = "Arabische Emirate";
+          else if(line.substr(startLand, lengthLand) == "Bahrein")
+            landTmp = "Bahrain";
+          else if(line.substr(startLand, lengthLand) == "Macau")
+            landTmp = "Macao";
+          else if(line.substr(startLand, lengthLand) == "Saudi Arabien")
+            landTmp = "Saudi-Arabien";
+
 
           string betrag = line.substr(startKategories, kategoriLength);
           erase_all(betrag, "'");
