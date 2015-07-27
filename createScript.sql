@@ -13,6 +13,11 @@ LOAD DATA LOCAL INFILE 'laender.csv' INTO TABLE laender CHARACTER SET utf8 COLUM
 ALTER TABLE laender ADD latitude FLOAT(10,6);
 ALTER TABLE laender ADD longitude FLOAT(10,6);
 
+INSERT INTO laender (Code, Kontinent, Land, LandFranz, latitude, longitude) VALUES ("HU", "Europa", "Ungarn", "Hongrie", 47.503672, 19.033590);
+INSERT INTO laender (Code, Kontinent, Land, LandFranz, latitude, longitude) VALUES ("BJ", "Afrika", "Benin", "Bénin", 6.502603, 2.611570);
+INSERT INTO laender (Code, Kontinent, Land, LandFranz, latitude, longitude) VALUES ("GW", "Afrika", "Guinea-Bissau", "Guinée Bissau", 11.871668, -15.624172);
+INSERT INTO laender (Code, Kontinent, Land, LandFranz, latitude, longitude) VALUES ("NA", "Afrika", "Namibia", "Namibie", -22.561842, 17.064777);
+
 CREATE TABLE art (Id INT NOT NULL AUTO_INCREMENT, Art VARCHAR(40));
 CREATE TABLE system (Id INT NOT NULL AUTO_INCREMENT, System VARCHAR(40));
 CREATE TABLE kategorie (Id INT NOT NULL AUTO_INCREMENT, Kategorie VARCHAR(40));

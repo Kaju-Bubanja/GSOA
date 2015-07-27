@@ -6,5 +6,5 @@ IN Year YEAR, IN Betrag INT) MODIFIES SQL DATA
 BEGIN
 	DECLARE Code_lookup CHAR(2) DEFAULT "CH";
 	SELECT Code INTO Code_lookup FROM laender WHERE laender.Land=Land;
-	INSERT INTO export VALUES(Code_lookup, Art, System, Kategorie, Year, Betrag);
+	INSERT INTO export (Code, Art, System, Kategorie, Year, Betrag) VALUES(Code_lookup, Art, System, Kategorie, Year, Betrag);
 END$$
