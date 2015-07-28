@@ -34,15 +34,23 @@ int main(int argc, char* argv[]){
   {
     while ( getline (inFile,line) )
     {   
-      
       size_t startX = line.find_first_of(";");
-      size_t endX = line.find_first_of("/");
-      
       int startLand = static_cast<int>(startX) + 1;
-      int endLand = static_cast<int>(endX) - 1;
-      int lengthLand = endLand - startLand;
       
-      if(endLand == -2 || endLand > 40){
+      int yearInt = atoi(year.c_str());
+
+      if(yearInt == 2006){
+        size_t endX = line.find_first_of("/");
+        int endLand = static_cast<int>(endX) - 1;
+        
+      }
+
+      iterator_range<string::iterator> endLandX = find_nth(line, ";", 1);
+      int endLand = distance(line.begin(), endLandX.begin());
+
+      int lengthLand = endLand - startLand;
+
+      if(endLand == -2 || endLand > 40 || lengthLand == 0){
         continue;
       }
 
@@ -56,25 +64,26 @@ int main(int argc, char* argv[]){
         if(kategoriLength != 0){ 
           stringstream tmp;
           string landTmp = line.substr(startLand, lengthLand);
-          if(line.substr(startLand, lengthLand) == "D?nemark")
+          if(line.substr(startLand, lengthLand) == "D?nemark" || line.substr(startLand, lengthLand) == "DŠnemark")
             landTmp = "Dänemark";
-          else if(line.substr(startLand, lengthLand) == "?sterreich")
+          else if(line.substr(startLand, lengthLand) == "?sterreich" || line.substr(startLand, lengthLand) == "…sterreich")
             landTmp = "Österreich";
-          else if(line.substr(startLand, lengthLand) == "Rum?nien")
+          else if(line.substr(startLand, lengthLand) == "Rum?nien" || line.substr(startLand, lengthLand) == "RumŠnien")
             landTmp = "Rumänien";
-          else if(line.substr(startLand, lengthLand) == "T?rkei")
+          else if(line.substr(startLand, lengthLand) == "T?rkei" || line.substr(startLand, lengthLand) == "TŸrkei")
             landTmp = "Türkei";
-          else if(line.substr(startLand, lengthLand) == "S?dafrika")
+          else if(line.substr(startLand, lengthLand) == "S?dafrika" || line.substr(startLand, lengthLand) == "SŸdafrika")
             landTmp = "Südafrika";
-          else if(line.substr(startLand, lengthLand) == "Korea (S?d)")
+          else if(line.substr(startLand, lengthLand) == "Korea (S?d)" || line.substr(startLand, lengthLand) == "Korea (SŸd)")
             landTmp = "Korea (Süd)";
-          else if(line.substr(startLand, lengthLand) == "Bosnien")
+          else if(line.substr(startLand, lengthLand) == "Bosnien" || line.substr(startLand, lengthLand) == "RumŠnien")
             landTmp = "Bosnien und Herzeg.";
-          else if(line.substr(startLand, lengthLand) == "Gr. Britannien")
+          else if(line.substr(startLand, lengthLand) == "Gr. Britannien" || line.substr(startLand, lengthLand) == "RumŠnien")
             landTmp = "Grossbritannien";
-          else if(line.substr(startLand, lengthLand) == "Tschechien")
+          else if(line.substr(startLand, lengthLand) == "Tschechien" || line.substr(startLand, lengthLand) == "RumŠnien")
             landTmp = "Tschechische Rep.";
-          else if(line.substr(startLand, lengthLand) == "Aegypten")
+          else if(line.substr(startLand, lengthLand) == "Aegypten" || line.substr(startLand, lengthLand) == "?gypten"
+           || line.substr(startLand, lengthLand) == "€gypten")
             landTmp = "Ägypten";
           else if(line.substr(startLand, lengthLand) == "USA")
             landTmp = "U.S.A";
@@ -86,6 +95,10 @@ int main(int argc, char* argv[]){
             landTmp = "Macao";
           else if(line.substr(startLand, lengthLand) == "Saudi Arabien")
             landTmp = "Saudi-Arabien";
+          else if(line.substr(startLand, lengthLand) == "Slowakai")
+            landTmp = "Slowakei";
+          else if(line.substr(startLand, lengthLand) == "Land")
+            continue;
 
 
           string betrag = line.substr(startKategories, kategoriLength);

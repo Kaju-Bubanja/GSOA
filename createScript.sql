@@ -18,9 +18,13 @@ INSERT INTO laender (Code, Kontinent, Land, LandFranz, latitude, longitude) VALU
 INSERT INTO laender (Code, Kontinent, Land, LandFranz, latitude, longitude) VALUES ("GW", "Afrika", "Guinea-Bissau", "Guinée Bissau", 11.871668, -15.624172);
 INSERT INTO laender (Code, Kontinent, Land, LandFranz, latitude, longitude) VALUES ("NA", "Afrika", "Namibia", "Namibie", -22.561842, 17.064777);
 
-CREATE TABLE art (Id INT NOT NULL AUTO_INCREMENT, Art VARCHAR(40));
-CREATE TABLE system (Id INT NOT NULL AUTO_INCREMENT, System VARCHAR(40));
-CREATE TABLE kategorie (Id INT NOT NULL AUTO_INCREMENT, Kategorie VARCHAR(40));
+CREATE TABLE art (Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Art VARCHAR(40));
+CREATE TABLE system (Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, System VARCHAR(40));
+CREATE TABLE kategorie (Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Kategorie VARCHAR(40));
+
+INSERT INTO art (Art) VALUES ("Kriegsmaterial");
+INSERT INTO art (Art) VALUES ("Besondere Militärische Güter");
+INSERT INTO art (Art) VALUES ("Dual Use Güter");
 
 CREATE TABLE export (Id INT NOT NULL AUTO_INCREMENT, Code CHAR(2), Art VARCHAR(40), System VARCHAR(10), Kategorie VARCHAR(15), Year Year, Betrag INT, 
 PRIMARY KEY(Id), FOREIGN KEY (Code) REFERENCES laender(Code), FOREIGN KEY (Art) REFERENCES art(Art), FOREIGN KEY (System) REFERENCES system(System),
