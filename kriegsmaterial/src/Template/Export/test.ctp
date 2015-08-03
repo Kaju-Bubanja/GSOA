@@ -24,17 +24,7 @@
 					Skandal3
 				</option>
 			</select>
-			<select id="jahresdaten">
-				<option value="Skandal1">
-					Skandal1
-				</option>
-				<option value="Skandal2">
-					Skandal2
-				</option>
-				<option value="Skandal3">
-					Skandal3
-				</option>
-			</select>
+			
 		</aside>
 	
 		<main>
@@ -42,10 +32,110 @@
 			<div id="googleMap"></div>
 		</main>
 	
-		<footer>
-			<p></p>
-		</footer>
+	<?php
+	echo $this->Form->create($laender, ['action' => 'search']);
+	?>
 
+	<div id="Selector">
+		<select id="laender">
+			<?php foreach ($laender as $land): ?>
+    	   		<option>
+    	   			<?= h($land->Land) ?>
+    	   		</option>
+			<?php endforeach; ?>
+		</select>
+	
+		<select id="art">
+			<?php foreach ($art as $art): ?>
+    	   		<option>
+    	   			<?= h($art->Art) ?>
+    	   		</option>
+			<?php endforeach; ?>
+		</select>
+	
+		<select id="system">
+			<?php foreach ($system as $system): ?>
+    	   		<option>
+    	   			<?= h($system->System) ?>
+    	   		</option>
+			<?php endforeach; ?>
+		</select>
+	
+		<select id="kategorie">
+			<?php foreach ($kategorie as $kategorie): ?>
+    	   		<option>
+    	   			<?= h($kategorie->Kategorie) ?>
+    	   		</option>
+			<?php endforeach; ?>
+		</select>
+	
+		<select id="years">
+				<option>
+    	   			2006
+    	   		</option>
+    	   		<option>
+    	   			2007
+    	   		</option>
+    	   		<option>
+    	   			2008
+    	   		</option>
+    	   		<option>
+    	   			2009
+    	   		</option>
+    	   		<option>
+    	   			2010
+    	   		</option>
+    	   		<option>
+    	   			2011
+    	   		</option>
+    	   		<option>
+    	   			2012
+    	   		</option>
+    	   		<option>
+    	   			2013
+    	   		</option>
+    	   		<option>
+    	   			2014
+    	   		</option>
+		</select>
+
+	</div>
+
+	<div class="table">
+		<table>
+    	<thead>
+        	<tr>
+          		<th><?= $this->Paginator->sort('Code') ?></th>
+           		<th><?= $this->Paginator->sort('Art') ?></th>
+        	    <th><?= $this->Paginator->sort('System') ?></th>
+            	<th><?= $this->Paginator->sort('Kategorie') ?></th>
+            	<th><?= $this->Paginator->sort('Betrag') ?></th>
+        	</tr>
+    	</thead>
+    <tbody>
+   <?php foreach ($export as $export): ?>
+        <tr>
+            <td><?= h($export->Code) ?></td>
+            <td><?= h($export->Art) ?></td>
+            <td><?= h($export->System) ?></td>
+            <td><?= h($export->Kategorie) ?></td>
+            <td><?= $this->Number->format($export->Betrag) ?></td>
+        </tr>
+
+    <?php endforeach; ?>
+    </tbody>
+    </table>
+
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+        </ul>
+        <p><?= $this->Paginator->counter() ?></p>
+    </div>
+
+    </div>
 	</body>
 
 	<script type="text/javascript">
@@ -53,8 +143,6 @@
 	var allData = <?php echo json_encode($allData); ?>;
 	var schweizKordinaten = <?php echo json_encode($schweizKordinaten); ?>;
 	</script>
-
-	
 
     <?php
 		echo $this->Html->script('http://maps.googleapis.com/maps/api/js');

@@ -41,19 +41,55 @@ class ExportController extends AppController
 
     public function test(){
         $this->loadModel('Laender');
+        
         $this->layout= '';
+        
         $this->set('export', $this->paginate($this->Export));
         $this->set('_serialize', ['export']);
+        
         $queryAll = $this->Export->find('all')->contain(['Laender' => 
         function ($q){
             return $q->select(['Longitude', 'Latitude']);
         }
         ])->all();
+        
         $this->set('allData', $queryAll);
+        
         $querySwiss = $this->Laender->find()
             ->select(['Latitude', 'Longitude'])
             ->where(['Code' => 'CH']);
+        
         $this->set('schweizKordinaten', $querySwiss);
+
+        $this->loadModel('Laender');
+        $this->loadModel('Art');
+        $this->loadModel('System');
+        $this->loadModel('Kategorie');
+
+        $laender = $this->Laender->find('all')
+            ->select(['Land'])
+            ->where(['Code !=' => 'CH'])
+            ->order(['Land' => 'ASC']);
+        $art = $this->Art->find('all')
+            ->select(['Art'])
+            ->order(['Art' => 'ASC']);
+        $system = $this->System->find('all')
+            ->select(['System'])
+            ->order(['System' => 'ASC']);
+        $kategorie = $this->Kategorie->find('all')
+            ->select(['Kategorie']);
+
+        $this->set('laender', $laender);
+        $this->set('art', $art);
+        $this->set('system', $system);
+        $this->set('kategorie', $kategorie);
+
+    }
+
+    public function search(){
+        
+        
+
     }
 
     /**

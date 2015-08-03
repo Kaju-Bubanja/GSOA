@@ -31,3 +31,87 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2015-08-03 16:07:43 Notice: Notice (8): Undefined variable: laender in [/home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp, line 36]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Export/test.ctp, line 36
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 833
+Cake\View\View::_render() - CORE/src/View/View.php, line 793
+Cake\View\View::render() - CORE/src/View/View.php, line 464
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 582
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 16:07:43 Notice: Notice (8): Undefined variable: laender in [/home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp, line 44]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Export/test.ctp, line 44
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 833
+Cake\View\View::_render() - CORE/src/View/View.php, line 793
+Cake\View\View::render() - CORE/src/View/View.php, line 464
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 582
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 16:07:43 Notice: Notice (8): Undefined variable: laender in [/home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp, line 52]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Export/test.ctp, line 52
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 833
+Cake\View\View::_render() - CORE/src/View/View.php, line 793
+Cake\View\View::render() - CORE/src/View/View.php, line 464
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 582
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 16:07:43 Notice: Notice (8): Undefined variable: laender in [/home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp, line 60]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Export/test.ctp, line 60
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 833
+Cake\View\View::_render() - CORE/src/View/View.php, line 793
+Cake\View\View::render() - CORE/src/View/View.php, line 464
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 582
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 16:07:43 Notice: Notice (8): Undefined variable: laender in [/home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp, line 68]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Export/test.ctp, line 68
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 833
+Cake\View\View::_render() - CORE/src/View/View.php, line 793
+Cake\View\View::render() - CORE/src/View/View.php, line 464
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 582
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2015-08-03 16:07:43 Notice: Notice (8): Undefined variable: laender in [/home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp, line 76]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 138
+include - APP/Template/Export/test.ctp, line 76
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 833
+Cake\View\View::_render() - CORE/src/View/View.php, line 793
+Cake\View\View::render() - CORE/src/View/View.php, line 464
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 582
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

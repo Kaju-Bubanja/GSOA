@@ -22,7 +22,18 @@ var values = [];
 for(var i = 0; i < allData.length; i++){
   var city = new google.maps.LatLng(allData[i].laender.Latitude, allData[i].laender.Longitude);
   cities.push(city);
-  values.push(allData[i].Betrag);
+  var kat = 0;
+  if(allData[i].Betrag > 200000000)
+    kat = 5;
+  else if(allData[i].Betrag > 150000000)
+    kat = 4;
+  else if(allData[i].Betrag > 100000000)
+    kat = 3;
+  else if(allData[i].Betrag > 50000000)
+    kat = 2;
+  else if(allData[i].Betrag > 0)
+    kat = 1;
+  values.push(kat);
 }
 
 var trips = [];
@@ -34,12 +45,9 @@ for(var i = 0; i < cities.length; i++){
 for(var i = 0; i < trips.length; i++){
   var flightPath=new google.maps.Polyline({
   path:trips[i],
-  icons: [{
-    icon: arrow
-  }],
   strokeColor:"#FF0000",
   strokeOpacity:0.9,
-  strokeWeight:values[i]/1000000,
+  strokeWeight:values[i]*3,
   geodesic:true
   });
   flightPath.setMap(map);
