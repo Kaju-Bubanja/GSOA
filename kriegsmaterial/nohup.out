@@ -647,3 +647,146 @@ You can exit with `CTRL-C`
 [Mon Aug  3 12:29:57 2015] 62.203.82.16:53429 [200]: /favicon.ico
 [Mon Aug  3 12:29:58 2015] 62.203.82.16:53430 [200]: /favicon.ico
 [Mon Aug  3 12:30:12 2015] 62.203.82.16:53457 Invalid request (Unexpected EOF)
+[Mon Aug  3 12:32:57 2015] 62.203.82.16:53474 Invalid request (Unexpected EOF)
+[Tue Aug  4 06:26:49 2015] 82.197.181.215:49320 [200]: /favicon.ico
+[Tue Aug  4 06:26:49 2015] 82.197.181.215:49323 [200]: /favicon.ico
+[Tue Aug  4 07:43:43 2015] 62.203.82.16:53613 Invalid request (Unexpected EOF)
+[Tue Aug  4 07:45:00 2015] 62.203.82.16:53638 Invalid request (Unexpected EOF)
+[Tue Aug  4 07:45:20 2015] 62.203.82.16:53670 [200]: /css/base.css
+[Tue Aug  4 07:45:20 2015] 62.203.82.16:53671 [200]: /css/cake.css
+[Tue Aug  4 07:45:20 2015] 62.203.82.16:53673 [200]: /favicon.ico
+[Tue Aug  4 07:45:21 2015] 62.203.82.16:53672 [200]: /favicon.ico
+[Tue Aug  4 07:45:21 2015] 62.203.82.16:53674 [200]: /favicon.ico
+[Tue Aug  4 07:45:22 2015] 62.203.82.16:53675 [200]: /favicon.ico
+[Tue Aug  4 07:45:25 2015] 62.203.82.16:53683 [200]: /css/base.css
+[Tue Aug  4 07:45:25 2015] 62.203.82.16:53685 [200]: /css/cake.css
+[Tue Aug  4 07:45:25 2015] 62.203.82.16:53684 [200]: /favicon.ico
+[Tue Aug  4 07:45:26 2015] 62.203.82.16:53687 [200]: /favicon.ico
+[Tue Aug  4 07:45:26 2015] 62.203.82.16:53686 [200]: /favicon.ico
+[Tue Aug  4 07:45:27 2015] 62.203.82.16:53688 [200]: /favicon.ico
+[Tue Aug  4 07:45:28 2015] 62.203.82.16:53692 [200]: /css/base.css
+[Tue Aug  4 07:45:28 2015] 62.203.82.16:53693 [200]: /css/cake.css
+[Tue Aug  4 07:45:28 2015] 62.203.82.16:53694 [200]: /favicon.ico
+[Tue Aug  4 07:45:28 2015] 62.203.82.16:53695 [200]: /favicon.ico
+[Tue Aug  4 07:45:29 2015] 62.203.82.16:53696 [200]: /favicon.ico
+[Tue Aug  4 07:45:29 2015] 62.203.82.16:53697 [200]: /favicon.ico
+[Tue Aug  4 07:51:14 2015] 62.203.82.16:53769 [200]: /css/test.css
+[Tue Aug  4 07:51:14 2015] 62.203.82.16:53771 [200]: /js/test.js
+[Tue Aug  4 07:51:14 2015] 62.203.82.16:53772 [200]: /img/background.png
+[Tue Aug  4 07:51:15 2015] 62.203.82.16:53774 [200]: /favicon.ico
+[Tue Aug  4 07:51:15 2015] 62.203.82.16:53775 [200]: /favicon.ico
+[Tue Aug  4 07:51:36 2015] 62.203.82.16:53795 Invalid request (Unexpected EOF)
+[Tue Aug  4 07:52:21 2015] 62.203.82.16:53803 [200]: /css/test.css
+[Tue Aug  4 07:52:21 2015] 62.203.82.16:53804 [200]: /js/test.js
+[Tue Aug  4 07:52:21 2015] 62.203.82.16:53805 [200]: /img/background.png
+[Tue Aug  4 07:52:21 2015] 62.203.82.16:53807 [200]: /favicon.ico
+[Tue Aug  4 07:52:22 2015] 62.203.82.16:53808 [200]: /favicon.ico
+[Tue Aug  4 07:52:45 2015] 62.203.82.16:53834 Invalid request (Unexpected EOF)
+[Tue Aug  4 07:56:26 2015] 62.203.82.16:53882 [200]: /css/test.css
+[Tue Aug  4 07:56:26 2015] 62.203.82.16:53884 [200]: /js/test.js
+[Tue Aug  4 07:56:26 2015] 62.203.82.16:53885 [200]: /img/background.png
+[Tue Aug  4 07:56:27 2015] 62.203.82.16:53887 [200]: /favicon.ico
+[Tue Aug  4 07:56:27 2015] 62.203.82.16:53888 [200]: /favicon.ico
+[Tue Aug  4 07:56:44 2015] 62.203.82.16:53914 [200]: /img/background.png
+[Tue Aug  4 07:56:45 2015] 62.203.82.16:53915 [200]: /css/test.css
+[Tue Aug  4 07:56:45 2015] 62.203.82.16:53916 [200]: /js/test.js
+[Tue Aug  4 07:56:46 2015] 62.203.82.16:53917 [200]: /favicon.ico
+[Tue Aug  4 07:56:46 2015] 62.203.82.16:53918 [200]: /favicon.ico
+[Tue Aug  4 07:57:04 2015] PHP Fatal error:  Call to undefined function String() in /home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp on line 37
+[Tue Aug  4 07:57:04 2015] 62.203.82.16:53922 [200]: /favicon.ico
+[Tue Aug  4 07:57:04 2015] 62.203.82.16:53923 [200]: /favicon.ico
+[Tue Aug  4 07:57:04 2015] 62.203.82.16:53924 [200]: /favicon.ico
+[Tue Aug  4 07:57:04 2015] 62.203.82.16:53925 [200]: /favicon.ico
+[Tue Aug  4 07:57:08 2015] 62.203.82.16:53926 [200]: /favicon.ico
+[Tue Aug  4 07:57:08 2015] 62.203.82.16:53927 [200]: /favicon.ico
+[Tue Aug  4 08:07:18 2015] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp on line 37
+[Tue Aug  4 08:07:18 2015] 62.203.82.16:54094 [200]: /favicon.ico
+[Tue Aug  4 08:07:18 2015] 62.203.82.16:54095 [200]: /favicon.ico
+[Tue Aug  4 08:07:18 2015] 62.203.82.16:54099 [200]: /favicon.ico
+[Tue Aug  4 08:07:18 2015] 62.203.82.16:54100 [200]: /favicon.ico
+[Tue Aug  4 08:07:35 2015] 62.203.82.16:54102 [200]: /css/test.css
+[Tue Aug  4 08:07:36 2015] 62.203.82.16:54103 [200]: /img/background.png
+[Tue Aug  4 08:07:36 2015] 62.203.82.16:54105 [200]: /js/test.js
+[Tue Aug  4 08:07:37 2015] 62.203.82.16:54107 [200]: /favicon.ico
+[Tue Aug  4 08:07:37 2015] 62.203.82.16:54108 [200]: /favicon.ico
+[Tue Aug  4 08:07:53 2015] 62.203.82.16:54134 [200]: /css/test.css
+[Tue Aug  4 08:07:53 2015] 62.203.82.16:54135 [200]: /js/test.js
+[Tue Aug  4 08:07:53 2015] 62.203.82.16:54136 [200]: /img/background.png
+[Tue Aug  4 08:07:54 2015] 62.203.82.16:54137 [200]: /favicon.ico
+[Tue Aug  4 08:07:54 2015] 62.203.82.16:54138 [200]: /favicon.ico
+[Tue Aug  4 08:08:16 2015] 62.203.82.16:54143 Invalid request (Unexpected EOF)
+[Tue Aug  4 08:12:30 2015] 62.203.82.16:54223 [200]: /css/test.css
+[Tue Aug  4 08:12:30 2015] 62.203.82.16:54225 [200]: /js/test.js
+[Tue Aug  4 08:12:30 2015] 62.203.82.16:54226 [200]: /img/background.png
+[Tue Aug  4 08:12:31 2015] 62.203.82.16:54228 [200]: /favicon.ico
+[Tue Aug  4 08:12:31 2015] 62.203.82.16:54229 [200]: /favicon.ico
+[Tue Aug  4 08:13:11 2015] 62.203.82.16:54266 [200]: /css/test.css
+[Tue Aug  4 08:13:11 2015] 62.203.82.16:54267 [200]: /img/background.png
+[Tue Aug  4 08:13:12 2015] 62.203.82.16:54268 [200]: /js/test.js
+[Tue Aug  4 08:13:13 2015] 62.203.82.16:54269 [200]: /favicon.ico
+[Tue Aug  4 08:13:16 2015] 62.203.82.16:54270 [200]: /favicon.ico
+[Tue Aug  4 08:14:58 2015] 62.203.82.16:54282 [200]: /css/test.css
+[Tue Aug  4 08:14:58 2015] 62.203.82.16:54283 [200]: /js/test.js
+[Tue Aug  4 08:14:58 2015] 62.203.82.16:54284 [200]: /img/background.png
+[Tue Aug  4 08:15:00 2015] 62.203.82.16:54285 [200]: /favicon.ico
+[Tue Aug  4 08:15:00 2015] 62.203.82.16:54288 [200]: /favicon.ico
+[Tue Aug  4 08:15:14 2015] PHP Parse error:  syntax error, unexpected ''val'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/masterchief/git/kriegsmaterial/src/Template/Export/test.ctp on line 40
+[Tue Aug  4 08:15:14 2015] 62.203.82.16:54319 [200]: /favicon.ico
+[Tue Aug  4 08:15:15 2015] 62.203.82.16:54320 [200]: /favicon.ico
+[Tue Aug  4 08:15:15 2015] 62.203.82.16:54321 [200]: /favicon.ico
+[Tue Aug  4 08:15:15 2015] 62.203.82.16:54322 [200]: /favicon.ico
+[Tue Aug  4 08:15:28 2015] 62.203.82.16:54324 [200]: /css/test.css
+[Tue Aug  4 08:15:29 2015] 62.203.82.16:54325 [200]: /js/test.js
+[Tue Aug  4 08:15:29 2015] 62.203.82.16:54326 [200]: /img/background.png
+[Tue Aug  4 08:15:30 2015] 62.203.82.16:54327 [200]: /favicon.ico
+[Tue Aug  4 08:15:30 2015] 62.203.82.16:54328 [200]: /favicon.ico
+[Tue Aug  4 08:16:15 2015] 62.203.82.16:54337 Invalid request (Unexpected EOF)
+[Tue Aug  4 08:16:20 2015] 62.203.82.16:54338 Invalid request (Unexpected EOF)
+[Tue Aug  4 08:16:36 2015] 62.203.82.16:54341 [200]: /css/test.css
+[Tue Aug  4 08:16:36 2015] 62.203.82.16:54342 [200]: /js/test.js
+[Tue Aug  4 08:16:36 2015] 62.203.82.16:54343 [200]: /img/background.png
+[Tue Aug  4 08:16:37 2015] 62.203.82.16:54344 [200]: /favicon.ico
+[Tue Aug  4 08:16:37 2015] 62.203.82.16:54346 [200]: /favicon.ico
+[Tue Aug  4 08:20:03 2015] 62.203.82.16:54416 [200]: /css/test.css
+[Tue Aug  4 08:20:03 2015] 62.203.82.16:54418 [200]: /js/test.js
+[Tue Aug  4 08:20:03 2015] 62.203.82.16:54419 [200]: /img/background.png
+[Tue Aug  4 08:20:04 2015] 62.203.82.16:54421 [200]: /favicon.ico
+[Tue Aug  4 08:20:06 2015] 62.203.82.16:54423 [200]: /favicon.ico
+[Tue Aug  4 08:22:26 2015] 62.203.82.16:54463 [200]: /css/test.css
+[Tue Aug  4 08:22:27 2015] 62.203.82.16:54464 [200]: /img/background.png
+[Tue Aug  4 08:22:27 2015] 62.203.82.16:54466 [200]: /js/test.js
+[Tue Aug  4 08:22:29 2015] 62.203.82.16:54471 [200]: /favicon.ico
+[Tue Aug  4 08:22:33 2015] 62.203.82.16:54473 [200]: /favicon.ico
+[Tue Aug  4 08:22:40 2015] 62.203.82.16:54506 [200]: /css/test.css
+[Tue Aug  4 08:22:40 2015] 62.203.82.16:54505 [200]: /js/test.js
+[Tue Aug  4 08:22:40 2015] 62.203.82.16:54504 [200]: /img/background.png
+[Tue Aug  4 08:22:41 2015] 62.203.82.16:54508 [200]: /favicon.ico
+[Tue Aug  4 08:22:43 2015] 62.203.82.16:54507 [200]: /favicon.ico
+[Tue Aug  4 08:23:26 2015] 62.203.82.16:54515 [200]: /css/test.css
+[Tue Aug  4 08:23:26 2015] 62.203.82.16:54516 [200]: /js/test.js
+[Tue Aug  4 08:23:26 2015] 62.203.82.16:54517 [200]: /img/background.png
+[Tue Aug  4 08:23:27 2015] 62.203.82.16:54518 [200]: /favicon.ico
+[Tue Aug  4 08:23:30 2015] 62.203.82.16:54519 [200]: /favicon.ico
+[Tue Aug  4 08:24:15 2015] 62.203.82.16:54524 [200]: /css/test.css
+[Tue Aug  4 08:24:15 2015] 62.203.82.16:54525 [200]: /img/background.png
+[Tue Aug  4 08:24:15 2015] 62.203.82.16:54526 [200]: /js/test.js
+[Tue Aug  4 08:24:16 2015] 62.203.82.16:54527 [200]: /favicon.ico
+[Tue Aug  4 08:24:19 2015] 62.203.82.16:54528 [200]: /favicon.ico
+[Tue Aug  4 08:26:36 2015] 62.203.82.16:54532 Invalid request (Unexpected EOF)
+[Tue Aug  4 08:26:54 2015] 62.203.82.16:54535 [200]: /css/test.css
+[Tue Aug  4 08:26:54 2015] 62.203.82.16:54536 [200]: /js/test.js
+[Tue Aug  4 08:26:54 2015] 62.203.82.16:54537 [200]: /img/background.png
+[Tue Aug  4 08:26:55 2015] 62.203.82.16:54539 [200]: /favicon.ico
+[Tue Aug  4 08:26:55 2015] 62.203.82.16:54542 [200]: /favicon.ico
+[Tue Aug  4 08:27:13 2015] 62.203.82.16:54571 Invalid request (Unexpected EOF)
+[Tue Aug  4 08:28:25 2015] 62.203.82.16:54620 [200]: /css/test.css
+[Tue Aug  4 08:28:25 2015] 62.203.82.16:54621 [200]: /js/test.js
+[Tue Aug  4 08:28:25 2015] 62.203.82.16:54622 [200]: /img/background.png
+[Tue Aug  4 08:28:26 2015] 62.203.82.16:54623 [200]: /favicon.ico
+[Tue Aug  4 08:28:26 2015] 62.203.82.16:54629 [200]: /favicon.ico
+[Tue Aug  4 08:28:35 2015] 62.203.82.16:54655 [200]: /css/test.css
+[Tue Aug  4 08:28:35 2015] 62.203.82.16:54656 [200]: /img/background.png
+[Tue Aug  4 08:28:36 2015] 62.203.82.16:54657 [200]: /js/test.js
+[Tue Aug  4 08:28:36 2015] 62.203.82.16:54658 [200]: /favicon.ico
+[Tue Aug  4 08:28:36 2015] 62.203.82.16:54659 [200]: /favicon.ico
+[Tue Aug  4 08:29:10 2015] 62.203.82.16:54662 Invalid request (Unexpected EOF)

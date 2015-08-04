@@ -34,6 +34,12 @@
 	
 	<?php
 	echo $this->Form->create($laender, ['action' => 'search']);
+	$outLaender = [];
+	foreach($laender as $land){
+		array_push($outLaender, h($land->Land));
+	}
+	echo $this->Form->select('laender', $outLaender, ['multiple' => true,
+		'empty' => true,]);
 	?>
 
 	<div id="Selector">

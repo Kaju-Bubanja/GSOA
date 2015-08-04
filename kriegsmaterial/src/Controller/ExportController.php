@@ -61,7 +61,6 @@ class ExportController extends AppController
         
         $this->set('schweizKordinaten', $querySwiss);
 
-        $this->loadModel('Laender');
         $this->loadModel('Art');
         $this->loadModel('System');
         $this->loadModel('Kategorie');
