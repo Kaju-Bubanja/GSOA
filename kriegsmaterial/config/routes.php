@@ -48,7 +48,7 @@ Router::scope(
  *
  */
 Router::defaultRouteClass('Route');
-
+Router::extensions('json', 'xml');
 Router::scope('/', function ($routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

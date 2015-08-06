@@ -12,6 +12,13 @@ use App\Controller\AppController;
 class ExportController extends AppController
 {
 
+    public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('RequestHandler');
+    }
+
     /**
      * Index method
      *
@@ -47,7 +54,9 @@ class ExportController extends AppController
         $this->set('export', $this->paginate($this->Export));
         $this->set('_serialize', ['export']);
         
-        $queryAll = $this->Export->find('all')->contain(['Laender' => 
+        $queryAll = $this->Export->find('all')
+        ->where(['Year' => '2014'])
+        ->contain(['Laender' => 
         function ($q){
             return $q->select(['Longitude', 'Latitude']);
         }
@@ -86,9 +95,8 @@ class ExportController extends AppController
     }
 
     public function search(){
-        
-        
-
+        $this->set('text', 'SUCCESS');
+        $this->set('_serialize', ['text']);
     }
 
     /**

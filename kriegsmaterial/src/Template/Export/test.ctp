@@ -32,80 +32,29 @@
 			<div id="googleMap"></div>
 		</main>
 	
-	<?php
-	echo $this->Form->create($laender, ['action' => 'search']);
-	$outLaender = [];
-	foreach($laender as $land){
-		array_push($outLaender, h($land->Land));
-	}
-	echo $this->Form->select('laender', $outLaender, ['multiple' => true,
-		'empty' => true,]);
-	?>
-
 	<div id="Selector">
-		<select id="laender">
-			<?php foreach ($laender as $land): ?>
-    	   		<option>
-    	   			<?= h($land->Land) ?>
-    	   		</option>
-			<?php endforeach; ?>
-		</select>
-	
-		<select id="art">
-			<?php foreach ($art as $art): ?>
-    	   		<option>
-    	   			<?= h($art->Art) ?>
-    	   		</option>
-			<?php endforeach; ?>
-		</select>
-	
-		<select id="system">
-			<?php foreach ($system as $system): ?>
-    	   		<option>
-    	   			<?= h($system->System) ?>
-    	   		</option>
-			<?php endforeach; ?>
-		</select>
-	
-		<select id="kategorie">
-			<?php foreach ($kategorie as $kategorie): ?>
-    	   		<option>
-    	   			<?= h($kategorie->Kategorie) ?>
-    	   		</option>
-			<?php endforeach; ?>
-		</select>
-	
-		<select id="years">
-				<option>
-    	   			2006
-    	   		</option>
-    	   		<option>
-    	   			2007
-    	   		</option>
-    	   		<option>
-    	   			2008
-    	   		</option>
-    	   		<option>
-    	   			2009
-    	   		</option>
-    	   		<option>
-    	   			2010
-    	   		</option>
-    	   		<option>
-    	   			2011
-    	   		</option>
-    	   		<option>
-    	   			2012
-    	   		</option>
-    	   		<option>
-    	   			2013
-    	   		</option>
-    	   		<option>
-    	   			2014
-    	   		</option>
-		</select>
-
+		<?php
+		echo $this->Form->create($laender, ['action' => 'search',
+			'type' => 'get']);
+		
+		$outLaender = [];
+		foreach($laender as $land){
+			array_push($outLaender, h($land->Land));
+		}
+		?>
+		<fieldset>
+			<?php
+				echo $this->Form->select('laender', $outLaender, ['empty' => 'Land',]);
+				echo $this->Form->button('search', array('id' => 'submitButton', 'type' => 'button', 'onClick' => 'search()'));
+    		?>
+		</fieldset>
+		<?php $this->Form->end() ?>
 	</div>
+	
+	
+	<div id="searchContent">
+
+	<div>
 
 	<div class="table">
 		<table>
@@ -116,6 +65,7 @@
         	    <th><?= $this->Paginator->sort('System') ?></th>
             	<th><?= $this->Paginator->sort('Kategorie') ?></th>
             	<th><?= $this->Paginator->sort('Betrag') ?></th>
+            	<th><?= $this->Paginator->sort('Year') ?></th>
         	</tr>
     	</thead>
     <tbody>
@@ -126,6 +76,7 @@
             <td><?= h($export->System) ?></td>
             <td><?= h($export->Kategorie) ?></td>
             <td><?= $this->Number->format($export->Betrag) ?></td>
+            <td><?= h($export->Year) ?></td>
         </tr>
 
     <?php endforeach; ?>
@@ -151,7 +102,9 @@
 	</script>
 
     <?php
+		echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
 		echo $this->Html->script('http://maps.googleapis.com/maps/api/js');
 		echo $this->Html->script('test');
+		echo $this->Html->script('ajax');
 	?>
 </html>
