@@ -1,2 +1,3 @@
-kriegsmaterial/tmp/
-kriegsmaterial/logs/
+/kriegsmaterial/tmp/
+/kriegsmaterial/logs/cache/persistent/
+/kriegsmaterial/nohup.out

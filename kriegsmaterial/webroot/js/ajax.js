@@ -1,7 +1,5 @@
 function search(){
         console.log("Been here");
-        var targetUrl = <?php echo $this->Html->url(array('action' => 'search', 'ext' => 'json')); ?>;
-        //var targetUrl = <?php echo $this->Url->build(['action'=>'search']);?>;
         console.log(targetUrl);
        $.ajax({
                 type:"POST",

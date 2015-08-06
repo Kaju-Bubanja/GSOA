@@ -1,7 +1,4 @@
 var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
-var stavanger=new google.maps.LatLng(50.983991,-100.734863);
-var amsterdam=new google.maps.LatLng(52.395715,4.888916);
-var london=new google.maps.LatLng(51.508742,-0.120850);
 
 function initialize()
 {
@@ -12,11 +9,11 @@ var mapProp = {
   };
 
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
+/*
 var arrow = {
     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
   };
-
+*/
 var cities = [];
 var values = [];
 for(var i = 0; i < allData.length; i++){
