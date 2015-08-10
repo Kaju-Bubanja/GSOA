@@ -95,8 +95,25 @@ class ExportController extends AppController
     }
 
     public function search(){
-        $this->set('text', 'SUCCESS');
-        $this->set('_serialize', ['text']);
+        $data = [];
+        if($this->request->is('ajax')) {
+            //$data['response'] =  "WOWOWOW"; //$this->request->query['magicId'];
+            $data['response'] =  $this->request->data['landId'];
+        }
+        /*
+        $queryAll = $this->Export->find('all')
+        ->where(['Year' => '2014'])
+        ->contain(['Laender' => 
+        function ($q){
+            return $q->select(['Longitude', 'Latitude'])
+                ->where(['Land' => $this->request->data['landId']]);
+        }
+        ])->all();
+
+        $this->set('searchData', $queryAll);
+        */
+        $this->set(compact('data'));
+        $this->set('_serialize', 'data');
     }
 
     /**

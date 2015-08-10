@@ -44,7 +44,7 @@
 		?>
 		<fieldset>
 			<?php
-				echo $this->Form->select('laender', $outLaender, ['empty' => 'Land',]);
+				echo $this->Form->select('laender', $outLaender, ['empty' => 'Land', 'id' => 'laender']);
 				echo $this->Form->button('search', array('id' => 'submitButton', 'type' => 'button', 'onClick' => 'search()'));
     		?>
 		</fieldset>
@@ -99,7 +99,11 @@
 	var data = <?php echo json_encode($export); ?>;
 	var allData = <?php echo json_encode($allData); ?>;
 	var schweizKordinaten = <?php echo json_encode($schweizKordinaten); ?>;
-	var targetUrl = <?php echo $this->Html->url(array('action' => 'search', 'ext' => 'json')); ?>;
+	
+	var targetUrl = <?php echo json_encode($this->Url->build([
+		'action' => 'search',
+		'_ext' => 'json'])); ?>;
+	var magic = 'MAGIC';
 	</script>
 
     <?php
