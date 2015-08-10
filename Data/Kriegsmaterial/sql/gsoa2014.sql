@@ -200,8 +200,8 @@ CALL export_insert( 'Korea (Süd)', 'Kriegsmaterial', 'Wassenaar', 'KM3', 2014, 
 CALL export_insert( 'Korea (Süd)', 'Kriegsmaterial', 'Wassenaar', 'KM4', 2014, 769941);
 CALL export_insert( 'Kuwait', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2014, 41794);
 CALL export_insert( 'Kuwait', 'Kriegsmaterial', 'Wassenaar', 'KM3', 2014, 24681);
-CALL export_insert( 'Lebanon', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2014, 944860);
-CALL export_insert( 'Lebanon', 'Kriegsmaterial', 'Wassenaar', 'KM2', 2014, 9572);
+CALL export_insert( 'Libanon', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2014, 944860);
+CALL export_insert( 'Libanon', 'Kriegsmaterial', 'Wassenaar', 'KM2', 2014, 9572);
 CALL export_insert( 'Macao', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2014, 379773);
 CALL export_insert( 'Macao', 'Kriegsmaterial', 'Wassenaar', 'KM3', 2014, 8416);
 CALL export_insert( 'Malaysia', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2014, 51627);
