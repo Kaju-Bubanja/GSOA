@@ -7,6 +7,21 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 USE `kriegsmaterialexport`;
 
+DELIMITER ;;
+
+DROP PROCEDURE IF EXISTS `export_insert`;;
+CREATE PROCEDURE `export_insert`(IN Land VARCHAR(40),
+IN Art VARCHAR(40), IN System VARCHAR(40), IN Kategorie VARCHAR(40),
+IN Year YEAR, IN Betrag INT)
+    MODIFIES SQL DATA
+BEGIN
+DECLARE Code_lookup CHAR(2) DEFAULT "CH";
+SELECT Code INTO Code_lookup FROM laender WHERE laender.Land=Land;
+INSERT INTO export (Code, Art, System, Kategorie, Year, Betrag) VALUES(Code_lookup, Art, System, Kategorie, Year, Betrag);
+END;;
+
+DELIMITER ;
+
 SET NAMES utf8mb4;
 
 DROP TABLE IF EXISTS `art`;
@@ -15,7 +30,7 @@ CREATE TABLE `art` (
   `Art` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`Id`),
   KEY `Art` (`Art`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 TRUNCATE `art`;
 INSERT INTO `art` (`Id`, `Art`) VALUES
@@ -41,7 +56,7 @@ CREATE TABLE `export` (
   CONSTRAINT `export_ibfk_2` FOREIGN KEY (`Code`) REFERENCES `laender` (`Code`),
   CONSTRAINT `export_ibfk_3` FOREIGN KEY (`System`) REFERENCES `system` (`System`),
   CONSTRAINT `export_ibfk_4` FOREIGN KEY (`Kategorie`) REFERENCES `kategorie` (`Kategorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1953 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 TRUNCATE `export`;
 INSERT INTO `export` (`Id`, `Code`, `Art`, `System`, `Kategorie`, `Year`, `Betrag`) VALUES
@@ -2004,7 +2019,7 @@ CREATE TABLE `kategorie` (
   `Kategorie` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`Id`),
   KEY `Kategorie` (`Kategorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 TRUNCATE `kategorie`;
 INSERT INTO `kategorie` (`Id`, `Kategorie`) VALUES
@@ -2164,7 +2179,7 @@ CREATE TABLE `system` (
   `System` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`Id`),
   KEY `System` (`System`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 TRUNCATE `system`;
 INSERT INTO `system` (`Id`, `System`) VALUES
@@ -2173,4 +2188,4 @@ INSERT INTO `system` (`Id`, `System`) VALUES
 DROP TABLE IF EXISTS `laenderexport`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `laenderexport` AS select `export`.`Code` AS `Code`,`export`.`Id` AS `Id`,`export`.`Art` AS `Art`,`export`.`System` AS `System`,`export`.`Kategorie` AS `Kategorie`,`export`.`Year` AS `Year`,`export`.`Betrag` AS `Betrag`,`laender`.`Kontinent` AS `Kontinent`,`laender`.`Land` AS `Land`,`laender`.`LandFranz` AS `LandFranz`,`laender`.`latitude` AS `latitude`,`laender`.`longitude` AS `longitude` from (`export` join `laender` on((`export`.`Code` = `laender`.`Code`)));
 
--- 2015-08-27 13:45:58
+-- 2015-08-27 14:07:27
