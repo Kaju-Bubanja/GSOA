@@ -96,24 +96,105 @@ class ExportController extends AppController
 
     public function search(){
         $data = [];
+        
         if($this->request->is('ajax')) {
-            //$data['response'] =  "WOWOWOW"; //$this->request->query['magicId'];
-            $data['response'] =  $this->request->data['landId'];
-        }
-        /*
-        $queryAll = $this->Export->find('all')
-        ->where(['Year' => '2014'])
-        ->contain(['Laender' => 
-        function ($q){
-            return $q->select(['Longitude', 'Latitude'])
-                ->where(['Land' => $this->request->data['landId']]);
-        }
-        ])->all();
+            $this->loadModel('Laender');
+            $land = $this->request->data['land'];
+            $art = $this->request->data['art'];
+            $system = $this->request->data['system'];
+            $kategorie = $this->request->data['kategorie'];
+            $yearBegin = $this->request->data['yearBegin'];
+            $yearEnd = $this->request->data['yearEnd'];
+            
+            $code = $this->Laender->find()
+            ->select('Code')
+            ->where(['Land' => $land]);
+            
+            $queryArray = [];
 
-        $this->set('searchData', $queryAll);
-        */
+            if(strcmp($land, "Land") != 0){
+                $queryArray[$this->Export->aliasField('Code')] = $code;
+            }
+            if(strcmp($art, "Art") != 0)
+                $queryArray['Art'] = $art;
+            if(strcmp($system, "System") != 0)
+                $queryArray['System'] = $system;
+            if(strcmp($kategorie, "Kategorie") != 0)
+                $queryArray['Kategorie'] = $kategorie;
+            if(strcmp($yearBegin, "Von") == 0)
+                $yearBegin = 2006;
+            if(strcmp($yearEnd, "Bis") == 0)
+                $yearEnd = 2014;
+
+
+            $searchData = $this->Export->find('all')
+            ->where($queryArray)
+            ->where(function ($exp, $q) use (&$yearBegin) {
+                return $exp->gte('Year', $yearBegin);
+            })
+            ->where(function ($exp, $q) use (&$yearEnd){
+                return $exp->lte('Year', $yearEnd);
+            })
+            ->contain(['Laender' => 
+            function ($q){
+                return $q->select(['Longitude', 'Latitude']);
+            }
+            ]);
+            $data['response'] = $searchData->all();
+        
+            $this->set('export2', $this->paginate($searchData));
+            $this->set('_serialize', ['export2']);
+        }
         $this->set(compact('data'));
         $this->set('_serialize', 'data');
+
+    }
+
+    public function test2(){
+        $this->loadModel('Laender');
+            $land = "Land";
+            $art = "Kriegsmaterial";
+            $system = "Wassenaar";
+            $kategorie = "KM1";
+            $yearBegin = 2006;
+            $yearEnd = 2014;
+            
+            if(strcmp($land, "Land") == 0)
+                $land = null;
+            if(strcmp($art, "Art") == 0)
+                $art = null;
+            if(strcmp($system, "System") == 0)
+                $system = null;
+            if(strcmp($kategorie, "Kategorie") == 0)
+                $kategorie = null;
+            if(strcmp($yearBegin, "Von") == 0)
+                $yearBegin = null;
+            if(strcmp($yearEnd, "Bis") == 0)
+                $yearEnd = null;
+
+            debug($code = $this->Laender->find()
+            ->select('Code')
+            ->where(function ($exp) use (&$land) {
+                return $land === null ? $exp : $exp->eq('Land', $land);
+            }));
+            //->where(['Land' => $land]);
+            
+            $searchData = $this->Export->find('all')
+            ->where([$this->Export->aliasField('Code') => $code,
+                'Art' => $art,
+                'System' => $system,
+                'Kategorie' => $kategorie])
+            ->where(function ($exp, $q) use (&$yearBegin) {
+                return $exp->gte('Year', $yearBegin);
+            })
+            ->where(function ($exp, $q) use (&$yearEnd){
+                return $exp->lte('Year', $yearEnd);
+            })
+            ->contain(['Laender' => 
+            function ($q){
+                return $q->select(['Longitude', 'Latitude']);
+            }
+            ])->all();
     }
 
     /**

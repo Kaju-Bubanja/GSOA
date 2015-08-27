@@ -26,7 +26,7 @@ class LaenderTable extends Table
         $this->displayField('Code');
         $this->primaryKey('Code');
         $this->hasMany('Export', [
-            'foreignKey' => 'export_Code'
+            'foreignKey' => 'Code'
         ]);
     }
 

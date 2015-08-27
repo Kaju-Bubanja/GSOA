@@ -45,6 +45,11 @@ main{
 	width: 80%;
 }
 
+#searchContent{
+	padding-left: 220px;
+	width: 80%;
+}
+
 fieldset{
 	border: none;
 	padding: 0px;
