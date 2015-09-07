@@ -1,5 +1,7 @@
 var map;
 var lines = [];
+var searchData = "false";
+
 function initialize()
 {
   var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
@@ -24,13 +26,13 @@ function initialize()
     cities.push(city);
     var kat = 0;
     if(allData[i].Betrag > 200000000)
-      kat = 5;
+      kat = 10;
     else if(allData[i].Betrag > 150000000)
-      kat = 4;
+      kat = 8;
     else if(allData[i].Betrag > 100000000)
-      kat = 3;
+      kat = 6;
     else if(allData[i].Betrag > 50000000)
-      kat = 2;
+      kat = 4;
     else if(allData[i].Betrag > 0)
       kat = 1;
     values.push(kat);
@@ -58,37 +60,32 @@ function initialize()
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-function createTable(tab){
-  var exportColumns = 6;
-  var tbody = document.createElement('tbody');
-  tbody.id = "exportTbody";
-  var rows = tab.response.length;
-  /*
-  Anfang von JS Pagination selbst implementierung
-  if(rows >= 25){
-    rows = 25;
-  }
-  */
-  for(var i = 0; i < rows; i++){
-    var tr = tbody.insertRow();
-    var td = tr.insertCell();
-    td.appendChild(document.createTextNode(tab.response[i].Code));
-    var td = tr.insertCell();
-    td.appendChild(document.createTextNode(tab.response[i].Art));
-    var td = tr.insertCell();
-    td.appendChild(document.createTextNode(tab.response[i].System));
-    var td = tr.insertCell();
-    td.appendChild(document.createTextNode(tab.response[i].Kategorie));
-    var td = tr.insertCell();
-    td.appendChild(document.createTextNode(tab.response[i].Betrag));
-    var td = tr.insertCell();
-    td.appendChild(document.createTextNode(tab.response[i].Year));
-  }
- 
-  var oldtbody = document.getElementById("exportTbody");
-  oldtbody.parentNode.replaceChild(tbody, oldtbody);
+$(document).ready(function (){
+  $(document).on('click', '#pagination-container a', function () {
+    var land = $('#laender').find(':selected').text();
+  var art = $('#art').find(':selected').text();
+  var system = $('#system').find(':selected').text();
+  var kategorie = $('#kategorie').find(':selected').text();
+  var yearBegin = $('#yearBegin').find(':selected').text();
+  var yearEnd = $('#yearEnd').find(':selected').text();
 
-}
+    var thisHref = $(this).attr('href');
+    if (!thisHref) {
+      return false;
+    }
+    $('#pagination-container').fadeTo(300, 0);
+    $('#pagination-container').load(thisHref, {search: searchData,
+      land: land,
+      art: art,
+      system: system,
+      kategorie: kategorie,
+      yearBegin: yearBegin,
+      yearEnd: yearEnd}, function() {
+      $(this).fadeTo(200, 1);
+    });
+    return false;
+  });
+});
 
 function search(){
   var land = $('#laender').find(':selected').text();
@@ -108,19 +105,40 @@ function search(){
       yearBegin: yearBegin,
       yearEnd: yearEnd},
     success: function(tab){
-       var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
-       document.getElementById("paginator").style.display = "none";
-       document.getElementById("table").style.paddingBottom = "20px";
-       if(tab.response.length < 1){
-          var searchContent = document.getElementById("searchContent");
-          searchContent.innerHTML = "Keine Daten für diese Parameter.";
-          searchContent.style.display = "initial";
-          $("#searchContent").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
-          return;
+      var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
+      if(tab.response.length < 1){
+        var searchContent = document.getElementById("searchContent");
+        searchContent.innerHTML = "Keine Daten für diese Parameter.";
+        searchContent.style.display = "initial";
+        $("#searchContent").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
+        return;
+      }
+      document.getElementById("searchContent").style.display = "none";
+      if(land.localeCompare("Land") == 0){
+        for(var i = 0; i < lines.length; i++){
+            lines[i].setMap(null);
+          }
+        for(var i = 0; i < tab.response.length; i++){
+          var Longitude = tab.response[i].laender.Longitude;
+          var Latitude = tab.response[i].laender.Latitude;
+          var searchPlace = new google.maps.LatLng(Latitude, Longitude);
+          var searchTrip = [schweiz, searchPlace];
+          var flightPath=new google.maps.Polyline({
+            path:searchTrip,
+            strokeColor:"#FF0000",
+            strokeOpacity:0.9,
+            strokeWeight:3,
+            geodesic:true
+            });
+          lines.push(flightPath);
+          flightPath.setMap(map);
         }
-        document.getElementById("searchContent").style.display = "none";
+      }
+      else{
+        
         var Longitude = tab.response[0].laender.Longitude;
         var Latitude = tab.response[0].laender.Latitude;
+  
         for(var i = 0; i < lines.length; i++){
           lines[i].setMap(null);
         }
@@ -135,9 +153,29 @@ function search(){
           });
         lines.push(flightPath);
         flightPath.setMap(map);
-        // Meine Idee wie man Pagination machen könnte
-        // phpTable(tab);
-        createTable(tab);
+      }
+      $.ajax({
+        type:"POST",
+        url: searchUrl,
+        dataType: 'html',
+        data: {search: "true",
+          land: land,
+          art: art,
+          system: system,
+          kategorie: kategorie,
+          yearBegin: yearBegin,
+          yearEnd: yearEnd},
+        success: function(tab2){
+          searchData = "true";
+          $('#pagination-container').fadeTo(300, 0);
+          $('#pagination-container').html(tab2);
+          $('#pagination-container').fadeTo(200, 1);
+        },
+        error: function (response) {
+            console.log(response);
+            alert('error');
+        }
+      });
     },
     error: function (tab) {
         console.log(tab);

@@ -72,64 +72,22 @@
 		</fieldset>
 		<?php $this->Form->end() ?>
 	</div>
-	
-	
+
 	<div id="searchContent">
 
 	</div>
 
-	<div class="table" id="table">
-		<table>
-    	<thead>
-        	<tr>
-          		<th><?= $this->Paginator->sort('Code') ?></th>
-           		<th><?= $this->Paginator->sort('Art') ?></th>
-        	    <th><?= $this->Paginator->sort('System') ?></th>
-            	<th><?= $this->Paginator->sort('Kategorie') ?></th>
-            	<th><?= $this->Paginator->sort('Betrag') ?></th>
-            	<th><?= $this->Paginator->sort('Year') ?></th>
-        	</tr>
-    	</thead>
-    <tbody id="exportTbody">
-   <script type="text/javascript">
-   function phpTable(tab){
-		<?php foreach ($export2 as $export): ?>
-        <tr>
-            <td><?= h($export->Code) ?></td>
-            <td><?= h($export->Art) ?></td>
-            <td><?= h($export->System) ?></td>
-            <td><?= h($export->Kategorie) ?></td>
-            <td><?= $this->Number->format($export->Betrag) ?></td>
-            <td><?= h($export->Year) ?></td>
-        </tr>
+	<div class="table">
 
-    	<?php endforeach; ?>
-	}
-	</script>
-	<?php foreach ($export as $export): ?>
-        <tr>
-            <td><?= h($export->Code) ?></td>
-            <td><?= h($export->Art) ?></td>
-            <td><?= h($export->System) ?></td>
-            <td><?= h($export->Kategorie) ?></td>
-            <td><?= $this->Number->format($export->Betrag) ?></td>
-            <td><?= h($export->Year) ?></td>
-        </tr>
+	<div id="pagination-container">
+	<?php 
+	echo $this->element('../Export/ajax_table_part');
+	
+	?>
+	</div>
 
-    <?php endforeach; ?>
-    </tbody>
-    </table>
+	</div>
 
-    <div class="paginator" id="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
-    </div>
-
-    </div>
 	</body>
 
 	<script type="text/javascript">
@@ -139,9 +97,12 @@
 	var targetUrl = <?php echo json_encode($this->Url->build([
 		'action' => 'search',
 		'_ext' => 'json'])); ?>;
+	var searchUrl = <?php echo json_encode($this->Url->build([
+		'action' => 'search',
+		'_ext' => 'html'])); ?>;
 	</script>
 
-    <?php
+ <?php
 		echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
 		echo $this->Html->script('http://maps.googleapis.com/maps/api/js');
 		echo $this->Html->script('test');

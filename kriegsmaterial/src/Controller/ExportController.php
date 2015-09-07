@@ -4,6 +4,9 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 
+// TODO: Antillen not working for query, because ,
+
+
 /**
  * Export Controller
  *
@@ -47,15 +50,21 @@ class ExportController extends AppController
     }
 
     public function test(){
+
+
         $this->loadModel('Laender');
         
         $this->layout= '';
         
         $this->set('export', $this->paginate($this->Export));
         $this->set('_serialize', ['export']);
-        
+
+        if ($this->request->is('ajax')) {
+            $this->render('ajax_table_part');
+        }
+
         $queryAll = $this->Export->find('all')
-        ->where(['Year' => '2014'])
+        ->where(['Exportdate' => '2014.1.1'])
         ->contain(['Laender' => 
         function ($q){
             return $q->select(['Longitude', 'Latitude']);
@@ -96,7 +105,8 @@ class ExportController extends AppController
 
     public function search(){
         $data = [];
-        
+        $this->layout= '';
+
         if($this->request->is('ajax')) {
             $this->loadModel('Laender');
             $land = $this->request->data['land'];
@@ -130,10 +140,10 @@ class ExportController extends AppController
             $searchData = $this->Export->find('all')
             ->where($queryArray)
             ->where(function ($exp, $q) use (&$yearBegin) {
-                return $exp->gte('Year', $yearBegin);
+                return $exp->gte('Exportdate', $yearBegin);
             })
             ->where(function ($exp, $q) use (&$yearEnd){
-                return $exp->lte('Year', $yearEnd);
+                return $exp->lte('Exportdate', $yearEnd + 1);
             })
             ->contain(['Laender' => 
             function ($q){
@@ -141,60 +151,52 @@ class ExportController extends AppController
             }
             ]);
             $data['response'] = $searchData->all();
-        
-            $this->set('export2', $this->paginate($searchData));
-            $this->set('_serialize', ['export2']);
+                
+            if($this->RequestHandler->accepts('json')){
+                $this->set(compact('data'));
+                $this->set('_serialize', 'data');
+            }
+            else if($this->RequestHandler->accepts('html')){
+                $search = $this->request->data['search'];
+                if(strcmp($search, "true") == 0){
+                    $this->set('export', $this->paginate($searchData));
+                    $this->set('_serialize', ['export']);
+                }
+                else{
+                    $this->set('export', $this->paginate($this->Export));
+                    $this->set('_serialize', ['export']);
+                }
+                $this->render('ajax_table_part');
+            }
         }
-        $this->set(compact('data'));
-        $this->set('_serialize', 'data');
-
+       
     }
 
     public function test2(){
-        $this->loadModel('Laender');
-            $land = "Land";
-            $art = "Kriegsmaterial";
-            $system = "Wassenaar";
-            $kategorie = "KM1";
-            $yearBegin = 2006;
-            $yearEnd = 2014;
-            
-            if(strcmp($land, "Land") == 0)
-                $land = null;
-            if(strcmp($art, "Art") == 0)
-                $art = null;
-            if(strcmp($system, "System") == 0)
-                $system = null;
-            if(strcmp($kategorie, "Kategorie") == 0)
-                $kategorie = null;
-            if(strcmp($yearBegin, "Von") == 0)
-                $yearBegin = null;
-            if(strcmp($yearEnd, "Bis") == 0)
-                $yearEnd = null;
+        $this->layout= '';
+        $query = $this->Export->find('all')
+            ->where(['Kategorie' => 'KM1']);
 
-            debug($code = $this->Laender->find()
-            ->select('Code')
-            ->where(function ($exp) use (&$land) {
-                return $land === null ? $exp : $exp->eq('Land', $land);
-            }));
-            //->where(['Land' => $land]);
-            
-            $searchData = $this->Export->find('all')
-            ->where([$this->Export->aliasField('Code') => $code,
-                'Art' => $art,
-                'System' => $system,
-                'Kategorie' => $kategorie])
-            ->where(function ($exp, $q) use (&$yearBegin) {
-                return $exp->gte('Year', $yearBegin);
-            })
-            ->where(function ($exp, $q) use (&$yearEnd){
-                return $exp->lte('Year', $yearEnd);
-            })
-            ->contain(['Laender' => 
-            function ($q){
-                return $q->select(['Longitude', 'Latitude']);
+        
+
+        if ($this->request->is('ajax')) {
+            $search = $this->request->data['search'];
+            if(strcmp($search, "true") == 0){
+                
+                $this->set('export', $this->paginate($query));
+                $this->set('_serialize', ['export']);
             }
-            ])->all();
+            else{
+                $this->set('export', $this->paginate($this->Export));
+                $this->set('_serialize', ['export']);
+            }
+            $this->render('ajax_table_part');
+        }
+        else{
+            $this->set('export', $this->paginate($this->Export));
+            $this->set('_serialize', ['export']);
+            $this->render('ajax_table');
+        }
     }
 
     /**
