@@ -60,7 +60,7 @@ class ExportController extends AppController
         $this->set('export', $this->paginate($this->Export));
         $this->set('_serialize', ['export']);
 
-        if ($this->request->is('ajax')) {
+        if($this->request->is('ajax')){
             $this->render('ajax_table_part');
         }
 
@@ -174,7 +174,7 @@ class ExportController extends AppController
                 $this->set('_serialize', 'data');
             }
             else if($this->RequestHandler->accepts('html')){
-                $search = $this->request->data['search'];
+                $search = $this->request->data['searchSkandals'];
                 if(strcmp($search, "true") == 0){
                     $searchData = $this->Skandale->find()
                     ->where($queryArray)

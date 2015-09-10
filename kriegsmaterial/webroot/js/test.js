@@ -1,6 +1,7 @@
 var map;
 var lines = [];
 var searchData = "false";
+var searchSkandalsBol = "false";
 
 function initialize()
 {
@@ -56,28 +57,51 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 $(document).ready(function (){
   $(document).on('click', '#pagination-container a', function () {
-    var land = $('#laender').find(':selected').text();
-  var art = $('#art').find(':selected').text();
-  var system = $('#system').find(':selected').text();
-  var kategorie = $('#kategorie').find(':selected').text();
-  var yearBegin = $('#yearBegin').find(':selected').text();
-  var yearEnd = $('#yearEnd').find(':selected').text();
-
-    var thisHref = $(this).attr('href');
-    if (!thisHref) {
+    if(searchSkandalsBol.localeCompare("false") == 0){
+      var land = $('#laender').find(':selected').text();
+      var art = $('#art').find(':selected').text();
+      var system = $('#system').find(':selected').text();
+      var kategorie = $('#kategorie').find(':selected').text();
+      var yearBegin = $('#yearBegin').find(':selected').text();
+      var yearEnd = $('#yearEnd').find(':selected').text();
+  
+      var thisHref = $(this).attr('href');
+      if (!thisHref) {
+        return false;
+      }
+      $('#pagination-container').fadeTo(300, 0);
+      $('#pagination-container').load(thisHref, {search: searchData,
+        land: land,
+        art: art,
+        system: system,
+        kategorie: kategorie,
+        yearBegin: yearBegin,
+        yearEnd: yearEnd}, function() {
+        $(this).fadeTo(200, 1);
+      });
       return false;
     }
-    $('#pagination-container').fadeTo(300, 0);
-    $('#pagination-container').load(thisHref, {search: searchData,
-      land: land,
-      art: art,
-      system: system,
-      kategorie: kategorie,
-      yearBegin: yearBegin,
-      yearEnd: yearEnd}, function() {
-      $(this).fadeTo(200, 1);
-    });
-    return false;
+    if(searchSkandalsBol.localeCompare("true") == 0){
+      var landSkandal = $('#laenderSkandale').find(':selected').text();
+      var firma = $('#firma').find(':selected').text();
+      var yearBeginSkandale = $('#yearBeginSkandale').find(':selected').text();
+      var yearEndSkandale = $('#yearEndSkandale').find(':selected').text();
+
+      var thisHref = $(this).attr('href');
+      if (!thisHref) {
+        return false;
+      }
+      $('#pagination-container').fadeTo(300, 0);
+      $('#pagination-container').load(thisHref, {searchSkandals: searchSkandalsBol,
+        landSkandal: landSkandal,
+        firma: firma,
+        yearBeginSkandale: yearBeginSkandale,
+        yearEndSkandale: yearEndSkandale,
+      }, function() {
+        $(this).fadeTo(200, 1);
+      });
+      return false;
+    }
   });
 });
 
@@ -97,7 +121,7 @@ function searchSkandals(){
       },
     success: function(tab){
       var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
-      if(tab.response[0].laender.Latitude == null){
+      if(tab.response[0] == null || tab.response[0].laender.Latitude == null){
         var searchContent = document.getElementById("searchContent");
         searchContent.innerHTML = "Keine Daten für diese Parameter.";
         searchContent.style.display = "initial";
@@ -115,9 +139,6 @@ function searchSkandals(){
             lines[i].setMap(null);
           }
         for(var i = 0; i < tab.response.length; i++){
-          console.log("TEST");
-          console.log(tab.response.length);
-          console.log(tab.response[i].laender.Longitude);
           var Longitude = tab.response[i].laender.Longitude;
           var Latitude = tab.response[i].laender.Latitude;
           var searchPlace = new google.maps.LatLng(Latitude, Longitude);
@@ -169,14 +190,14 @@ function searchSkandals(){
         type:"POST",
         url: searchSkandalsHtml,
         dataType: 'html',
-        data: {search: "true",
+        data: {searchSkandals: "true",
           landSkandal: landSkandal,
           firma: firma,
           yearBeginSkandale: yearBeginSkandale,
           yearEndSkandale: yearEndSkandale,
         },
         success: function(tab2){
-          searchData = "true";
+          searchSkandalsBol = "true";
           $('#pagination-container').fadeTo(300, 0);
           $('#pagination-container').html(tab2);
           $('#pagination-container').fadeTo(200, 1);
@@ -227,9 +248,6 @@ function search(){
             lines[i].setMap(null);
           }
         for(var i = 0; i < tab.response.length; i++){
-          console.log("HI");
-          console.log(tab.response);
-          console.log(tab.response.length);
           var Longitude = tab.response[i].laender.Longitude;
           var Latitude = tab.response[i].laender.Latitude;
           var searchPlace = new google.maps.LatLng(Latitude, Longitude);
@@ -290,6 +308,7 @@ function search(){
           yearEnd: yearEnd},
         success: function(tab2){
           searchData = "true";
+          searchSkandalsBol = "false";
           $('#pagination-container').fadeTo(300, 0);
           $('#pagination-container').html(tab2);
           $('#pagination-container').fadeTo(200, 1);
