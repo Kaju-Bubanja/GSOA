@@ -25,15 +25,23 @@ main{
 	height: 100%;
 }
 
-#googleMap{
-	padding: 0;
-	margin: 0;
-	width: 80%;
-	height: 85%;
+#title{
+	padding-left: 10%;
 }
 
-#skandale{
-	width: 200px;
+#Betrag{
+	padding-bottom: 15px;
+}
+
+#legende{
+	text-align: left;
+	padding-bottom: 30px;
+}
+
+#googleMap{
+	margin-left: 10%;
+	width: 80%;
+	height: 85%;
 }
 
 #jahresdaten{
@@ -41,12 +49,11 @@ main{
 }
 
 #Selector{
-	padding-left: 220px;
+	padding-left: 10%;
 	width: 80%;
 }
 
 #searchContent{
-	padding-left: 220px;
 	width: 80%;
 }
 
@@ -60,16 +67,8 @@ button{
 	float: right;
 }
 
-aside{
-	float: left;
-	display: block;
-	margin-right: 20px;
-	width: 200px;
-	height: 100%;
-	min-height: 100%;
-}
-
 table{
+	padding-left: 10%
 	width: 100%;
 	color: black;
 	display: block;
@@ -146,7 +145,7 @@ ul.pagination li.active a {
 
 .table{
 	width: 80%;
-	padding-left: 220px;
+	padding-left: 10%;
 	text-align: center;
 	cellpadding: 0px; 
 	cellspacing: 0px;

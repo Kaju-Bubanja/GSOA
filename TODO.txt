@@ -1,0 +1,6 @@
+TODO:
+1. Make script for updating DB for next year
+2. Search display in URL
+3. Ajax links bei skandalen und bei leeren suchen funktioniert noch nicht
+5. Production Server
+6. Dual Use Güter in die DB laden

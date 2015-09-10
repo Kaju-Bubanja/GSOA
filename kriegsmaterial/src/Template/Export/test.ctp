@@ -9,33 +9,22 @@
 	</head>
 
 	<body>
-		<aside>
-			<?php
-			echo $this->Html->image('background.png', ['alt' => 'background']);
-			?>
-			<select id="skandale">
-				<option value="Skandal1">
-					Skandal1
-				</option>
-				<option value="Skandal2">
-					Skandal2
-				</option>
-				<option value="Skandal3">
-					Skandal3
-				</option>
-			</select>
-			
-		</aside>
-	
-		<main>
-			<h1>Schweizer Waffenexporte</h1>
-			<div id="googleMap"></div>
-		</main>
+
+	<main>
+		<h1 id="title">Schweizer Waffenexporte</h1>
+		<div id="googleMap"></div>
+	</main>
 	
 	<div id="Selector">
+		<p id="Betrag">Dies ergibt Waffen exportiert im Wert von <?php 
+			foreach($sumData as $sumData){
+				echo $this->Number->format($sumData->Betrag); 
+			}
+		?> Franken. </p>
 		<?php
 		echo $this->Form->create($laender, ['action' => 'search',
-			'type' => 'get']);
+			'type' => 'get',
+			'id' => 'search']);
 		
 		$outLaender = [];
 		$outArt = [];
@@ -52,7 +41,8 @@
 		}
 		foreach($kategorie as $kategorie){
 			array_push($outKategorie, h($kategorie->Kategorie));
-		} ?>
+		}
+		 ?>
 		<fieldset>
 			<?php
 				echo $this->Form->select('laender', $outLaender, ['empty' => 'Land', 'id' => 'laender']);
@@ -67,10 +57,39 @@
     				'maxYear' => 2014,
     				'empty' => 'Bis',
     				'id' => 'yearEnd']);
-				echo $this->Form->button('search', array('id' => 'submitButton', 'type' => 'button', 'onClick' => 'search()'));
+				echo $this->Form->button('Suche Exporte', array('id' => 'submitButton', 'type' => 'button', 'onClick' => 'search()'));
     		?>
 		</fieldset>
-		<?php $this->Form->end() ?>
+		<?php echo $this->Form->end() ?>
+
+		<?php
+		echo $this->Form->create($firmen, ['action' => 'searchskandals',
+			'type' => 'get',
+			'id' => 'searchSkandals']);
+		
+		$outFirma = [];
+		foreach($firmen as $firma){
+			array_push($outFirma, h($firma->Firma));
+		}
+		array_push($outFirma, "None");
+		?>
+		<fieldset>
+			<?php
+				echo $this->Form->select('laenderSkandal', $outLaender, ['empty' => 'Land', 'id' => 'laenderSkandale']);
+				echo $this->Form->select('firma', $outFirma, ['empty' => 'Firma', 'id' => 'firma']);
+				echo $this->Form->year('yearBeginSkandal', ['maxYear' => 2014,
+    				'minYear' => 1939,
+    				'empty' => 'Von',
+    				'id' => 'yearBeginSkandale']);
+				echo $this->Form->year('yearEndSkandal', ['minYear' => 1939,
+    				'maxYear' => 2014,
+    				'empty' => 'Bis',
+    				'id' => 'yearEndSkandale']);
+				echo $this->Form->button('Suche Skandale', array('id' => 'submitSkandals', 'type' => 'button', 'onClick' => 'searchSkandals()'));
+    		?>
+		</fieldset>
+		<?php echo $this->Form->end() ?>
+
 	</div>
 
 	<div id="searchContent">
@@ -85,13 +104,18 @@
 	
 	?>
 	</div>
-
+	
+	<div id="legende">
+	<?php 
+	echo $this->element('../Export/legende');
+	?>
+	</div>
+	
 	</div>
 
 	</body>
 
 	<script type="text/javascript">
-	var data = <?php echo json_encode($export); ?>;
 	var allData = <?php echo json_encode($allData); ?>;
 	var schweizKordinaten = <?php echo json_encode($schweizKordinaten); ?>;
 	var targetUrl = <?php echo json_encode($this->Url->build([
@@ -99,6 +123,12 @@
 		'_ext' => 'json'])); ?>;
 	var searchUrl = <?php echo json_encode($this->Url->build([
 		'action' => 'search',
+		'_ext' => 'html'])); ?>;
+	var searchSkandalsUrl = <?php echo json_encode($this->Url->build([
+		'action' => 'searchskandals',
+		'_ext' => 'json'])); ?>;
+	var searchSkandalsHtml = <?php echo json_encode($this->Url->build([
+		'action' => 'searchskandals',
 		'_ext' => 'html'])); ?>;
 	</script>
 

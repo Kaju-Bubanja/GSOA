@@ -13,12 +13,6 @@ function initialize()
 
   map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
   
-  /*
-  var arrow = {
-      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
-    };
-  */
-  
   var cities = [];
   var values = [];
   for(var i = 0; i < allData.length; i++){
@@ -50,7 +44,7 @@ function initialize()
     path:trips[i],
     strokeColor:"#FF0000",
     strokeOpacity:0.9,
-    strokeWeight:values[i]*3,
+    strokeWeight:values[i]*2,
     geodesic:true
     });
     flightPath.setMap(map);
@@ -87,6 +81,119 @@ $(document).ready(function (){
   });
 });
 
+function searchSkandals(){
+  var landSkandal = $('#laenderSkandale').find(':selected').text();
+  var firma = $('#firma').find(':selected').text();
+  var yearBeginSkandale = $('#yearBeginSkandale').find(':selected').text();
+  var yearEndSkandale = $('#yearEndSkandale').find(':selected').text();
+  $.ajax({
+    type:"POST",
+    url: searchSkandalsUrl,
+    dataType: 'json',
+    data: {landSkandal: landSkandal,
+      firma: firma,
+      yearBeginSkandale: yearBeginSkandale,
+      yearEndSkandale: yearEndSkandale,
+      },
+    success: function(tab){
+      var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
+      if(tab.response[0].laender.Latitude == null){
+        var searchContent = document.getElementById("searchContent");
+        searchContent.innerHTML = "Keine Daten für diese Parameter.";
+        searchContent.style.display = "initial";
+        $("#searchContent").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
+        return;
+      }
+      if(tab.sum[0].Betrag != null)
+        $("#Betrag").html("<p>Dies ergibt Material exportiert im Wert von " + tab.sum[0].Betrag.toLocaleString() + " Franken.</p>");
+      else{
+        $("#Betrag").html("<p>Es ist unbekannt wieviel die Materialien Wert waren.</p>");
+      }
+      document.getElementById("searchContent").style.display = "none";
+      if(landSkandal.localeCompare("Land") == 0){
+        for(var i = 0; i < lines.length; i++){
+            lines[i].setMap(null);
+          }
+        for(var i = 0; i < tab.response.length; i++){
+          console.log("TEST");
+          console.log(tab.response.length);
+          console.log(tab.response[i].laender.Longitude);
+          var Longitude = tab.response[i].laender.Longitude;
+          var Latitude = tab.response[i].laender.Latitude;
+          var searchPlace = new google.maps.LatLng(Latitude, Longitude);
+          var searchTrip = [schweiz, searchPlace];
+          var Betrag = tab.response[i].Betrag;
+          var kat = 1;
+          if(Betrag > 200000000)
+            kat = 10;
+          else if(Betrag > 150000000)
+            kat = 8;
+          else if(Betrag > 100000000)
+            kat = 6;
+          else if(Betrag > 50000000)
+            kat = 4;
+          else if(Betrag > 0)
+            kat = 1;
+          var flightPath=new google.maps.Polyline({
+            path:searchTrip,
+            strokeColor:"#FF0000",
+            strokeOpacity:0.9,
+            strokeWeight:kat * 2,
+            geodesic:true
+            });
+          lines.push(flightPath);
+          flightPath.setMap(map);
+        }
+      }
+      else{
+        
+        var Longitude = tab.response[0].laender.Longitude;
+        var Latitude = tab.response[0].laender.Latitude;
+  
+        for(var i = 0; i < lines.length; i++){
+          lines[i].setMap(null);
+        }
+        var searchPlace = new google.maps.LatLng(Latitude, Longitude);
+        var searchTrip = [schweiz, searchPlace];
+        var flightPath=new google.maps.Polyline({
+          path:searchTrip,
+          strokeColor:"#FF0000",
+          strokeOpacity:0.9,
+          strokeWeight:3,
+          geodesic:true
+          });
+        lines.push(flightPath);
+        flightPath.setMap(map);
+      }
+      $.ajax({
+        type:"POST",
+        url: searchSkandalsHtml,
+        dataType: 'html',
+        data: {search: "true",
+          landSkandal: landSkandal,
+          firma: firma,
+          yearBeginSkandale: yearBeginSkandale,
+          yearEndSkandale: yearEndSkandale,
+        },
+        success: function(tab2){
+          searchData = "true";
+          $('#pagination-container').fadeTo(300, 0);
+          $('#pagination-container').html(tab2);
+          $('#pagination-container').fadeTo(200, 1);
+        },
+        error: function (response) {
+            console.log(response);
+            alert('error2');
+        }
+      });
+    },
+    error: function (response) {
+      console.log(response);
+      alert('error');
+    }
+  });
+}
+
 function search(){
   var land = $('#laender').find(':selected').text();
   var art = $('#art').find(':selected').text();
@@ -106,28 +213,44 @@ function search(){
       yearEnd: yearEnd},
     success: function(tab){
       var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
-      if(tab.response.length < 1){
+      if(tab.response[0].Betrag == null){
         var searchContent = document.getElementById("searchContent");
         searchContent.innerHTML = "Keine Daten für diese Parameter.";
         searchContent.style.display = "initial";
         $("#searchContent").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
         return;
       }
+      $("#Betrag").html("<p>Dies ergibt Waffen exportiert im Wert von " + tab.sum[0].Betrag.toLocaleString() + " Franken.</p>");
       document.getElementById("searchContent").style.display = "none";
       if(land.localeCompare("Land") == 0){
         for(var i = 0; i < lines.length; i++){
             lines[i].setMap(null);
           }
         for(var i = 0; i < tab.response.length; i++){
+          console.log("HI");
+          console.log(tab.response);
+          console.log(tab.response.length);
           var Longitude = tab.response[i].laender.Longitude;
           var Latitude = tab.response[i].laender.Latitude;
           var searchPlace = new google.maps.LatLng(Latitude, Longitude);
           var searchTrip = [schweiz, searchPlace];
+          var Betrag = tab.response[i].Betrag;
+          var kat = 0;
+          if(Betrag > 200000000)
+            kat = 10;
+          else if(Betrag > 150000000)
+            kat = 8;
+          else if(Betrag > 100000000)
+            kat = 6;
+          else if(Betrag > 50000000)
+            kat = 4;
+          else if(Betrag > 0)
+            kat = 1;
           var flightPath=new google.maps.Polyline({
             path:searchTrip,
             strokeColor:"#FF0000",
             strokeOpacity:0.9,
-            strokeWeight:3,
+            strokeWeight:kat * 2,
             geodesic:true
             });
           lines.push(flightPath);
