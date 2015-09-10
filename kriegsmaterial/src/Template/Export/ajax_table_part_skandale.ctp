@@ -1,3 +1,6 @@
+<?php
+use Cake\Routing\Router
+?>
 <table width="100%">
 <tr>
 	<th><?= $this->Paginator->sort('Code') ?></th>
@@ -16,7 +19,7 @@ foreach ($skandale as $skandal):
         <td><?= h($skandal->DatumAnfang) ?></td>
         <td><?= h($skandal->DatumEnde) ?></td>
         <td><?= $this->Number->format($skandal->Betrag) ?></td>
-        <td><?= h($skandal->Link) ?></td>
+        <td><a href="<?= Router::fullBaseUrl("//5.196.178.165/index.php/") . str_replace(" ", "_", $skandal->Link) ?>" ><?= $skandal->Link ?></a></td>
 	</tr>
 <?php endforeach; ?>
 </table>

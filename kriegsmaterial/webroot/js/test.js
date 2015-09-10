@@ -56,7 +56,7 @@ function initialize()
 google.maps.event.addDomListener(window, 'load', initialize);
 
 $(document).ready(function (){
-  $(document).on('click', '#pagination-container a', function () {
+  $(document).on('click', '#pagination-container th a, #pagination a', function () {
     if(searchSkandalsBol.localeCompare("false") == 0){
       var land = $('#laender').find(':selected').text();
       var art = $('#art').find(':selected').text();
