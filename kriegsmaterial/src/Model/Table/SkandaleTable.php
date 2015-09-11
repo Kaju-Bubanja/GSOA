@@ -1,17 +1,17 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Laender;
+use App\Model\Entity\Skandale;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Laender Model
+ * Skandale Model
  *
  */
-class LaenderTable extends Table
+class SkandaleTable extends Table
 {
 
     /**
@@ -22,16 +22,12 @@ class LaenderTable extends Table
      */
     public function initialize(array $config)
     {
-        $this->table('laender');
-        $this->displayField('Code');
-        $this->primaryKey('Code');
-        $this->hasMany('Export', [
+        $this->table('skandale');
+        $this->displayField('Id');
+        $this->primaryKey('Id');
+        $this->belongsTo('Laender', [
             'foreignKey' => 'Code'
         ]);
-        $this->hasMany('Skandale', [
-            'foreignKey' => 'Code'
-        ]);
-        
     }
 
     /**
@@ -43,24 +39,30 @@ class LaenderTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->allowEmpty('Code', 'create');
+            ->add('Id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('Id', 'create');
             
         $validator
-            ->allowEmpty('Kontinent');
+            ->requirePresence('Code', 'create')
+            ->notEmpty('Code');
             
         $validator
-            ->allowEmpty('Land');
+            ->allowEmpty('Firma');
             
         $validator
-            ->allowEmpty('LandFranz');
+            ->add('DatumAnfang', 'valid', ['rule' => 'date'])
+            ->allowEmpty('DatumAnfang');
             
         $validator
-            ->add('latitude', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('latitude');
+            ->add('DatumEnde', 'valid', ['rule' => 'date'])
+            ->allowEmpty('DatumEnde');
             
         $validator
-            ->add('longitude', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('longitude');
+            ->allowEmpty('Betrag');
+            
+        $validator
+            ->requirePresence('Link', 'create')
+            ->notEmpty('Link');
 
         return $validator;
     }

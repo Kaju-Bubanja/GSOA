@@ -17,6 +17,7 @@ html{
 body{
 	width: 100%;
 	height: 100%;
+	min-height: 100%;
 }
 
 main{
@@ -24,23 +25,130 @@ main{
 	height: 100%;
 }
 
-#googleMap{
-	padding: 0;
-	margin: 0;
-	width: 85%;
-	height: 85%;
+#title{
+	padding-left: 10%;
 }
 
-#skandale{
-	width: 200px;
+#Betrag{
+	padding-bottom: 15px;
+}
+
+#legende{
+	text-align: left;
+	padding-bottom: 30px;
+}
+
+#googleMap{
+	margin-left: 10%;
+	width: 80%;
+	height: 85%;
 }
 
 #jahresdaten{
 	width: 200px;
 }
 
-aside{
-	float: left;
-	margin-right: 20px;
-	width: 200px;
+#Selector{
+	padding-left: 10%;
+	width: 80%;
 }
+
+#searchContent{
+	padding-left: 10%;
+	width: 80%;
+}
+
+fieldset{
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+button{
+	float: right;
+}
+
+table{
+	padding-left: 10%
+	width: 100%;
+	color: black;
+	display: block;
+}
+
+thead a{
+	color: white;
+	text-decoration: none;
+}
+
+th {
+    height: 20px;
+    text-align: left;
+}
+
+td {
+    padding: 5px;
+}
+
+table tr:nth-child(odd) td{
+	background-color: grey;
+}
+
+table tr:nth-child(even) td{
+	background-color: lightgrey;
+}
+
+thead th{
+	padding: 5px;
+	padding-bottom: 15px;
+}
+
+thead tr{
+	width: 100%;
+}
+
+thead{
+	display: inline-table;
+	width: 100%;
+}
+
+tbody{
+	display: inline-table;
+	width: 100%;
+}
+
+ul.pagination li.active a {
+  background: none repeat scroll 0% 0% #DCE47E;
+  font-weight: bold;
+  cursor: default;
+}
+
+.paginator{
+	width: 100%;
+}
+
+.paginator ul.pagination li {
+  float: none;
+  display: inline-block;
+}
+
+.pagination{
+	padding-top: 15px;
+}
+
+.pagination li{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.paginator p {
+	text-align: right;
+}
+
+.table{
+	width: 80%;
+	padding-left: 10%;
+	text-align: center;
+	cellpadding: 0px; 
+	cellspacing: 0px;
+}
+

@@ -94,7 +94,7 @@ CALL export_insert( 'Schweden', 'Kriegsmaterial', 'Wassenaar', 'KM3', 2006, 4106
 CALL export_insert( 'Schweden', 'Kriegsmaterial', 'Wassenaar', 'KM5', 2006, 2302972);
 CALL export_insert( 'Schweden', 'Kriegsmaterial', 'Wassenaar', 'KM6', 2006, 3678732);
 CALL export_insert( 'Schweden', 'Kriegsmaterial', 'Wassenaar', 'KM8', 2006, 329249);
-CALL export_insert( 'Slowakai', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2006, 16868);
+CALL export_insert( 'Slowakei', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2006, 16868);
 CALL export_insert( 'Slowenien', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2006, 12890);
 CALL export_insert( 'Slowenien', 'Kriegsmaterial', 'Wassenaar', 'KM3', 2006, 21548);
 CALL export_insert( 'Spanien', 'Kriegsmaterial', 'Wassenaar', 'KM1', 2006, 27286);

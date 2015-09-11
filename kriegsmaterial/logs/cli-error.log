@@ -52,3 +52,43 @@ Stack Trace:
 #4 {main}
 
 
+2015-09-09 18:28:55 Error: [Cake\Database\Exception] SQLSTATE[HY000]: General error: 1356 View 'kriegsmaterialexport.laenderexport' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them
+Stack Trace:
+#0 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'laenderexport', Array, Object(Cake\Database\Schema\Table))
+#1 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(65): Cake\Database\Schema\Collection->describe('laenderexport', Array)
+#2 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/ORM/Table.php(426): Cake\Database\Schema\CachedCollection->describe('laenderexport')
+#3 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(325): Cake\ORM\Table->schema()
+#4 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(205): Bake\Shell\Task\ModelTask->findHasMany(Object(Cake\ORM\Table), Array)
+#5 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(110): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(96): Bake\Shell\Task\ModelTask->bake('Skandale')
+#7 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/BakeShell.php(254): Bake\Shell\Task\ModelTask->main('Skandale')
+#8 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('skandale', 0)
+#9 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/BakeShell.php(257): Cake\Collection\Collection->each(Object(Closure))
+#10 [internal function]: Bake\Shell\BakeShell->all('skandale')
+#11 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/Shell.php(380): call_user_func_array(Array, Array)
+#12 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(204): Cake\Console\Shell->runCommand(Array, true)
+#13 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(175): Cake\Console\ShellDispatcher->_dispatch()
+#14 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(126): Cake\Console\ShellDispatcher->dispatch()
+#15 /home/masterchief/git/kriegsmaterial/bin/cake.php(33): Cake\Console\ShellDispatcher::run(Array)
+#16 {main}
+
+
+2015-09-09 18:30:21 Error: [Cake\Database\Exception] SQLSTATE[HY000]: General error: 1356 View 'kriegsmaterialexport.laenderexport' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them
+Stack Trace:
+#0 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'laenderexport', Array, Object(Cake\Database\Schema\Table))
+#1 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(65): Cake\Database\Schema\Collection->describe('laenderexport', Array)
+#2 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/ORM/Table.php(426): Cake\Database\Schema\CachedCollection->describe('laenderexport')
+#3 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(325): Cake\ORM\Table->schema()
+#4 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(205): Bake\Shell\Task\ModelTask->findHasMany(Object(Cake\ORM\Table), Array)
+#5 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(110): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 /home/masterchief/git/kriegsmaterial/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(96): Bake\Shell\Task\ModelTask->bake('Skandale')
+#7 [internal function]: Bake\Shell\Task\ModelTask->main('skandale')
+#8 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/Shell.php(391): call_user_func_array(Array, Array)
+#9 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/Shell.php(386): Cake\Console\Shell->runCommand(Array, false)
+#10 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(204): Cake\Console\Shell->runCommand(Array, true)
+#11 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(175): Cake\Console\ShellDispatcher->_dispatch()
+#12 /home/masterchief/git/kriegsmaterial/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(126): Cake\Console\ShellDispatcher->dispatch()
+#13 /home/masterchief/git/kriegsmaterial/bin/cake.php(33): Cake\Console\ShellDispatcher::run(Array)
+#14 {main}
+
+
