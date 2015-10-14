@@ -1,10 +1,3 @@
-/*TODO:
-
-- Find end of for loop condition
-- Special characters ?
-
-*/
-
 #include <iostream>
 #include <fstream>
 #include <string>

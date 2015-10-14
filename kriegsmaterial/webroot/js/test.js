@@ -234,7 +234,7 @@ function search(){
       yearEnd: yearEnd},
     success: function(tab){
       var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
-      if(tab.response[0].Betrag == null){
+      if(tab.response[0] == null || tab.response[0].Betrag == null){
         var searchContent = document.getElementById("searchContent");
         searchContent.innerHTML = "Keine Daten für diese Parameter.";
         searchContent.style.display = "initial";
