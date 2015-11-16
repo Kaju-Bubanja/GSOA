@@ -7,7 +7,6 @@ article, aside, footer, header, main, nav, section{
 }
 
 html{
-	background-color: black;
 	color: white;
 	font-family: Verdana;
 	width: 100%;
@@ -20,15 +19,6 @@ body{
 	min-height: 100%;
 }
 
-main{
-	width: auto;
-	height: 100%;
-}
-
-#title{
-	padding-left: 10%;
-}
-
 #Betrag{
 	padding-bottom: 15px;
 }
@@ -38,82 +28,13 @@ main{
 	padding-bottom: 30px;
 }
 
-#googleMap{
-	margin-left: 10%;
-	width: 80%;
-	height: 85%;
-}
-
 #jahresdaten{
 	width: 200px;
 }
 
-#Selector{
-	padding-left: 10%;
-	width: 80%;
-}
-
-#searchContent{
-	padding-left: 10%;
-	width: 80%;
-}
-
-fieldset{
-	border: none;
-	padding: 0px;
-	margin: 0px;
-}
-
-button{
-	float: right;
-}
-
-table{
-	padding-left: 10%
-	width: 100%;
-	color: black;
-	display: block;
-}
-
-thead a{
-	color: white;
-	text-decoration: none;
-}
-
-th {
-    height: 20px;
-    text-align: left;
-}
-
-td {
-    padding: 5px;
-}
-
-table tr:nth-child(odd) td{
-	background-color: grey;
-}
-
-table tr:nth-child(even) td{
-	background-color: lightgrey;
-}
-
-thead th{
-	padding: 5px;
-	padding-bottom: 15px;
-}
-
-thead tr{
-	width: 100%;
-}
-
-thead{
-	display: inline-table;
-	width: 100%;
-}
-
-tbody{
-	display: inline-table;
-	width: 100%;
+label{
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 ul.pagination li.active a {
@@ -142,13 +63,5 @@ ul.pagination li.active a {
 
 .paginator p {
 	text-align: right;
-}
-
-.table{
-	width: 80%;
-	padding-left: 10%;
-	text-align: center;
-	cellpadding: 0px; 
-	cellspacing: 0px;
 }
 

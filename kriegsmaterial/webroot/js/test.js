@@ -13,6 +13,7 @@ function initialize()
   };
 
   map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  google.maps.event.trigger(map, 'resize');
   
   var cities = [];
   var values = [];
@@ -214,6 +215,22 @@ function searchSkandals(){
     }
   });
 }
+
+$( document ).ready(function() {
+	$(".dropdownExport").change(function() {
+		  search();
+	});
+	$(".dropdownSkandal").change(function() {
+		  searchSkandals();
+	});
+	$("#searchSkandals").toggle();
+	$(".pickSearch").change(function() {
+		$("#searchSkandals").toggle();
+		$("#search").toggle();
+		$("#pickSearchExport").val("export");
+		$("#pickSearchSkandal").val("skandal");
+	});
+});
 
 function search(){
   var land = $('#laender').find(':selected').text();

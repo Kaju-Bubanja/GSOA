@@ -1,4 +1,4 @@
-<table width="100%">
+<table class="table table-striped">
 <tr>
 	<th><?= $this->Paginator->sort('Code') ?></th>
     <th><?= $this->Paginator->sort('Art') ?></th>
