@@ -8,7 +8,6 @@ article, aside, footer, header, main, nav, section{
 
 html{
 	color: white;
-	font-family: Verdana;
 	width: 100%;
 	height: 100%;
 }
@@ -23,6 +22,26 @@ body{
 	padding-bottom: 15px;
 }
 
+#paginator>.pagination>li>a, .pagination>li>span{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	color: #336666;
+}
+.form-control, label, p{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+
+table{
+	font-family: 'Roboto', sans-serif;
+}
+
+table a{
+	font-size: 16px;
+	font-weight: 700;
+	color: #336666;
+}
+
 #legende{
 	text-align: left;
 	padding-bottom: 30px;
@@ -33,35 +52,14 @@ body{
 }
 
 label{
-	margin-right: 20px;
+	margin-right: 10px;
 	margin-left: 20px;
 }
 
-ul.pagination li.active a {
-  background: none repeat scroll 0% 0% #DCE47E;
-  font-weight: bold;
+#paginator>ul.pagination li.active a {
+  background: none repeat scroll 0% 0% #336666;
+  border-color: #336666;
+  color: white;
   cursor: default;
-}
-
-.paginator{
-	width: 100%;
-}
-
-.paginator ul.pagination li {
-  float: none;
-  display: inline-block;
-}
-
-.pagination{
-	padding-top: 15px;
-}
-
-.pagination li{
-	padding-right: 5px;
-	padding-left: 5px;
-}
-
-.paginator p {
-	text-align: right;
 }
 

@@ -49,20 +49,20 @@
 						 ?>
 						<fieldset>
 							<div class="form-group">
-								<select id="pickSearchExport" class="pickSearch form-control" style="margin-left: 20px;">
+								<select id="pickSearchExport" class="pickSearch form-control">
 									<option value="export">Exportzahlen anzeigen</option>
 									<option value="skandal">Skandale anzeigen</option>
 								</select>
 							</div>
 							<div class="form-group">
     							<label for="lander">Wohin?</label>
-								<?php echo $this->Form->select('laender', $outLaender, ['empty' => 'Land', 'label' => 'sfs', 'id' => 'laender', 'class' => 'dropdownExport form-control']); ?>
+								<?php echo $this->Form->select('laender', $outLaender, ['empty' => 'Alle Staaten', 'label' => 'sfs', 'id' => 'laender', 'class' => 'dropdownExport form-control']); ?>
 							</div>
 							<div class="form-group">
     							<label for="art">Was?</label>						
-								<?php echo $this->Form->select('art', $outArt, ['empty' => 'Art', 'id' => 'art', 'class' => 'dropdownExport form-control']);
-								echo $this->Form->select('system', $outSystem, ['empty' => 'System', 'id' => 'system', 'class' => 'dropdownExport form-control']);
-								echo $this->Form->select('kategorie', $outKategorie, ['empty' => 'Kategorie', 'id' => 'kategorie', 'class' => 'dropdownExport form-control']); ?>
+								<?php echo $this->Form->select('art', $outArt, ['empty' => 'Alle Arten', 'id' => 'art', 'class' => 'dropdownExport form-control']);
+								echo $this->Form->select('system', $outSystem, ['empty' => 'Alle Systeme', 'id' => 'system', 'class' => 'dropdownExport form-control']);
+								echo $this->Form->select('kategorie', $outKategorie, ['empty' => 'Alle Kategorien', 'id' => 'kategorie', 'class' => 'dropdownExport form-control']); ?>
 							</div>
 							<div class="form-group">
     							<label for=yearBegin>Wann?</label><?php  
@@ -102,7 +102,7 @@
 							</div>
 							<div class="form-group">
     							<label for="laenderSkandal">Wohin?</label>
-								<?php echo $this->Form->select('laenderSkandal', $outLaender, ['empty' => 'Land', 'id' => 'laenderSkandale', 'class' => 'dropdownSkandal form-control']); ?>
+								<?php echo $this->Form->select('laenderSkandal', $outLaender, ['empty' => 'Alle Staaten', 'id' => 'laenderSkandale', 'class' => 'dropdownSkandal form-control']); ?>
 							</div>
 							<div class="form-group">
     							<label for="firma">Firma</label>
@@ -123,7 +123,7 @@
 				    		</div>
 						</fieldset>
 						<?php echo $this->Form->end() ?>
-						<p id="Betrag" style="margin-left: 20px; margin-top: 20px">Diese Auswahl umfasst Rüstungsexporte im Wert von <?php 
+						<p id="Betrag" style="margin-top: 20px">Diese Auswahl umfasst Rüstungsexporte im Wert von <?php 
 							foreach($sumData as $sumData){
 								echo $this->Number->format($sumData->Betrag); 
 							}
@@ -132,12 +132,17 @@
         		</div>
 			</div>
 
-			<div class="row" style="height: 65%; background-color: #cecece;">
-        		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" style="height: 100%; padding-bottom: 20px">
+			<div class="row" style="height: 60%; background-color: #336666;">
+        		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" style="height: 100%;">
         			<div id="googleMap" style="height: 100%;"></div>
         		</div>
 			</div>
-			<div class="row" style="background-color: #336666;">
+			<div class="row" style="background-color: #cecece;">
+        		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" style="padding-top: 20px;">
+        			<p style="font-size: 24px; color: white; font-weight: 700; font-family: 'Roboto Condensed', sans-serif">Die ausgewählten Exporte im Detail</p>
+        		</div>
+			</div>
+			<div class="row" style="background-color: #cecece;">
         		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" style="height: 100%;">		
 					<div id="searchContent">
 				

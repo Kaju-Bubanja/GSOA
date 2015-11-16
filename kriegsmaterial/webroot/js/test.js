@@ -258,7 +258,7 @@ function search(){
         $("#searchContent").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
         return;
       }
-      $("#Betrag").html("<p>Dies ergibt Waffen exportiert im Wert von " + tab.sum[0].Betrag.toLocaleString() + " Franken.</p>");
+      $("#Betrag").html("Diese Auswahl umfasst Rüstungsexporte im Wert von " + tab.sum[0].Betrag.toLocaleString() + " Franken.");
       document.getElementById("searchContent").style.display = "none";
       if(land.localeCompare("Land") == 0){
         for(var i = 0; i < lines.length; i++){
