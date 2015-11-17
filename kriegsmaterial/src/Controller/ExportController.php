@@ -215,14 +215,14 @@ class ExportController extends AppController
             
             $queryArray = [];
 
-            if(strcmp($land, "Land") != 0){
+            if(strcmp($land, "Alle Staaten") != 0){
                 $queryArray[$this->Export->aliasField('Code')] = $code;
             }
-            if(strcmp($art, "Art") != 0)
+            if(strcmp($art, "Alle Arten") != 0)
                 $queryArray['Art'] = $art;
-            if(strcmp($system, "System") != 0)
+            if(strcmp($system, "Alle Systeme") != 0)
                 $queryArray['System'] = $system;
-            if(strcmp($kategorie, "Kategorie") != 0)
+            if(strcmp($kategorie, "Alle Kategorien") != 0)
                 $queryArray['Kategorie'] = $kategorie;
             if(strcmp($yearBegin, "Von") == 0)
                 $yearBegin = 2006;
