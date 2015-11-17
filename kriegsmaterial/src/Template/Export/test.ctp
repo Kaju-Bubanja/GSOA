@@ -14,14 +14,14 @@
 	<body>
 		<div id="container" style="height: 100%">
 			<div class="row" style='font-family:"Roboto Condensed"; font-size: 52px; font-weight: 700; text-transform: uppercase; padding: 20px; background-color: #fcfcfc'>
-				<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+				<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
 				    <img alt="" src="http://i0.wp.com/kriegsmaterial.ch.augustus.sui-inter.net/kriegsmaterial/wp-content/uploads/2015/08/icon_1_100_b.png" />
 					Schweizer Waffenexporte
 				</div>
 			</div>
 
 			<div class="row" style="background-color: #cecece;">
-        		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1"">
+        		<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
         		
         			<div id="Selector" style="margin-top: 20px">
 						<?php
@@ -133,17 +133,17 @@
 			</div>
 
 			<div class="row" style="height: 60%; background-color: #336666;">
-        		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" style="height: 100%;">
+        		<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" style="height: 100%;">
         			<div id="googleMap" style="height: 100%;"></div>
         		</div>
 			</div>
 			<div class="row" style="background-color: #cecece;">
-        		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" style="padding-top: 20px;">
+        		<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" style="padding-top: 20px;">
         			<p style="font-size: 24px; color: white; font-weight: 700; font-family: 'Roboto Condensed', sans-serif">Die ausgewählten Exporte im Detail</p>
         		</div>
 			</div>
 			<div class="row" style="background-color: #cecece;">
-        		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" style="height: 100%;">		
+        		<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" style="height: 100%;">		
 					<div id="searchContent">
 				
 					</div>
