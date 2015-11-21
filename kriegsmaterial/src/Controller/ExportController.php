@@ -15,6 +15,11 @@ use App\Controller\AppController;
 class ExportController extends AppController
 {
 
+    public function beforeFilter(\Cake\Event\Event $event){
+        $this->Auth->allow(['test','search','searchskandals']);
+
+    }
+
     public function initialize()
     {
         parent::initialize();
@@ -32,6 +37,8 @@ class ExportController extends AppController
         $this->set('export', $this->paginate($this->Export));
         $this->set('_serialize', ['export']);
     }
+
+    
 
     /**
      * View method
@@ -115,6 +122,7 @@ class ExportController extends AppController
     }
 
     public function searchskandals(){
+
         $data = [];
         $this->layout= '';
 
@@ -197,6 +205,7 @@ class ExportController extends AppController
     }
 
     public function search(){
+
         $data = [];
         $this->layout= '';
 
