@@ -26,7 +26,7 @@ use Cake\Controller\Controller;
  */
 class AppController extends Controller
 {
-
+    /*
     public function isAuthorized($user){
         return false;
     }
@@ -37,11 +37,35 @@ class AppController extends Controller
      * Use this method to add common initialization code like loading components.
      *
      * @return void
-     */
+     *
     public function initialize()
     {
         // $this->layout= '';
         $this->loadComponent('Flash');
         parent::initialize();
+    } */
+
+
+    public function initialize()
+    {
+        $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'Users',
+                'action' => 'login'
+            ]
+        ]);
+
+        // Allow the display action so our pages controller
+        // continues to work.
+        $this->Auth->allow(['display']);
     }
 }
