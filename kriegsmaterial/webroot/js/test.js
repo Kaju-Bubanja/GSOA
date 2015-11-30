@@ -62,7 +62,7 @@ $(document).ready(function (){
       var land = $('#laender').find(':selected').text();
       var art = $('#art').find(':selected').text();
       var system = $('#system').find(':selected').text();
-      var kategorie = $('#kategorie').find(':selected').text();
+      var kategorie = $('#kategorie').find(':selected').val();
       var yearBegin = $('#yearBegin').find(':selected').text();
       var yearEnd = $('#yearEnd').find(':selected').text();
   
@@ -126,6 +126,7 @@ function searchSkandals(){
         var searchContent = document.getElementById("searchContent");
         searchContent.innerHTML = "Keine Daten für diese Parameter.";
         searchContent.style.display = "initial";
+        $("#pagination-container").hide();
         $("#searchContent").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
         return;
       }
@@ -135,7 +136,7 @@ function searchSkandals(){
         $("#Betrag").html("<p>Es ist unbekannt wieviel die Materialien Wert waren.</p>");
       }
       document.getElementById("searchContent").style.display = "none";
-      if(landSkandal.localeCompare("Land") == 0){
+      if(landSkandal.localeCompare("Alle Staaten") == 0){
         for(var i = 0; i < lines.length; i++){
             lines[i].setMap(null);
           }
@@ -236,7 +237,7 @@ function search(){
   var land = $('#laender').find(':selected').text();
   var art = $('#art').find(':selected').text();
   var system = $('#system').find(':selected').text();
-  var kategorie = $('#kategorie').find(':selected').text();
+  var kategorie = $('#kategorie').find(':selected').val();
   var yearBegin = $('#yearBegin').find(':selected').text();
   var yearEnd = $('#yearEnd').find(':selected').text();
   $.ajax({
@@ -255,12 +256,13 @@ function search(){
         var searchContent = document.getElementById("searchContent");
         searchContent.innerHTML = "Keine Daten für diese Parameter.";
         searchContent.style.display = "initial";
+        $("#pagination-container").hide();
         $("#searchContent").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
         return;
       }
       $("#Betrag").html("Diese Auswahl umfasst Rüstungsexporte im Wert von " + tab.sum[0].Betrag.toLocaleString() + " Franken.");
       document.getElementById("searchContent").style.display = "none";
-      if(land.localeCompare("Land") == 0){
+      if(land.localeCompare("Alle Staaten") == 0){
         for(var i = 0; i < lines.length; i++){
             lines[i].setMap(null);
           }

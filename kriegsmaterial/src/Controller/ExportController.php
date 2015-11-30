@@ -98,7 +98,7 @@ class ExportController extends AppController
 
         $laender = $this->Laender->find()
             ->select(['Land'])
-            ->where(['Code !=' => 'CH'])
+            ->where(["Code != 'CH' AND Code IN (SELECT Code FROM export)"])
             ->order(['Land' => 'ASC']);
         $art = $this->Art->find()
             ->select(['Art'])
@@ -107,8 +107,9 @@ class ExportController extends AppController
             ->select(['System'])
             ->order(['System' => 'ASC']);
         $kategorie = $this->Kategorie->find()
+        	->where('Kategorie IN (SELECT Kategorie FROM export)')
             ->select(['Kategorie'])
-            ->order(['Kategorie' => 'ASC']);
+            ->order(['Id' => 'ASC']);
         $firmen = $this->Firmen->find()
             ->select(['Firma'])
             ->order(['Firma' => 'ASC']);
@@ -231,7 +232,7 @@ class ExportController extends AppController
                 $queryArray['Art'] = $art;
             if(strcmp($system, "Alle Systeme") != 0)
                 $queryArray['System'] = $system;
-            if(strcmp($kategorie, "Alle Kategorien") != 0)
+            if(!empty($kategorie))
                 $queryArray['Kategorie'] = $kategorie;
             if(strcmp($yearBegin, "Von") == 0)
                 $yearBegin = 2006;
