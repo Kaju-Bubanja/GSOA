@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mtool\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-06 09:25+0100\n"
+"PO-Revision-Date: 2015-11-27 15:42+0000\n"
+"Last-Translator: andreas weibel\n"
+"Language-Team: mtool SP Schweiz\n"
+"Language: German (Switzerland)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Loco https://localise.biz\n"
+"X-Loco-Source-Locale: en_GB\n"
+"X-Loco-Target-Locale: de_CH\n"
+"X-Loco-Project-Id: 7317\n"
+"X-Loco-Api-Version: 1.0.13"
+
+msgid "KM1"
+msgstr "Hand- und Faustfeuerwaffen jeglichen Kalibers"
+
+msgid "KM2"
+msgstr "Waffen jeglichen Kalibers (ausser Hand- und Faustfeuerwaffen)"
+
+msgid "KM3"
+msgstr "Munition"
+
+msgid "KM4"
+msgstr "Bomben, Torpedos, Raketen, Flugkörper"
+
+msgid "KM5"
+msgstr "Feuerleiteinrichtungen"
+
+msgid "KM6"
+msgstr "Panzer- und andere Landfahrzeuge"
+
+msgid "KM7"
+msgstr "Tränengase und andere Reizstoffe"
+
+msgid "KM8"
+msgstr "Militärische Explosiv-, Brenn- und Treibstoffe"
+
+msgid "KM9"
+msgstr "Kriegsschiffe"
+
+msgid "KM10"
+msgstr "Bemannte und unbemannte Luftfahrzeuge"
+
+msgid "KM11"
+msgstr "Elektronische Ausrüstung "
+
+msgid "KM12"
+msgstr "Waffensysteme mit hoher kinetischer Energie"
+
+msgid "KM13"
+msgstr "Spezialpanzer- und Schutzausrüstungen"
+
+msgid "KM16"
+msgstr "Schmiedestücke, Gussstücke und andere unfertige Erzeugnisse"
+
+msgid "KM17"
+msgstr "Verschiedene Ausrüstungsgegenstände (Roboter etc.)"
+
+msgid "KM19"
+msgstr "Strahlenwaffen-Systeme (z.B. Laser-Systeme)"
+
+msgid "KM20"
+msgstr "Kryogenische (Tieftemparatur-) und supraleitende Ausrüstung"
+
+msgid "KM21"
+msgstr "Software"

@@ -14,7 +14,7 @@ foreach ($export as $export):
 		<td><?= h($export->Code) ?></td>
         <td><?= h($export->Art) ?></td>
         <td><?= h($export->System) ?></td>
-        <td><?= h($export->Kategorie) ?></td>
+        <td><?= __($export->Kategorie) ?></td>
         <td class="text-right" style="padding-right: 30px"><?= $this->Number->format($export->Betrag) ?> CHF</td>
         <td><?= h($export->Exportdate->format('Y.m.d')) ?></td>
 	</tr>

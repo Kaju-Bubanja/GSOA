@@ -44,7 +44,7 @@
 							array_push($outSystem, h($system->System));
 						}
 						foreach($kategorie as $kategorie){
-							array_push($outKategorie, h($kategorie->Kategorie));
+							$outKategorie[h($kategorie->Kategorie)] = __($kategorie->Kategorie);
 						}
 						 ?>
 						<fieldset>
