@@ -70,21 +70,6 @@ class ExportController extends AppController
         if($this->request->is('ajax')){
             $this->render('ajax_table_part');
         }
-
-        $queryAll = $this->Export->find()
-        ->select(['Betrag', $this->Laender->aliasField('Longitude'), $this->Laender->aliasField('Latitude')])
-        ->where(['Exportdate' => '2014.1.1'])
-        ->contain(['Laender' => 
-        function ($q){
-            return $q->select(['Longitude', 'Latitude']);
-        }
-        ])->all();
-        
-        $querySum = $this->Export->find();
-        $sumData = $querySum->select(['Betrag' => $querySum->func()->sum('Betrag')])->all();
-
-        $this->set('sumData', $sumData);
-        $this->set('allData', $queryAll);
         
         $querySwiss = $this->Laender->find()
             ->select(['Latitude', 'Longitude'])
@@ -97,10 +82,11 @@ class ExportController extends AppController
         $this->loadModel('Kategorie');
 
         $laender = $this->Laender->find()
-            ->select(['Land'])
-            ->where(["Code != 'CH' AND Code IN (SELECT Code FROM export)"])
+            ->select(['Land', 'LandFranz', 'Code', 'Latitude', 'Longitude'])
+            ->where(["Code != 'CH' AND Code IN (SELECT Code FROM export) OR Code IN (SELECT Code FROM skandale)"])
             ->order(['Land' => 'ASC']);
         $art = $this->Art->find()
+        	->where("Art NOT LIKE 'Dual%'")
             ->select(['Art'])
             ->order(['Art' => 'ASC']);
         $system = $this->System->find()
@@ -113,7 +99,7 @@ class ExportController extends AppController
         $firmen = $this->Firmen->find()
             ->select(['Firma'])
             ->order(['Firma' => 'ASC']);
-
+        
         $this->set('laender', $laender);
         $this->set('art', $art);
         $this->set('system', $system);
@@ -141,7 +127,7 @@ class ExportController extends AppController
             
             $queryArray = [];
 
-            if(strcmp($land, "Land") != 0){
+            if(strcmp($land, "Alle Staaten") != 0){
                 $queryArray[$this->Skandale->aliasField('Code')] = $code;
             }
             if(strcmp($firma, "Firma") != 0)
@@ -164,7 +150,7 @@ class ExportController extends AppController
                     })->all();
 
                 $searchData = $this->Skandale->find()
-                    ->select(['Betrag', $this->Laender->aliasField('Longitude'), $this->Laender->aliasField('Latitude')])
+                    ->select(['Code'],['Land'])
                     ->where($queryArray)
                     ->where(function ($exp, $q) use (&$yearBegin) {
                         return $exp->gte('DatumAnfang', $yearBegin);
@@ -174,11 +160,12 @@ class ExportController extends AppController
                     })
                     ->contain(['Laender' => 
                     function ($q){
-                        return $q->select(['Longitude', 'Latitude']);
+                        return $q->select(['Land', 'LandFranz']);
                     }
                     ])->all();
                 $data['response'] = $searchData;
                 $data['sum'] = $sumData;
+                
                 $this->set(compact('data'));
                 $this->set('_serialize', 'data');
             }
@@ -192,7 +179,13 @@ class ExportController extends AppController
                     })
                     ->where(function ($exp, $q) use (&$yearEnd){
                         return $exp->lte('DatumAnfang', $yearEnd + 1);
-                    });
+                    })
+                    ->contain(['Laender' =>
+                    		function ($q){
+                    			return $q->select(['Land', 'LandFranz']);
+                    		}
+                    ]);
+                    
                     $this->set('skandale', $this->paginate($searchData));
                     $this->set('_serialize', ['skandale']);
                 }
@@ -209,7 +202,6 @@ class ExportController extends AppController
 
         $data = [];
         $this->layout= '';
-
         if($this->request->is('ajax')) {
             $this->loadModel('Laender');
             $land = $this->request->data['land'];
@@ -218,7 +210,7 @@ class ExportController extends AppController
             $kategorie = $this->request->data['kategorie'];
             $yearBegin = $this->request->data['yearBegin'];
             $yearEnd = $this->request->data['yearEnd'];
-            
+	        
             $code = $this->Laender->find()
             ->select('Code')
             ->where(['Land' => $land]);
@@ -230,7 +222,7 @@ class ExportController extends AppController
             }
             if(strcmp($art, "Alle Arten") != 0)
                 $queryArray['Art'] = $art;
-            if(strcmp($system, "Alle Systeme") != 0)
+            if(!empty($system))
                 $queryArray['System'] = $system;
             if(!empty($kategorie))
                 $queryArray['Kategorie'] = $kategorie;
@@ -251,8 +243,10 @@ class ExportController extends AppController
                         return $exp->lte('Exportdate', $yearEnd + 1);
                     })->all();
 
-                $searchData = $this->Export->find()
-                    ->select(['Betrag', $this->Laender->aliasField('Longitude'), $this->Laender->aliasField('Latitude')])
+                    
+                $searchDataTmp2 = $this->Export->find();
+                $searchData = $searchDataTmp2
+                    ->select(['Code', 'Betrag' => $searchDataTmp2->func()->sum('Betrag')])
                     ->where($queryArray)
                     ->where(function ($exp, $q) use (&$yearBegin) {
                         return $exp->gte('Exportdate', $yearBegin);
@@ -260,11 +254,9 @@ class ExportController extends AppController
                     ->where(function ($exp, $q) use (&$yearEnd){
                         return $exp->lte('Exportdate', $yearEnd + 1);
                     })
-                    ->contain(['Laender' => 
-                    function ($q){
-                        return $q->select(['Longitude', 'Latitude']);
-                    }
-                    ])->all();
+                    ->group('Code')
+                    ->all();
+                 
                 $data['response'] = $searchData;
                 $data['sum'] = $sumData;
                 $this->set(compact('data'));
@@ -280,7 +272,12 @@ class ExportController extends AppController
                     })
                     ->where(function ($exp, $q) use (&$yearEnd){
                         return $exp->lte('Exportdate', $yearEnd + 1);
-                    });
+                    })
+                    ->contain(['Laender' =>
+                    		function ($q){
+                    			return $q->select(['Land', 'LandFranz']);
+                    		}
+                    ]);
                     $this->set('export', $this->paginate($searchData));
                     $this->set('_serialize', ['export']);
                 }

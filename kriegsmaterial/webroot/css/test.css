@@ -51,6 +51,10 @@ table a{
 	width: 200px;
 }
 
+#myModalBody ul{
+	padding: 20px;
+}
+
 label{
 	margin-right: 6px;
 	margin-left: 15px;

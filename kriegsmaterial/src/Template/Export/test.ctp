@@ -5,10 +5,12 @@
 		echo $this->Html->charset();
 		echo $this->Html->css('test');
 		echo $this->Html->css('/bootstrap/css/bootstrap.min');
+		echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
+		echo $this->Html->script('/bootstrap/js/bootstrap.js');
 		?>
 		<link rel='stylesheet' id='font-1-css'  href='http://fonts.googleapis.com/css?family=Roboto%3A500%2C900%2C100%2C300%2C700%2C400&#038;ver=4.3.1' type='text/css' media='all' />
 		<link rel='stylesheet' id='font-2-css'  href='http://fonts.googleapis.com/css?family=Roboto+Condensed%3A700%2C300%2C400&#038;ver=4.3.1' type='text/css' media='all' />
-		<title>Schweizer Waffenexporte</title>
+		<title>Schweizer Waffenexporte: Die Kriegsmaterial-Statistik</title>
 	</head>
 
 	<body>
@@ -41,7 +43,7 @@
 							array_push($outArt, h($art->Art));
 						}
 						foreach($system as $system){
-							array_push($outSystem, h($system->System));
+							$outSystem[h($system->System)] = __($system->System);
 						}
 						foreach($kategorie as $kategorie){
 							$outKategorie[h($kategorie->Kategorie)] = __($kategorie->Kategorie);
@@ -95,7 +97,7 @@
 						?>
 						<fieldset>
 							<div class="form-group">
-								<select id="pickSearchSkandal" class="pickSearch form-control" style="margin-left: 20px;">
+								<select id="pickSearchSkandal" class="pickSearch form-control">
 									<option value="export">Exportzahlen anzeigen</option>
 									<option value="skandal">Skandale anzeigen</option>
 								</select>
@@ -123,11 +125,14 @@
 				    		</div>
 						</fieldset>
 						<?php echo $this->Form->end() ?>
-						<p id="Betrag" style="margin-top: 20px">Diese Auswahl umfasst Rüstungsexporte im Wert von <?php 
-							foreach($sumData as $sumData){
-								echo $this->Number->format($sumData->Betrag); 
-							}
-						?> Franken. </p>
+						<p id="Betrag" style="margin-top: 20px"></p>
+					</div>
+        		</div>
+			</div>
+			<div class="row" style="background-color: #cecece;">
+        		<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1" style="padding-bottom: 20px;">
+					<div id="facebook">
+						<script src="http://connect.facebook.net/de_DE/all.js#xfbml=1"></script><fb:like href="http://maps.kriegsmaterial.ch/" layout="button_count" show_faces="false" width="160" action="recommend" font="arial" colorscheme="dark"></fb:like>
 					</div>
         		</div>
 			</div>
@@ -171,7 +176,6 @@
 	</body>
 
 	<script type="text/javascript">
-	var allData = <?php echo json_encode($allData); ?>;
 	var schweizKordinaten = <?php echo json_encode($schweizKordinaten); ?>;
 	var targetUrl = <?php echo json_encode($this->Url->build([
 		'action' => 'search',
@@ -185,10 +189,19 @@
 	var searchSkandalsHtml = <?php echo json_encode($this->Url->build([
 		'action' => 'searchskandals',
 		'_ext' => 'html'])); ?>;
+
+	var staaten = [];
+	<?php 
+		foreach($laender as $land){
+			echo "staaten['" . h($land->Code) . "'] = {};\n";
+			echo "staaten['" . h($land->Code) . "'].Name = '" . h($land->Land) . "';\n";
+			echo "staaten['" . h($land->Code) . "'].Longitude = '" . h($land->Longitude) . "';\n";
+			echo "staaten['" . h($land->Code) . "'].Latitude = '" . h($land->Latitude) . "';\n";
+		}
+		?>
 	</script>
 
  <?php
-		echo $this->Html->script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
 		echo $this->Html->script('http://maps.googleapis.com/maps/api/js');
 		echo $this->Html->script('test');
 		echo $this->Html->script('pulse');

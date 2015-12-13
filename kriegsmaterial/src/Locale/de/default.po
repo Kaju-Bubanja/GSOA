@@ -71,3 +71,18 @@ msgstr "Kryogenische (Tieftemparatur-) und supraleitende Ausrüstung"
 
 msgid "KM21"
 msgstr "Software"
+
+msgid "ChKV"
+msgstr "Chemikalienkontrollverordnung"
+
+msgid "NSGI"
+msgstr "Nukleargüter, Teil 1"
+
+msgid "NSGII"
+msgstr "Nukleargüter, Teil 2"
+
+msgid "ML"
+msgstr "Liste der besonderen mil. Güter"
+
+msgid "Anhang 5"
+msgstr "Anhang 5 der GKV"
