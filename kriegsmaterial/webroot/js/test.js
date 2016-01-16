@@ -2,14 +2,14 @@ var map;
 var lines = [];
 var searchData = "false";
 var searchSkandalsBol = "false";
-var infowindows = [];
+var infowindows = {};
 var markers = [];
 
 function initialize()
 {
   var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
   var mapProp = {
-    center:schweiz,
+    center:new google.maps.LatLng(20, 10),
     zoom:3,
     mapTypeId:google.maps.MapTypeId.HYBRID
   };
@@ -32,11 +32,12 @@ function initialize()
 	        return false;
 	      }
 	      $('#pagination-container').fadeTo(300, 0);
-	      $('#pagination-container').load(thisHref, {search: searchData,
+	      $('#pagination-container').load(thisHref.replace("search", "search.html"), {search: searchData,
 	        land: land,
 	        art: art,
 	        system: system,
 	        kategorie: kategorie,
+	        search: "true",
 	        yearBegin: yearBegin,
 	        yearEnd: yearEnd}, function() {
 	        $(this).fadeTo(200, 1);
@@ -66,7 +67,7 @@ function initialize()
 	    }
 	  });
 	  
-		$('#pagination-container').on('click', '.skandalLink', function(){
+		$('#container').on('click', '.skandalLink', function(){
 			$('#myModalLabel').html($(this).text());
 			$('#myModalBody').text("");
 			$.ajax({
@@ -82,13 +83,13 @@ function initialize()
 			return false;
 		});
 	  
-	  if(window.location.href.indexOf("skandal") > -1){
+	  if(window.location.href.indexOf("skandal") > -1 || window.location.href.indexOf("scandal") > -1 ){
 		  $("#search").toggle();
 		  $("#searchSkandals").toggle();
 		  $("#pickSearchSkandal").val("skandal");
 		  searchSkandals();
 	  } else {
-		  search();
+		  search(true);
 	  }
 	});
 }
@@ -151,8 +152,14 @@ function searchSkandals(){
           lines.push(flightPath);
           flightPath.setMap(map);
           
+          var txt = "<div class='km-marker'><strong>" + staaten[tab.response[i].Code].Name + "</strong><br>";
+          for(var k = 0; k < staaten[tab.response[i].Code].Skandale.length; k++){
+        	  txt = txt + "<a class='skandalLink' href='http://kriegsmaterial.ch/kriegsmaterialwiki/index.php/" + staaten[tab.response[i].Code].Skandale[k].replace(" ", "_") + "'>" + staaten[tab.response[i].Code].Skandale[k] + "</a><br/>";
+            }
+          txt = txt + "</div>";
+          
           var infowindow = new google.maps.InfoWindow({
-      	    content: staaten[tab.response[i].Code].Name
+      	    content: txt
       	  });
         
         infowindows[tab.response[i].Code] = infowindow;
@@ -161,10 +168,11 @@ function searchSkandals(){
     	    map: map,
     	    position: searchPlace,
     	    title: tab.response[i].Code,
+    	    zIndex: 999,
     	    icon: {
     	      path: google.maps.SymbolPath.CIRCLE,
     	      scale: 4,
-    	    strokeColor: "lightgrey"
+    	    strokeColor: "black"
     	    }
     	  });
       
@@ -172,6 +180,9 @@ function searchSkandals(){
 	      markers.push(marker);
 	      
 	      marker.addListener('click', function() {
+	        	for (var key in infowindows) {
+	        		infowindows[key].close();
+	        	}
 	          infowindows[this.getTitle()].open(map, this);
 	        });
           
@@ -225,11 +236,17 @@ $( document ).ready(function() {
 	
 	$('#art').change(function(){
 		if($(this).val() == 0){
-			$('#system').show();
+			$('#system').hide();
+			$('#system').val(null);
 			$('#kategorie').hide();
 			$('#kategorie').val(null);
 			search();
 		} else if ($(this).val() == 1){
+			$('#kategorie').hide();
+			$('#kategorie').val(null);
+			$('#system').show();
+			search();
+		} else if ($(this).val() == 2){
 			$('#kategorie').show();
 			$('#system').hide();
 			$('#system').val(null);
@@ -239,11 +256,12 @@ $( document ).ready(function() {
 			$('#system').val(null);
 			$('#kategorie').hide();
 			$('#kategorie').val(null);
+			search();
 		}
 	});
 });
 
-function search(){
+function search(isInit){
 	
   var land = $('#laender').find(':selected').text();
   var art = $('#art').find(':selected').text();
@@ -263,6 +281,7 @@ function search(){
       yearBegin: yearBegin,
       yearEnd: yearEnd},
     success: function(tab){
+      searchSkandalsBol = "false";
       var schweiz=new google.maps.LatLng(schweizKordinaten[0].Latitude, schweizKordinaten[0].Longitude);
       if(tab.response[0] == null ){
         var searchContent = document.getElementById("searchContent");
@@ -270,9 +289,11 @@ function search(){
         searchContent.style.display = "initial";
         $("#pagination-container").hide();
         $("#searchContent").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
+        $("#Betrag").html("Keine Daten für diese Parameter.");
+        $("#Betrag").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
         return;
       }
-      $("#Betrag").html("Diese Auswahl umfasst Rüstungsexporte im Wert von " + tab.sum[0].Betrag.toLocaleString() + " Franken.");
+      $("#Betrag").html("Diese Auswahl umfasst Rüstungsexporte im Wert von " + tab.sum[0].Betrag.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1\'') + " Franken.");
       document.getElementById("searchContent").style.display = "none";
         var maxBetrag = 0;
       	for(var i = 0; i < lines.length; i++){
@@ -325,32 +346,22 @@ function search(){
         markers.push(marker);
         
         marker.addListener('click', function() {
+        	for (var key in infowindows) {
+        		infowindows[key].close();
+        	}
         	infowindows[this.getTitle()].open(map, this);
           });
         }
-      $.ajax({
-        type:"POST",
-        url: searchUrl,
-        dataType: 'html',
-        data: {search: "true",
-          land: land,
-          art: art,
-          system: system,
-          kategorie: kategorie,
-          yearBegin: yearBegin,
-          yearEnd: yearEnd},
-        success: function(tab2){
-          searchData = "true";
-          searchSkandalsBol = "false";
-          $('#pagination-container').fadeTo(300, 0);
-          $('#pagination-container').html(tab2);
-          $('#pagination-container').fadeTo(200, 1);
-        },
-        error: function (response) {
-            console.log(response);
-            alert('error');
-        }
-      });
+        $('#pagination-container').load(searchUrl, {search: searchData,
+	        land: land,
+	        art: art,
+	        system: system,
+	        kategorie: kategorie,
+	        yearBegin: yearBegin,
+	        search: "true",
+	        yearEnd: yearEnd}, function() {
+	        $(this).fadeTo(200, 1);
+	      });
     },
     error: function (tab) {
         console.log(tab);

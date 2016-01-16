@@ -1,11 +1,15 @@
 <h2>Legende</h2>
-<h3>Art</h3>
-Kriegsmaterial: Kriegsmaterial
-<p>Besondere Militärische Güter: Eine spezielle Art von Kriegsmaterial, welche nur die Schweiz kennt. Die grössten Abnehmer von BMG sind China, Russland und Saudi Arabien. </p>
-Dual Use Güter: Diese Waren können sowohl zivil, als auch militärisch genutzt werden.
-<h3>System</h3>
-Anhang 5: Der Anhang zu Besonderen Militärischen Gütern in der Güter Kontroll Verordnung (GKV).
+<h3>Quelle</h3>
+<p>Staatssekretariat für Wirtschaft SECO, Exportkontrollen</p>
+<h3>Begriffe</h3>
+<p>Besondere militärische Güter: Eine spezielle Art von Rüstungsgütern, welche nur die Schweiz kennt. Besondere militärische Güter unterstehen nicht dem Kriegsmaterialgesetz.</p>
+<p>Dual Use Güter: Diese Güter können sowohl zivil als auch militärisch genutzt werden.</p>
+<h3>Systeme</h3>
+<p>Anhang 5: Der Anhang 5 der Güterkontrollverordnung (GKV). Umfasst Güter, die nicht international abgestimmten Ausfuhrkontrollen unterliegen.</p>
 <p>ChKV: Chemikalien der Chemikalienkontrollverordnung.</p>
-ML: Der Anhang zu Besonderen Militärischen Gütern im Wassenaar-Abkommen
+<p>ML: Der Anhang zu besonderen militärischen Gütern in der Güterkontrollverordnung (GKV)</p>
 <p>NSGI & NSGII: Nukleargüter des Anhangs 2, Teil 1 & 2 in der GKV.</p>
-Wassenaar: Das Wassenar-Abkommen.
+<p>Wassenaar: Das Wassenar-Abkommen regelt auf internationaler Ebene, welche Güter zu welcher Güterkategorie gehören.</p>
+<h3>Kontakt</h3>
+<p>Gruppe für eine Schweiz ohne Armee, GSoA</p>
+<p>gsoa@gsoa.ch</p>

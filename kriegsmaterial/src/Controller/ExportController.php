@@ -80,13 +80,15 @@ class ExportController extends AppController
         $this->loadModel('Art');
         $this->loadModel('System');
         $this->loadModel('Kategorie');
+        $this->loadModel('Skandale');
 
         $laender = $this->Laender->find()
             ->select(['Land', 'LandFranz', 'Code', 'Latitude', 'Longitude'])
             ->where(["Code != 'CH' AND Code IN (SELECT Code FROM export) OR Code IN (SELECT Code FROM skandale)"])
             ->order(['Land' => 'ASC']);
+        $skandale = $this->Skandale->find()
+	        ->select(['Code', 'Link']);
         $art = $this->Art->find()
-        	->where("Art NOT LIKE 'Dual%'")
             ->select(['Art'])
             ->order(['Art' => 'ASC']);
         $system = $this->System->find()
@@ -101,6 +103,7 @@ class ExportController extends AppController
             ->order(['Firma' => 'ASC']);
         
         $this->set('laender', $laender);
+        $this->set('skandale', $skandale);
         $this->set('art', $art);
         $this->set('system', $system);
         $this->set('kategorie', $kategorie);
@@ -184,7 +187,8 @@ class ExportController extends AppController
                     		function ($q){
                     			return $q->select(['Land', 'LandFranz']);
                     		}
-                    ]);
+                    ])
+                    ->order(['Land' => 'ASC', 'DatumAnfang' => 'ASC']);
                     
                     $this->set('skandale', $this->paginate($searchData));
                     $this->set('_serialize', ['skandale']);
@@ -222,7 +226,7 @@ class ExportController extends AppController
             }
             if(strcmp($art, "Alle Arten") != 0)
                 $queryArray['Art'] = $art;
-            if(!empty($system))
+            if(!(empty($system) || strcmp($system, "Alle Systeme") == 0))
                 $queryArray['System'] = $system;
             if(!empty($kategorie))
                 $queryArray['Kategorie'] = $kategorie;
@@ -272,12 +276,14 @@ class ExportController extends AppController
                     })
                     ->where(function ($exp, $q) use (&$yearEnd){
                         return $exp->lte('Exportdate', $yearEnd + 1);
-                    })
+                    }) 
                     ->contain(['Laender' =>
                     		function ($q){
                     			return $q->select(['Land', 'LandFranz']);
                     		}
-                    ]);
+                    ])
+                    ->order(['Betrag' => 'DESC', 'Land' => 'ASC']);
+                    
                     $this->set('export', $this->paginate($searchData));
                     $this->set('_serialize', ['export']);
                 }

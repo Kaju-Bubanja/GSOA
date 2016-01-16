@@ -4,11 +4,11 @@ use Cake\Routing\Router
 <table class="table table-striped">
 <tr>
 	<th>Land</th>
-    <th><?= $this->Paginator->sort('Link') ?></th>
-    <th><?= $this->Paginator->sort('Firma') ?></th>
-    <th><?= $this->Paginator->sort('Von') ?></th>
-    <th><?= $this->Paginator->sort('Bis') ?></th>
-    <th><?= $this->Paginator->sort('Betrag') ?></th>
+    <th>Link</th>
+    <th>Firma</th>
+    <th>Von</th>
+    <th>Bis</th>
+    <th>Betrag</th>
 </tr>
 <?php
 foreach ($skandale as $skandal):

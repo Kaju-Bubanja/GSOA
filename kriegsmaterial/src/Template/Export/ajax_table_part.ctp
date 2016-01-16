@@ -1,11 +1,11 @@
 <table class="table table-striped">
 <tr>
 	<th>Land</th>
-    <th><?= $this->Paginator->sort('Art') ?></th>
-    <th><?= $this->Paginator->sort('System') ?></th>
-    <th><?= $this->Paginator->sort('Kategorie') ?></th>
-    <th class="text-right" width="150px" style="padding-right: 30px"><?= $this->Paginator->sort('Betrag') ?></th>
-    <th><?= $this->Paginator->sort('Datum') ?></th>
+    <th>Art</th>
+    <th>System</th>
+    <th>Kategorie</th>
+    <th class="text-right" width="180px" style="padding-right: 30px">Betrag</th>
+    <th>Datum</th>
 </tr>
 <?php
 foreach ($export as $export):
