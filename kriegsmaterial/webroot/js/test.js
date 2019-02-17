@@ -211,7 +211,7 @@ function searchSkandals(){
     },
     error: function (response) {
       console.log(response);
-      //alert('error');
+      alert('error');
     }
   });
 }
@@ -293,7 +293,7 @@ function search(isInit){
         $("#Betrag").pulse({opacity: 0.4}, {duration: 1000, pulses: 1});
         return;
       }
-      $("#Betrag").html("Diese Auswahl umfasst Rüstungsexporte im Wert von " + tab.sum[0].Betrag.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1\'') + " Franken.");
+      $("#Betrag").html("Diese Auswahl umfasst Exporte im Wert von " + tab.sum[0].Betrag.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1\'') + " Franken.");
       document.getElementById("searchContent").style.display = "none";
         var maxBetrag = 0;
       	for(var i = 0; i < lines.length; i++){
@@ -364,9 +364,8 @@ function search(isInit){
 	      });
     },
     error: function (tab) {
-    	console.log("here");
-    	console.log(tab.responseText);
-        //alert('error');
+        console.log(tab);
+        alert('error');
     }
   });
 }

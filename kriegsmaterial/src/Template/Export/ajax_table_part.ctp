@@ -17,7 +17,7 @@ foreach ($export as $export):
         <td><? echo __($export->Kategorie);
         		if($export->Art != "Kriegsmaterial"){ 
 			?> 
-        		&nbsp&nbsp<a href="http://www.seco.admin.ch/themen/00513/00600/00608/00613/index.html?lang=de" target="_blank"><small>Güterlisten des SECO</small>
+        		&nbsp&nbsp<a href="https://www.seco.admin.ch/seco/de/home/Aussenwirtschaftspolitik_Wirtschaftliche_Zusammenarbeit/Wirtschaftsbeziehungen/exportkontrollen-und-sanktionen/industrieprodukte--dual-use--und-besondere-militaerische-gueter/rechtliche-grundlagen-und-gueterlisten--anhaenge-.html" target="_blank"><small>Güterlisten des SECO</small>
         	<? } ?>
         </a></td>
         <td class="text-right" style="padding-right: 30px"><?= $this->Number->format($export->Betrag) ?> CHF</td>

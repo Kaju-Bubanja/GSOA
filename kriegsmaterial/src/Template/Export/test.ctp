@@ -90,13 +90,13 @@
 							</div>
 							<div class="col-xs-12 col-md-6 col-lg-2">
     							<strong>Wann?</strong><br/><?php  
-								echo $this->Form->year('yearBegin', ['maxYear' => 2014,
+								echo $this->Form->year('yearBegin', ['maxYear' => 2015,
 				    				'minYear' => 2006,
 				    				'empty' => 'Von',
 				    				'id' => 'yearBegin',
 									'class' => 'dropdownExport form-control']);
 								echo $this->Form->year('yearEnd', ['minYear' => 2006,
-				    				'maxYear' => 2014,
+				    				'maxYear' => 2015,
 				    				'empty' => 'Bis',
 				    				'id' => 'yearEnd',
 									'class' => 'dropdownExport form-control']);
@@ -143,13 +143,13 @@
 							</div>
 							<div class="col-xs-12 col-md-6 col-lg-2">
 								<strong>Wann?</strong><br/>
-								<?php echo $this->Form->year('yearBeginSkandal', ['maxYear' => 2014,
+								<?php echo $this->Form->year('yearBeginSkandal', ['maxYear' => 2015,
 				    				'minYear' => 1939,
 				    				'empty' => 'Von',
 				    				'id' => 'yearBeginSkandale', 
 									'class' => 'dropdownSkandal form-control']);
 								echo $this->Form->year('yearEndSkandal', ['minYear' => 1939,
-				    				'maxYear' => 2014,
+				    				'maxYear' => 2015,
 				    				'empty' => 'Bis',
 				    				'id' => 'yearEndSkandale', 'class' => 'dropdownSkandal form-control']);
 				    		?>
