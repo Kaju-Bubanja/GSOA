@@ -211,7 +211,7 @@ function searchSkandals(){
     },
     error: function (response) {
       console.log(response);
-      alert('error');
+      //alert('error');
     }
   });
 }
@@ -364,8 +364,9 @@ function search(isInit){
 	      });
     },
     error: function (tab) {
-        console.log(tab);
-        alert('error');
+    	console.log("here");
+    	console.log(tab.responseText);
+        //alert('error');
     }
   });
 }

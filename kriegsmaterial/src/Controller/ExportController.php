@@ -145,22 +145,13 @@ class ExportController extends AppController
                 
                 $sumData = $searchDataTmp->select(['Betrag' => $searchDataTmp->func()->sum('Betrag')])
                     ->where($queryArray)
-                    ->where(function ($exp, $q) use (&$yearBegin) {
-                        return $exp->gte('DatumAnfang', $yearBegin);
-                    })
-                    ->where(function ($exp, $q) use (&$yearEnd){
-                        return $exp->lte('DatumAnfang', $yearEnd + 1);
-                    })->all();
+                    ->where(['DatumAnfang >= ' => $yearBegin . '-01-01'])
+                    ->all();
 
                 $searchData = $this->Skandale->find()
                     ->select(['Code'],['Land'])
                     ->where($queryArray)
-                    ->where(function ($exp, $q) use (&$yearBegin) {
-                        return $exp->gte('DatumAnfang', $yearBegin);
-                    })
-                    ->where(function ($exp, $q) use (&$yearEnd){
-                        return $exp->lte('DatumAnfang', $yearEnd + 1);
-                    })
+                    ->where(['DatumAnfang >= ' => $yearBegin . '-01-01'])
                     ->contain(['Laender' => 
                     function ($q){
                         return $q->select(['Land', 'LandFranz']);
@@ -177,12 +168,7 @@ class ExportController extends AppController
                 if(strcmp($search, "true") == 0){
                     $searchData = $this->Skandale->find()
                     ->where($queryArray)
-                    ->where(function ($exp, $q) use (&$yearBegin) {
-                        return $exp->gte('DatumAnfang', $yearBegin);
-                    })
-                    ->where(function ($exp, $q) use (&$yearEnd){
-                        return $exp->lte('DatumAnfang', $yearEnd + 1);
-                    })
+                    ->where(['DatumAnfang >= ' => $yearBegin . '-01-01'])
                     ->contain(['Laender' =>
                     		function ($q){
                     			return $q->select(['Land', 'LandFranz']);

@@ -9,7 +9,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => true,
+    'debug' => false,
 
     /**
      * Configure basic information about the application.
@@ -219,9 +219,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'nonstandard_port_number',
-            'username' => 'gsoa',
-            'password' => 'noguns',
-            'database' => 'kriegsmaterialexport',
+            'username' => 'root',
+            'password' => 'andreas1',
+            'database' => 'kriegsmaterialmap',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
