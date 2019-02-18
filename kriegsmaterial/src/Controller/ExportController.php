@@ -241,31 +241,32 @@ class ExportController extends AppController
                 $sumData = $searchDataTmp->select(['Betrag' => $searchDataTmp->func()->sum('Betrag')])
                     ->where($queryArray)
                     ->where(function ($exp, $q) use (&$yearBegin) {
-                        return $exp->gte('Exportdate', $yearBegin);
+                        return $exp->gte('Exportdate', $yearBegin. "-01-01");
                     })
                     ->where(function ($exp, $q) use (&$yearEnd){
-                        return $exp->lte('Exportdate', $yearEnd + 1);
-                    })->all();
+                        return $exp->lte('Exportdate', ($yearEnd + 1) . "-01-01");
+                    })
+                    ->all();
 
-                $this->log("HERE!");
+               /* $this->log("HERE!");
                 $this->log(debug($searchDataTmp->select(['Betrag' => $searchDataTmp->func()->sum('Betrag')])
                     ->where($queryArray)
                     ->where(function ($exp, $q) use (&$yearBegin) {
-                        return $exp->gte('Exportdate', $yearBegin);
+                        return $exp->gte('Exportdate', $yearBegin . "-01-01");
                     })
                     ->where(function ($exp, $q) use (&$yearEnd){
-                        return $exp->lte('Exportdate', $yearEnd + 1);
-                    })));
+                        return $exp->lte('Exportdate', ($yearEnd + 1) . "-01-01");
+                    })));*/
                     
                 $searchDataTmp2 = $this->Export->find();
                 $searchData = $searchDataTmp2
                     ->select(['Code', 'Betrag' => $searchDataTmp2->func()->sum('Betrag')])
                     ->where($queryArray)
-                    ->where(function ($exp, $q) use (&$yearBegin) {
-                        return $exp->gte('Exportdate', $yearBegin);
+                   ->where(function ($exp, $q) use (&$yearBegin) {
+                       return $exp->gte('Exportdate', $yearBegin. "-01-01");
                     })
                     ->where(function ($exp, $q) use (&$yearEnd){
-                        return $exp->lte('Exportdate', $yearEnd + 1);
+                        return $exp->lte('Exportdate', ($yearEnd + 1) . "-01-01");
                     })
                     ->group('Code')
                     ->all();
@@ -281,10 +282,10 @@ class ExportController extends AppController
                     $searchData = $this->Export->find()
                     ->where($queryArray)
                     ->where(function ($exp, $q) use (&$yearBegin) {
-                        return $exp->gte('Exportdate', $yearBegin);
+                        return $exp->gte('Exportdate', $yearBegin. "-01-01");
                     })
                     ->where(function ($exp, $q) use (&$yearEnd){
-                        return $exp->lte('Exportdate', $yearEnd + 1);
+                        return $exp->lte('Exportdate', ($yearEnd + 1) . "-01-01");
                     }) 
                     ->contain(['Laender' =>
                     		function ($q){
